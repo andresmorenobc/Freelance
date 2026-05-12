@@ -80,19 +80,35 @@
   .btn-ghost:hover { border-color: #d9d8e2; }
 
   /* ---------- hero ---------- */
-  .hero { padding: 36px 0 56px; position: relative; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 1.08fr; gap: 48px; align-items: center; }
-  .hero h1 { margin: 18px 0 18px; font-size: 56px; line-height: 1.04; letter-spacing: -.025em; font-weight: 700; }
+  .hero { padding: 48px 0 56px; position: relative; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1.8fr 1fr; gap: 32px; align-items: center; position: relative; }
+  .hero-cards { display: flex; flex-direction: column; gap: 20px; position: relative; }
+  .hero-cards.left { padding-right: 20px; }
+  .hero-cards.right { padding-left: 20px; }
+  .hero-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px; min-height: 160px; box-shadow: 0 4px 12px -4px rgba(0,0,0,.08); transition: transform .2s, box-shadow .2s; }
+  .hero-cards.left .hero-card:nth-child(1) { transform: translateY(-12px) rotate(-2deg); }
+  .hero-cards.left .hero-card:nth-child(2) { transform: translateY(8px) rotate(1deg); }
+  .hero-cards.left .hero-card:nth-child(3) { transform: translateY(20px) rotate(-1deg); }
+  .hero-cards.right .hero-card:nth-child(1) { transform: translateY(0px) rotate(1.5deg); }
+  .hero-cards.right .hero-card:nth-child(2) { transform: translateY(16px) rotate(-2deg); }
+  .hero-card:hover { transform: translateY(-4px) !important; box-shadow: 0 8px 24px -8px rgba(0,0,0,.15); }
+  .hero-card .ic { width: 36px; height: 36px; border-radius: 10px; background: var(--violet); color: #fff; display: grid; place-items: center; box-shadow: 0 6px 14px -6px rgba(109,92,246,.6); }
+  .hero-card .ic svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .hero-card h3 { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
+  .hero-card p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
+  .hero-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero h1 { margin: 12px 0 20px; font-size: 72px; line-height: 1.06; letter-spacing: -.03em; font-weight: 700; }
   .hero h1 .ink-motion { color: #8a6dff; }
   .hero h1 .ink-strategy { color: #5e7dff; }
   .hero h1 .ink-systems { color: #a78bff; }
-  .hero p.lede { color: var(--muted); max-width: 430px; font-size: 15px; line-height: 1.6; }
-  .hero-ctas { display: flex; gap: 12px; margin-top: 26px; }
+  .hero p.lede { color: var(--muted); max-width: 520px; font-size: 15px; line-height: 1.6; margin: 0 auto; }
+  .hero-ctas { display: flex; gap: 12px; margin-top: 28px; justify-content: center; }
   .btn-lg { height: 48px; padding: 0 20px; border-radius: 12px; font-size: 14px; }
   .btn-primary.btn-lg { box-shadow: 0 14px 30px -12px rgba(109,92,246,.55), inset 0 -1px 0 rgba(0,0,0,.2); }
   .play-pill { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,.22); display: grid; place-items: center; }
   .play-pill svg { width: 9px; height: 9px; fill: #fff; margin-left: 1px; }
-  .badge-row { color: var(--violet); font-weight: 600; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+  .badge-row { color: var(--violet); font-weight: 600; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .hero-center .badge-row { justify-content: center; }
   .badge-row .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 0 4px rgba(109,92,246,.15); }
   .trust { margin-top: 30px; display: flex; align-items: center; gap: 16px; }
   .avatars { display: flex; }
@@ -622,6 +638,7 @@
   /* ---------- responsive ---------- */
   @media (max-width: 1100px) {
     .hero-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 54px; }
     .pillars { grid-template-columns: repeat(2,1fr); }
     .cases { grid-template-columns: repeat(2,1fr); }
     .strat { grid-template-columns: 1fr; }
@@ -697,36 +714,57 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <div class="badge-row"><span class="dot" aria-hidden="true"></span> Motion. Strategy. Systems. Impact.</div>
-      <h1>I turn ideas into<br><span class="serif ink-motion">motion</span>, <span class="serif ink-strategy">strategy</span>,<br><span class="serif ink-systems">systems</span> and <span class="serif">impact</span>.</h1>
-      <p class="lede">Motion Designer, Creative Strategist, SaaS Visual Designer and Project Manager helping startups and brands bring stories to life, launch with clarity, and grow with purpose.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary btn-lg" type="button">Watch Showreel
-          <span class="play-pill" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 1.5 L10 6 L3 10.5 Z"/></svg></span>
-        </button>
-        <a href="#work" class="btn btn-ghost btn-lg">View My Work
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+    <!-- LEFT CARDS -->
+    <div class="hero-cards left">
+      <div class="hero-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 4 20 12 6 20" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Motion Design</h3>
+        <p>Visual storytelling that moves.</p>
       </div>
-      <div class="trust">
+      <div class="hero-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3 L14 11 L21 12 L14 13 L12 21 L10 13 L3 12 L10 11 Z"/></svg></div>
+        <h3>Art Direction</h3>
+        <p>Concepts that shape brands.</p>
+      </div>
+      <div class="hero-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3 L14 11 L21 12 L14 13 L12 21 L10 13 L3 12 L10 11 Z"/></svg></div>
+        <h3>Creative Strategy</h3>
+        <p>Positioning, messaging, and systems that drive clarity &amp; growth.</p>
+      </div>
+    </div>
+
+    <!-- CENTER HEADLINE -->
+    <div class="hero-center">
+      <div class="badge-row"><span class="dot" aria-hidden="true"></span> Motion. Strategy. Systems. Impact.</div>
+      <h1><span class="serif ink-motion">Motion.</span><br><span class="serif ink-strategy">Art Direction.</span><br><span class="serif">Strategy.</span><br><span class="serif ink-systems">Systems.</span></h1>
+      <p class="lede">I turn ideas into cinematic content, visual systems, and campaigns — with clarity and purpose.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary btn-lg" type="button">View Selected Work
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="trust" style="justify-content: center;">
         <div class="avatars" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
         <div class="trust-text">Trusted by startups and agencies worldwide</div>
       </div>
     </div>
 
-    <div class="showreel" role="img" aria-label="Showreel thumbnail — 2024 motion reel">
-      <div class="bg" aria-hidden="true"></div>
-      <div class="mountains" aria-hidden="true"></div>
-      <div class="ground" aria-hidden="true"></div>
-      <div class="astro" aria-hidden="true"><div class="head"></div><div class="body"></div><div class="legs"></div></div>
-      <div class="label" aria-hidden="true">SHOWREEL<span class="sub">2024</span></div>
-      <button class="play" type="button" aria-label="Play showreel">
-        <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 2 L15 9 L4 16 Z"/></svg>
-      </button>
-      <div class="meta" aria-hidden="true">02:18</div>
-      <div class="meta right" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M4 4 H10 V10 M4 4 L10 10 M20 20 H14 V14 M20 20 L14 14"/></svg> 4K
+    <!-- RIGHT CARDS -->
+    <div class="hero-cards right">
+      <div class="hero-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10 L21 8 V16 L16 14 Z"/></svg></div>
+        <h3>SaaS / Product Visuals</h3>
+        <p>Interfaces and product experiences that feel intuitive and deliver results.</p>
+      </div>
+      <div class="hero-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M8 12 Q12 8 16 12" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></div>
+        <h3>Social Ads / Performance</h3>
+        <p>Creative that performs. Measured impact that scales.</p>
+      </div>
+      <div class="hero-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4l6 6 M14 4h6v6 M20 4 L11 13 M11 13l-6 7 M11 13H5 M5 13v6"/></svg></div>
+        <h3>Project Management</h3>
+        <p>Structured workflows. Clear timelines. Predictable outcomes.</p>
       </div>
     </div>
   </div>
