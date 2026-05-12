@@ -6,7 +6,7 @@
 <title>Gonzalo Moreno — Motion Designer &amp; Strategist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
@@ -43,11 +43,15 @@
   }
   a { color: inherit; text-decoration: none; }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-  .serif { font-family: "Instrument Serif", ui-serif, Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: -.01em; }
+  .serif { font-family: "Fraunces", ui-serif, Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: -.015em; font-variation-settings: "opsz" 96, "SOFT" 30; }
   .eyebrow { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--violet); font-weight: 600; }
   .eyebrow.muted { color: var(--muted-2); }
   .h-section { font-family: "Manrope", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; letter-spacing: -.02em; color: var(--ink); }
-  .h-section.serif-h { font-family: "Instrument Serif", serif; font-style: normal; font-weight: 400; font-size: 40px; letter-spacing: -.005em; }
+  .h-section.serif-h { font-family: "Fraunces", serif; font-style: normal; font-weight: 450; font-size: 40px; line-height: 1.08; letter-spacing: -.02em; font-variation-settings: "opsz" 96, "SOFT" 50; }
+  .align-center { text-align: center; }
+  .align-center .lead p, .align-center p { margin-left: auto; margin-right: auto; }
+  .align-right { text-align: right; }
+  .align-right .lead p, .align-right p { margin-left: auto; margin-right: 0; }
 
   /* ---------- header ---------- */
   header {
@@ -61,7 +65,7 @@
   }
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .logo { width: 42px; height: 42px; display: grid; place-items: center; color: #1d1d28; font-family: "Instrument Serif", serif; font-style: normal; font-weight: 400; letter-spacing: -.04em; }
+  .logo { width: 42px; height: 42px; display: grid; place-items: center; color: #1d1d28; font-family: "Fraunces", serif; font-style: normal; font-weight: 400; letter-spacing: -.04em; }
   .logo svg { width: 36px; height: 36px; }
   .brand-text { display: flex; flex-direction: column; line-height: 1.08; }
   .brand-text b { font-weight: 800; letter-spacing: .04em; font-size: 13.5px; }
@@ -120,7 +124,7 @@
   .astro .head { position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%,#fff,#bdbcd6 60%,#5d5b85); }
   .astro .body { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); width: 24px; height: 42px; background: linear-gradient(180deg,#e8e8f0,#a8a8c0); border-radius: 12px 12px 6px 6px; }
   .astro .legs { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 18px; height: 14px; background: linear-gradient(180deg,#a8a8c0,#444460); border-radius: 0 0 6px 6px; }
-  .showreel .label { position: absolute; left: 0; right: 0; top: 38%; text-align: center; color: #fff; font-family: "Instrument Serif", serif; font-style: normal; font-weight: 400; letter-spacing: .5em; font-size: 36px; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
+  .showreel .label { position: absolute; left: 0; right: 0; top: 38%; text-align: center; color: #fff; font-family: "Fraunces", serif; font-style: normal; font-weight: 400; letter-spacing: .5em; font-size: 36px; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
   .showreel .label .sub { display: block; font-size: 18px; letter-spacing: .55em; margin-top: 8px; opacity: .9; }
   .showreel .play { position: absolute; left: 50%; bottom: 34%; transform: translate(-50%, 80%); width: 62px; height: 62px; border-radius: 50%; background: rgba(255,255,255,.96); display: grid; place-items: center; box-shadow: 0 12px 30px rgba(0,0,0,.4); cursor: pointer; }
   .showreel .play svg { width: 18px; height: 18px; fill: #3a2d8c; margin-left: 3px; }
@@ -138,10 +142,12 @@
   .lm-luminar { letter-spacing: .32em; }
 
   /* ---------- sections ---------- */
-  section { padding: 60px 0; }
-  .section-head { margin-bottom: 32px; }
-  .section-head .eyebrow { margin-bottom: 10px; display: inline-block; }
+  section { padding: 88px 0; }
+  .section-head { margin-bottom: 40px; }
+  .section-head .eyebrow { margin-bottom: 12px; display: inline-block; }
   .section-head h2 { margin: 0; }
+  .section-head.center { text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .section-head.right { text-align: right; }
 
   /* ---------- pillars ---------- */
   .pillars { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
@@ -438,7 +444,7 @@
   .cta-portrait .status { position: absolute; right: 6px; bottom: 10px; width: 14px; height: 14px; border-radius: 50%; background: var(--green); border: 2.5px solid #fff; z-index: 2; }
   .cta-locate { position: absolute; left: -6px; top: 0; width: 34px; height: 34px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 4px 10px rgba(0,0,0,.1); z-index: 3; }
   .cta-locate svg { width: 14px; height: 14px; color: var(--violet); stroke: currentColor; fill: none; stroke-width: 2; }
-  .cta-headline { font-family: "Instrument Serif", serif; font-size: 30px; line-height: 1.1; font-weight: 400; }
+  .cta-headline { font-family: "Fraunces", serif; font-size: 30px; line-height: 1.1; font-weight: 400; }
   .cta-headline .extra { font-style: italic; color: #8a6dff; }
   .cta-sub { font-size: 12px; color: var(--muted); margin-top: 6px; max-width: 300px; }
   .cta-info { display: flex; flex-direction: column; gap: 10px; font-size: 12px; line-height: 1.3; }
@@ -473,6 +479,15 @@
 
   /* Strategist's Toolkit */
   .toolkit { display: grid; grid-template-columns: 1fr 3fr; gap: 36px; align-items: start; }
+  .toolkit.stacked, .numbers.stacked { grid-template-columns: 1fr; gap: 44px; }
+  .toolkit.stacked .lead, .numbers.stacked .lead { text-align: center; max-width: 640px; margin: 0 auto; padding-top: 0; }
+  .toolkit.stacked .lead p, .numbers.stacked .lead p { margin-left: auto; margin-right: auto; }
+
+  /* Featured Case Study mirrored / right-aligned */
+  .fcs.mirror { grid-template-columns: 2.5fr 1fr; }
+  .fcs.mirror .lead { order: 2; text-align: right; }
+  .fcs.mirror .fcs-body { order: 1; }
+  .fcs.mirror .lead p { margin-left: auto; margin-right: 0; }
   .toolkit .lead { padding-top: 4px; }
   .toolkit .lead h2 { margin: 10px 0 14px; font-size: 30px; }
   .toolkit .lead p { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0; max-width: 260px; }
@@ -544,7 +559,7 @@
   .fcs-hero { background: linear-gradient(180deg, #0f0e1c, #1c1b32); border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px; min-height: 220px; position: relative; overflow: hidden; }
   .fcs-hero::before { content: ""; position: absolute; left: -30%; bottom: -30%; width: 140%; height: 80%; background: radial-gradient(ellipse 50% 70% at 50% 100%, rgba(110,90,220,.4), transparent 70%); }
   .fcs-hero .echo-brand { display: flex; align-items: center; gap: 9px; color: #fff; font-size: 18px; font-weight: 700; letter-spacing: -.01em; position: relative; z-index: 1; }
-  .fcs-hero .echo-brand .badge { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #8a6dff, #5a48ee); display: grid; place-items: center; font-family: "Instrument Serif", serif; font-style: italic; font-size: 17px; color: #fff; }
+  .fcs-hero .echo-brand .badge { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #8a6dff, #5a48ee); display: grid; place-items: center; font-family: "Fraunces", serif; font-style: italic; font-size: 17px; color: #fff; }
   .fcs-hero .echo-sub { color: rgba(255,255,255,.7); font-size: 12px; position: relative; z-index: 1; margin-top: -10px; padding-left: 37px; }
   .fcs-hero .echo-tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 1; }
   .fcs-hero .echo-tags span { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: #fff; font-size: 10.5px; padding: 5px 10px; border-radius: 20px; font-weight: 500; }
@@ -653,8 +668,8 @@
     <div class="brand">
       <div class="logo">
         <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <text x="2" y="30" font-family="Instrument Serif, serif" font-size="32" font-weight="400" fill="#0d0e14" letter-spacing="-1">G</text>
-          <text x="20" y="30" font-family="Instrument Serif, serif" font-size="32" font-weight="400" fill="#a9a9b4" letter-spacing="-1">M</text>
+          <text x="2" y="30" font-family="Fraunces, serif" font-size="32" font-weight="400" fill="#0d0e14" letter-spacing="-1">G</text>
+          <text x="20" y="30" font-family="Fraunces, serif" font-size="32" font-weight="400" fill="#a9a9b4" letter-spacing="-1">M</text>
         </svg>
       </div>
       <div class="brand-text">
@@ -759,7 +774,7 @@
 <!-- PILLARS / SERVICES -->
 <section id="services" style="padding-top: 24px;">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head center">
       <div class="eyebrow">What I do</div>
       <h2 class="h-section serif-h" style="margin-top: 8px;">Four pillars. One integrated approach.</h2>
     </div>
@@ -937,203 +952,6 @@
   </div>
 </section>
 
-<!-- CREATIVE STRATEGY -->
-<section>
-  <div class="wrap strat">
-    <div class="lead">
-      <div class="eyebrow">Creative Strategy</div>
-      <h2 class="h-section serif-h">Strategy that drives clarity and results.</h2>
-      <p>From positioning to campaign concepts, I help shape the why before the what—so everything works harder and goes further.</p>
-      <button class="btn btn-ghost" type="button">Explore My Approach
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="strat-cards">
-
-      <div class="scard">
-        <h6>Moodboards</h6>
-        <div class="viz vz-mood" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <p class="sub">Visual direction and inspiration.</p>
-      </div>
-
-      <div class="scard">
-        <h6>Messaging</h6>
-        <div class="viz vz-msg" aria-hidden="true">
-          <i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><i class="l5"></i>
-        </div>
-        <p class="sub">Clear, consistent messages that resonate.</p>
-      </div>
-
-      <div class="scard">
-        <h6>Campaign Roadmap</h6>
-        <div class="viz vz-road" aria-hidden="true">
-          <div class="lbl"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span></div>
-          <div class="bar b1"></div>
-          <div class="bar b2"></div>
-          <div class="bar b3"></div>
-        </div>
-        <p class="sub">Phased plan from idea to launch.</p>
-      </div>
-
-      <div class="scard">
-        <h6>Content System</h6>
-        <div class="viz vz-cs" aria-hidden="true">
-          <div class="row r1"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="row r2"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="row r1"><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
-        <p class="sub">Modular content built to scale.</p>
-      </div>
-
-      <div class="scard">
-        <h6>Positioning</h6>
-        <div class="viz vz-pos" aria-hidden="true">
-          <div class="c1"></div><div class="c2"></div><div class="c3"></div>
-        </div>
-        <p class="sub">Own the space. Win the market.</p>
-      </div>
-
-      <div class="scard">
-        <h6>Performance Plan</h6>
-        <div class="viz vz-perf" aria-hidden="true">
-          <div class="stat"><b>+42%</b><span>Sign-ups</span></div>
-          <div class="stat"><b>+28%</b><span>Activation</span></div>
-          <div class="stat"><b class="down">−31%</b><span>CAC</span></div>
-        </div>
-        <p class="sub">Measure, learn, and optimize.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="wrap">
-    <div class="process-grid">
-      <div class="lead">
-        <div class="eyebrow">Process &amp; Project Management</div>
-        <h2 class="h-section serif-h">A structured process for predictable outcomes.</h2>
-      </div>
-      <div class="steps" role="list">
-        <div class="step" role="listitem">
-          <div class="num" aria-hidden="true">1</div>
-          <div class="step-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16 L21 21"/></svg>
-          </div>
-          <h5><span class="n">1.</span>Discover</h5>
-          <p>Understand goals, audience, and context.</p>
-        </div>
-        <div class="step" role="listitem">
-          <div class="num" aria-hidden="true">2</div>
-          <div class="step-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M3 12c4-8 14-8 18 0c-4 8-14 8-18 0z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h5><span class="n">2.</span>Strategy</h5>
-          <p>Define direction, message, and plan.</p>
-        </div>
-        <div class="step" role="listitem">
-          <div class="num" aria-hidden="true">3</div>
-          <div class="step-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>
-          </div>
-          <h5><span class="n">3.</span>Design</h5>
-          <p>Craft visuals, systems, and flows.</p>
-        </div>
-        <div class="step" role="listitem">
-          <div class="num" aria-hidden="true">4</div>
-          <div class="step-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <h5><span class="n">4.</span>Produce</h5>
-          <p>Animate, build, and refine.</p>
-        </div>
-        <div class="step" role="listitem">
-          <div class="num" aria-hidden="true">5</div>
-          <div class="step-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M20 6 L9 17 L4 12"/></svg>
-          </div>
-          <h5><span class="n">5.</span>Review</h5>
-          <p>Test, iterate, and align.</p>
-        </div>
-        <div class="step" role="listitem">
-          <div class="num" aria-hidden="true">6</div>
-          <div class="step-ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M5 7h14l-1 13H6L5 7z M9 7V4h6v3"/></svg>
-          </div>
-          <h5><span class="n">6.</span>Deliver</h5>
-          <p>Launch, handoff, and support.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project management timeline -->
-    <div class="pm-grid">
-      <div class="pm-side">
-        <div class="top"><b>Active Project</b><span class="pill">In Progress</span></div>
-        <h6>Echo SaaS Redesign</h6>
-        <ul>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9 H21 M9 3 V21"/></svg>
-            Overview
-          </li>
-          <li class="active">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16 M4 12h16 M4 18h10"/></svg>
-            Timeline
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg>
-            Tasks
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3 H6 a2 2 0 0 0 -2 2 v14 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 2 -2 V9 z M14 3 v6 h6"/></svg>
-            Files
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5 M14 20c0-2 2-3.5 4-3.5s4 1.5 4 3.5"/></svg>
-            Team
-          </li>
-        </ul>
-      </div>
-
-      <div class="pm-kanban">
-        <div class="weeks">
-          <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span><span>Week 5</span><span>Week 6</span>
-        </div>
-        <div class="lane">
-          <div class="pm-task l1"><span class="ic" aria-hidden="true"></span>Discovery &amp; Research</div>
-        </div>
-        <div class="lane">
-          <div class="pm-task l2" style="background: var(--violet-soft);"><span class="ic" aria-hidden="true"></span>Strategy &amp; Positioning</div>
-        </div>
-        <div class="lane">
-          <div class="pm-task l3"><span class="ic" aria-hidden="true"></span>Design &amp; Prototyping</div>
-        </div>
-        <div class="lane">
-          <div class="pm-task l4" style="background: var(--violet-soft);"><span class="ic" aria-hidden="true"></span>Motion &amp; Production</div>
-        </div>
-        <div class="lane">
-          <div class="pm-task l5"><span class="ic" aria-hidden="true"></span>Review &amp; QA</div>
-        </div>
-        <div class="lane">
-          <div class="pm-task l6" style="background: var(--violet-soft);"><span class="ic" aria-hidden="true"></span>Launch &amp; Handoff</div>
-        </div>
-      </div>
-
-      <div class="pm-overview">
-        <h6>Project Overview</h6>
-        <div class="row"><span>Progress</span><b>72%</b></div>
-        <div class="row"><span>Tasks Completed</span><b>36 / 50</b></div>
-        <div class="row"><span>Next Milestone</span><b>Review &amp; QA</b></div>
-        <div class="row"><span>Due Date</span><b>May 22, 2024</b></div>
-        <button class="btn-full" type="button">View Full Project
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CREATIVE STRATEGY (new) -->
 <section id="about">
   <div class="wrap csv2">
@@ -1179,7 +997,7 @@
 
 <!-- STRATEGIST'S TOOLKIT -->
 <section>
-  <div class="wrap toolkit">
+  <div class="wrap toolkit stacked">
     <div class="lead">
       <div class="eyebrow">Strategist's Toolkit</div>
       <h2 class="h-section serif-h">Where strategy meets structure.</h2>
@@ -1249,7 +1067,7 @@
 
 <!-- FEATURED CASE STUDY -->
 <section>
-  <div class="wrap fcs">
+  <div class="wrap fcs mirror">
     <div class="lead">
       <div class="eyebrow">Featured Case Study</div>
       <h2 class="h-section serif-h">From strategy to story that converts.</h2>
@@ -1309,7 +1127,7 @@
 </section>
 
 <!-- MY PROCESS (new) -->
-<section>
+<section id="process">
   <div class="wrap process2">
     <div class="lead">
       <div class="eyebrow">My Process</div>
@@ -1395,7 +1213,7 @@
 
 <!-- BY THE NUMBERS -->
 <section>
-  <div class="wrap numbers">
+  <div class="wrap numbers stacked">
     <div class="lead">
       <div class="eyebrow">By the Numbers</div>
       <h2 class="h-section serif-h">Results that reflect strategy and craft.</h2>
