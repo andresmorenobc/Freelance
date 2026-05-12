@@ -457,6 +457,153 @@
   footer.site .links a:hover { color: var(--violet); }
   footer.site .center { color: var(--muted-2); }
 
+  /* ---------- new strategy block (replaces metrics) ---------- */
+
+  /* New Creative Strategy (6 mini cards) */
+  .csv2 { display: grid; grid-template-columns: 1fr 3fr; gap: 36px; align-items: start; }
+  .csv2 .lead { padding-top: 4px; }
+  .csv2 .lead h2 { margin: 10px 0 14px; font-size: 30px; }
+  .csv2 .lead p { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0; max-width: 290px; }
+  .csv2-cards { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .csv2-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 14px; display: flex; flex-direction: column; gap: 6px; min-height: 170px; }
+  .csv2-card .ic { width: 32px; height: 32px; border-radius: 8px; background: var(--violet-soft); color: var(--violet); display: grid; place-items: center; }
+  .csv2-card .ic svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .csv2-card h6 { margin: 6px 0 2px; font-size: 13px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; line-height: 1.25; }
+  .csv2-card p { margin: 0; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+  /* Strategist's Toolkit */
+  .toolkit { display: grid; grid-template-columns: 1fr 3fr; gap: 36px; align-items: start; }
+  .toolkit .lead { padding-top: 4px; }
+  .toolkit .lead h2 { margin: 10px 0 14px; font-size: 30px; }
+  .toolkit .lead p { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0; max-width: 260px; }
+  .tk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  .tk-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 10px; min-height: 190px; }
+  .tk-card h6 { margin: auto 0 0; font-size: 11.5px; font-weight: 700; color: var(--ink); letter-spacing: -.005em; line-height: 1.3; }
+  .tk-viz { height: 96px; border-radius: 8px; overflow: hidden; position: relative; background: #f6f5fb; }
+
+  /* Toolkit visualizations */
+  .tkv-mood { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; padding: 4px; background: none; }
+  .tkv-mood i { border-radius: 4px; }
+  .tkv-mood i:nth-child(1) { background: linear-gradient(135deg, #cfc4d6, #56473d); }
+  .tkv-mood i:nth-child(2) { background: linear-gradient(135deg, #f0d8c0, #a87858); }
+  .tkv-mood i:nth-child(3) { background: linear-gradient(135deg, #c8d4d6, #4d6066); }
+  .tkv-mood i:nth-child(4) { background: linear-gradient(135deg, #b8b8cc, #38384a); }
+
+  .tkv-road { padding: 12px 10px; display: flex; flex-direction: column; gap: 5px; justify-content: center; }
+  .tkv-road .rlbl { font-size: 8px; color: var(--muted); letter-spacing: .04em; margin-bottom: 2px; }
+  .tkv-road .bar { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #cdbeff, #6d5cf6); }
+  .tkv-road .bar.b1 { width: 70%; }
+  .tkv-road .bar.b2 { width: 50%; margin-left: 18%; background: linear-gradient(90deg, #ddd2ff, #9882ff); }
+  .tkv-road .bar.b3 { width: 36%; margin-left: 38%; background: linear-gradient(90deg, #ccc0ff, #7b65ff); }
+
+  .tkv-funnel { display: grid; place-items: center; padding: 6px; }
+  .tkv-funnel .fn { width: 72px; height: 70px; position: relative; }
+  .tkv-funnel .fn span { position: absolute; left: 50%; transform: translateX(-50%); font-size: 6.5px; color: var(--ink-2); font-weight: 600; letter-spacing: .02em; }
+  .tkv-funnel .fn span.s1 { top: 4px; }
+  .tkv-funnel .fn span.s2 { top: 27px; }
+  .tkv-funnel .fn span.s3 { bottom: 4px; color: #fff; }
+  .tkv-funnel .fn::before { content: ""; position: absolute; left: 6%; right: 6%; top: 14px; height: 16px; background: linear-gradient(180deg, #e0d6ff, #cdbeff); clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%); }
+  .tkv-funnel .fn::after { content: ""; position: absolute; left: 24%; right: 24%; top: 32px; height: 32px; background: linear-gradient(180deg, #a896ff, #6d5cf6); clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%); }
+
+  .tkv-cal { padding: 10px 8px; }
+  .tkv-cal .hd { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; font-size: 7.5px; color: var(--muted); letter-spacing: .04em; text-align: center; margin-bottom: 5px; font-weight: 700; }
+  .tkv-cal .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+  .tkv-cal .grid i { width: 8px; height: 8px; border-radius: 50%; background: #d8d2e8; justify-self: center; }
+  .tkv-cal .grid i.on { background: var(--violet); }
+  .tkv-cal .grid i.med { background: #a896ff; }
+
+  .tkv-venn { position: relative; }
+  .tkv-venn i { position: absolute; width: 38px; height: 38px; border-radius: 50%; mix-blend-mode: multiply; opacity: .7; }
+  .tkv-venn i.c1 { background: #c0aeff; left: 18%; top: 16%; }
+  .tkv-venn i.c2 { background: #8a6dff; right: 18%; top: 16%; }
+  .tkv-venn i.c3 { background: #5e7dff; left: 50%; top: 40%; transform: translateX(-50%); }
+  .tkv-venn span { position: absolute; font-size: 6.5px; color: var(--ink-2); font-weight: 600; }
+  .tkv-venn span.s1 { left: 4%; top: 4%; }
+  .tkv-venn span.s2 { right: 4%; top: 4%; }
+  .tkv-venn span.s3 { left: 50%; bottom: 4%; transform: translateX(-50%); }
+
+  .tkv-msg { padding: 10px 10px; display: flex; flex-direction: column; gap: 5px; justify-content: center; }
+  .tkv-msg .item { display: flex; align-items: center; gap: 5px; font-size: 7.5px; color: var(--ink-2); font-weight: 600; }
+  .tkv-msg .item::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--violet); flex-shrink: 0; background-image: radial-gradient(circle at 30% 30%, #fff 0 1.5px, transparent 2px); }
+
+  .tkv-stick { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 5px; padding: 9px; background: #f0eef7; }
+  .tkv-stick i { border-radius: 3px; box-shadow: 0 2px 3px rgba(0,0,0,.08); }
+  .tkv-stick i:nth-child(1) { background: #ffd87f; transform: rotate(-2deg); }
+  .tkv-stick i:nth-child(2) { background: #ffb0c8; transform: rotate(3deg); }
+  .tkv-stick i:nth-child(3) { background: #a8e1c5; transform: rotate(1deg); }
+  .tkv-stick i:nth-child(4) { background: #bdc9ff; transform: rotate(-3deg); }
+
+  /* Featured Case Study */
+  .fcs { display: grid; grid-template-columns: 1fr 2.5fr; gap: 36px; align-items: start; }
+  .fcs .lead { padding-top: 4px; }
+  .fcs .lead h2 { margin: 10px 0 14px; font-size: 30px; }
+  .fcs .lead p { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0 0 18px; max-width: 270px; }
+  .fcs-link { display: inline-flex; align-items: center; gap: 6px; color: var(--violet); font-weight: 700; font-size: 13px; }
+  .fcs-link svg { width: 12px; height: 12px; }
+  .fcs-body { display: grid; grid-template-columns: 1.05fr 2fr; gap: 14px; align-items: stretch; }
+  .fcs-hero { background: linear-gradient(180deg, #0f0e1c, #1c1b32); border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px; min-height: 220px; position: relative; overflow: hidden; }
+  .fcs-hero::before { content: ""; position: absolute; left: -30%; bottom: -30%; width: 140%; height: 80%; background: radial-gradient(ellipse 50% 70% at 50% 100%, rgba(110,90,220,.4), transparent 70%); }
+  .fcs-hero .echo-brand { display: flex; align-items: center; gap: 9px; color: #fff; font-size: 18px; font-weight: 700; letter-spacing: -.01em; position: relative; z-index: 1; }
+  .fcs-hero .echo-brand .badge { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #8a6dff, #5a48ee); display: grid; place-items: center; font-family: "Instrument Serif", serif; font-style: italic; font-size: 17px; color: #fff; }
+  .fcs-hero .echo-sub { color: rgba(255,255,255,.7); font-size: 12px; position: relative; z-index: 1; margin-top: -10px; padding-left: 37px; }
+  .fcs-hero .echo-tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index: 1; }
+  .fcs-hero .echo-tags span { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: #fff; font-size: 10.5px; padding: 5px 10px; border-radius: 20px; font-weight: 500; }
+
+  .fcs-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .fcs-col { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; min-height: 220px; display: flex; flex-direction: column; gap: 8px; }
+  .fcs-col h5 { margin: 0 0 2px; font-size: 11.5px; font-weight: 700; color: var(--ink-2); letter-spacing: -.005em; }
+  .fcs-col p { margin: 0; font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+  .fcs-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .fcs-col li { display: flex; gap: 7px; font-size: 11px; color: var(--ink-2); line-height: 1.45; }
+  .fcs-col li svg { width: 11px; height: 11px; color: var(--violet); flex-shrink: 0; margin-top: 2px; }
+  .fcs-impact { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+  .fcs-impact .istat { display: flex; flex-direction: column; gap: 0; }
+  .fcs-impact .istat b { font-size: 17px; font-weight: 800; color: var(--green); letter-spacing: -.02em; line-height: 1.1; }
+  .fcs-impact .istat b.down { color: var(--red); }
+  .fcs-impact .istat span { font-size: 9.5px; color: var(--muted); font-weight: 600; }
+  .fcs-spark { height: 44px; margin-top: auto; }
+  .fcs-spark svg { width: 100%; height: 100%; display: block; }
+
+  /* My Process (new) */
+  .process2 { display: grid; grid-template-columns: 1fr 3fr; gap: 36px; align-items: start; }
+  .process2 .lead { padding-top: 4px; }
+  .process2 .lead h2 { margin: 10px 0 14px; font-size: 30px; }
+  .process2 .lead p { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0; max-width: 260px; }
+  .process2-right { display: grid; grid-template-columns: 1.7fr 1fr; gap: 14px; align-items: start; }
+  .p2-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 12px; }
+  .p2-step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 5px; min-height: 130px; }
+  .p2-step .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+  .p2-step .num { font-size: 10px; font-weight: 700; color: var(--violet); background: var(--violet-soft); padding: 4px 8px; border-radius: 6px; letter-spacing: .04em; }
+  .p2-step .ic { width: 26px; height: 26px; border-radius: 50%; background: var(--violet); color: #fff; display: grid; place-items: center; box-shadow: 0 4px 10px -3px rgba(109,92,246,.55); }
+  .p2-step .ic svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .p2-step h6 { margin: 2px 0 0; font-size: 13px; font-weight: 700; color: var(--ink); letter-spacing: -.005em; }
+  .p2-step p { margin: 0; font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+  .p2-side { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-height: 280px; }
+  .p2-side h6 { margin: 0 0 4px; font-size: 12.5px; font-weight: 700; color: var(--ink); }
+  .p2-side ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .p2-side li { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--ink-2); font-weight: 500; }
+  .p2-side li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--violet); flex-shrink: 0; background-image: radial-gradient(circle at 30% 30%, #fff 0 1.5px, transparent 2px); }
+  .p2-side .chart-label { font-size: 9.5px; color: var(--muted-2); margin-top: 8px; letter-spacing: .04em; text-transform: uppercase; font-weight: 600; }
+  .p2-side .chart { height: 70px; margin-top: 2px; }
+  .p2-side .chart svg { width: 100%; height: 100%; display: block; }
+
+  /* By the Numbers */
+  .numbers { display: grid; grid-template-columns: 1fr 3fr; gap: 36px; align-items: start; }
+  .numbers .lead { padding-top: 4px; }
+  .numbers .lead h2 { margin: 10px 0 14px; font-size: 30px; }
+  .numbers .lead p { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0; max-width: 240px; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr) 1.4fr; gap: 10px; }
+  .ncard { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 4px; min-height: 130px; justify-content: space-between; }
+  .ncard .value { font-size: 26px; font-weight: 800; letter-spacing: -.02em; color: var(--ink); line-height: 1; }
+  .ncard .label { font-size: 12px; font-weight: 700; color: var(--ink-2); margin-top: 4px; }
+  .ncard .sub { font-size: 10.5px; color: var(--muted); line-height: 1.4; }
+  .testimonial { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; min-height: 130px; }
+  .testimonial .avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(160deg, #a99378, #65462e); flex-shrink: 0; position: relative; overflow: hidden; }
+  .testimonial .avatar::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 78%, #1f1a16 0 28%, transparent 30%), radial-gradient(circle at 50% 26%, #1c1411 0 14%, transparent 16%); }
+  .testimonial p { margin: 0; font-size: 11.5px; color: var(--ink-2); line-height: 1.5; font-style: italic; }
+  .testimonial .byline { font-size: 10.5px; color: var(--muted); font-weight: 600; margin-top: auto; }
+
   /* ---------- responsive ---------- */
   @media (max-width: 1100px) {
     .hero-grid { grid-template-columns: 1fr; }
@@ -470,6 +617,16 @@
     .metrics-grid { grid-template-columns: repeat(2,1fr); }
     .cta-bar { grid-template-columns: 1fr; text-align: left; }
     .logos-row { justify-content: flex-start; }
+    .csv2 { grid-template-columns: 1fr; }
+    .csv2-cards { grid-template-columns: repeat(3,1fr); }
+    .toolkit { grid-template-columns: 1fr; }
+    .tk-grid { grid-template-columns: repeat(4,1fr); }
+    .fcs { grid-template-columns: 1fr; }
+    .fcs-body { grid-template-columns: 1fr; }
+    .process2 { grid-template-columns: 1fr; }
+    .process2-right { grid-template-columns: 1fr; }
+    .numbers { grid-template-columns: 1fr; }
+    .num-grid { grid-template-columns: repeat(3,1fr); }
   }
 
   @media (max-width: 640px) {
@@ -480,6 +637,11 @@
     .strat-cards { grid-template-columns: repeat(2,1fr); }
     .metrics-grid { grid-template-columns: 1fr; }
     .wrap { padding: 0 16px; }
+    .csv2-cards { grid-template-columns: repeat(2,1fr); }
+    .tk-grid { grid-template-columns: repeat(2,1fr); }
+    .fcs-cols { grid-template-columns: 1fr; }
+    .p2-steps { grid-template-columns: repeat(2,1fr); }
+    .num-grid { grid-template-columns: repeat(2,1fr); }
   }
 </style>
 </head>
@@ -972,123 +1134,313 @@
   </div>
 </section>
 
-<!-- METRICS -->
+<!-- CREATIVE STRATEGY (new) -->
 <section id="about">
-  <div class="wrap metrics">
+  <div class="wrap csv2">
     <div class="lead">
-      <div class="eyebrow">Built for modern products</div>
-      <h2 class="h-section serif-h">Design systems and dashboards that scale.</h2>
-      <p>I design intuitive interfaces, data stories, and experiences that users love and businesses can rely on.</p>
-      <button class="btn btn-ghost" type="button">See More Product Work
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+      <div class="eyebrow">Creative Strategy</div>
+      <h2 class="h-section serif-h">Strategy for brands that need clarity and momentum.</h2>
+      <p>From positioning to campaign concepts, I help shape the why before the what—so everything works harder and goes further.</p>
     </div>
+    <div class="csv2-cards">
+      <div class="csv2-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="14" height="18" rx="2"/><path d="M8 8h6 M8 12h6 M8 16h4"/></svg></div>
+        <h6>Content Strategy</h6>
+        <p>Plan the right content, for the right audience, at the right time.</p>
+      </div>
+      <div class="csv2-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18a3 3 0 0 0 6 0 M12 14V3 M5 7l7-4 7 4 M5 7v6c0 0 3 2 7 2s7-2 7-2V7"/></svg></div>
+        <h6>Campaign Concepts</h6>
+        <p>Big ideas that connect brand, message, and emotion.</p>
+      </div>
+      <div class="csv2-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8 M8 13h5"/></svg></div>
+        <h6>Messaging &amp; Positioning</h6>
+        <p>Clear, compelling messaging that drives engagement and trust.</p>
+      </div>
+      <div class="csv2-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3 L14 11 L21 12 L14 13 L12 21 L10 13 L3 12 L10 11 Z"/></svg></div>
+        <h6>Creative Direction</h6>
+        <p>Visual direction, tone of voice, and design systems.</p>
+      </div>
+      <div class="csv2-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4l6 6 M14 4h6v6 M20 4 L11 13 M11 13l-6 7 M11 13H5 M5 13v6"/></svg></div>
+        <h6>Go-To-Market Support</h6>
+        <p>Launch strategies that create momentum and market traction.</p>
+      </div>
+      <div class="csv2-card">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+        <h6>Brand Storytelling</h6>
+        <p>Stories that build meaning, trust, and loyalty.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="metrics-grid">
-
-      <!-- Total Users -->
-      <div class="mcard">
-        <div class="head-row">
-          <span class="label">Total Users</span>
-          <span class="delta">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 16 L12 8 L18 16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            12.5%
-          </span>
+<!-- STRATEGIST'S TOOLKIT -->
+<section>
+  <div class="wrap toolkit">
+    <div class="lead">
+      <div class="eyebrow">Strategist's Toolkit</div>
+      <h2 class="h-section serif-h">Where strategy meets structure.</h2>
+      <p>The frameworks and artifacts I use to turn insight into actionable creative.</p>
+    </div>
+    <div class="tk-grid">
+      <div class="tk-card">
+        <div class="tk-viz tkv-mood" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <h6>Moodboards &amp; Visual Direction</h6>
+      </div>
+      <div class="tk-card">
+        <div class="tk-viz tkv-road" aria-hidden="true">
+          <div class="rlbl">Phase</div>
+          <div class="bar b1"></div>
+          <div class="bar b2"></div>
+          <div class="bar b3"></div>
         </div>
-        <div class="value">24,680</div>
-        <div class="sub"><span style="color:var(--green)">▲ 12.5%</span> <span>vs last month</span></div>
-        <div class="spark">
+        <h6>Campaign Roadmap</h6>
+      </div>
+      <div class="tk-card">
+        <div class="tk-viz tkv-funnel" aria-hidden="true">
+          <div class="fn">
+            <span class="s1">Awareness</span>
+            <span class="s2">Consideration</span>
+            <span class="s3">Conversion</span>
+          </div>
+        </div>
+        <h6>Funnel &amp; Journey Sketches</h6>
+      </div>
+      <div class="tk-card">
+        <div class="tk-viz tkv-cal" aria-hidden="true">
+          <div class="hd"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span></div>
+          <div class="grid">
+            <i class="on"></i><i></i><i class="med"></i><i></i><i class="on"></i>
+            <i></i><i class="med"></i><i></i><i class="on"></i><i></i>
+            <i class="on"></i><i></i><i class="med"></i><i></i><i class="on"></i>
+          </div>
+        </div>
+        <h6>Content Calendar</h6>
+      </div>
+      <div class="tk-card">
+        <div class="tk-viz tkv-venn" aria-hidden="true">
+          <span class="s1">Audience</span>
+          <span class="s2">Needs</span>
+          <span class="s3">Positioning</span>
+          <i class="c1"></i><i class="c2"></i><i class="c3"></i>
+        </div>
+        <h6>Audience &amp; Positioning</h6>
+      </div>
+      <div class="tk-card">
+        <div class="tk-viz tkv-msg" aria-hidden="true">
+          <div class="item">Headline</div>
+          <div class="item">Subheadline</div>
+          <div class="item">Key Benefit</div>
+          <div class="item">Proof Point</div>
+          <div class="item">CTA</div>
+        </div>
+        <h6>Messaging Hierarchy</h6>
+      </div>
+      <div class="tk-card">
+        <div class="tk-viz tkv-stick" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <h6>Workshop Outcomes</h6>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CASE STUDY -->
+<section>
+  <div class="wrap fcs">
+    <div class="lead">
+      <div class="eyebrow">Featured Case Study</div>
+      <h2 class="h-section serif-h">From strategy to story that converts.</h2>
+      <p>A strategic rebrand and campaign system that increased product sign-ups by 42% in 60 days.</p>
+      <a class="fcs-link" href="#">View Case Study
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="fcs-body">
+      <div class="fcs-hero">
+        <div class="echo-brand"><span class="badge">E</span> Echo</div>
+        <div class="echo-sub">SaaS Platform</div>
+        <div class="echo-tags">
+          <span>Brand Strategy</span>
+          <span>Campaign</span>
+          <span>Motion</span>
+          <span>UI/UX</span>
+        </div>
+      </div>
+      <div class="fcs-cols">
+        <div class="fcs-col">
+          <h5>The Challenge</h5>
+          <p>Echo had a powerful product but unclear positioning and inconsistent messaging across channels.</p>
+        </div>
+        <div class="fcs-col">
+          <h5>My Approach</h5>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 L9 17 L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Audience &amp; competitor research</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 L9 17 L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Positioning &amp; messaging strategy</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 L9 17 L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Campaign concept &amp; creative system</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 L9 17 L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Motion storytelling &amp; launch assets</li>
+          </ul>
+        </div>
+        <div class="fcs-col">
+          <h5>The Impact</h5>
+          <div class="fcs-impact">
+            <div class="istat"><b>+42%</b><span>Sign-ups</span></div>
+            <div class="istat"><b>+28%</b><span>Activation Rate</span></div>
+            <div class="istat"><b class="down">−31%</b><span>CAC</span></div>
+          </div>
+          <div class="fcs-spark">
+            <svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="gImpact" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#6d5cf6" stop-opacity=".3"/>
+                  <stop offset="1" stop-color="#6d5cf6" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 30 L14 26 L28 28 L42 20 L56 22 L70 14 L84 12 L100 4 L100 40 L0 40 Z" fill="url(#gImpact)"/>
+              <path d="M0 30 L14 26 L28 28 L42 20 L56 22 L70 14 L84 12 L100 4" stroke="#6d5cf6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MY PROCESS (new) -->
+<section>
+  <div class="wrap process2">
+    <div class="lead">
+      <div class="eyebrow">My Process</div>
+      <h2 class="h-section serif-h">Strategy first. Execution with intention.</h2>
+      <p>A collaborative process that aligns stakeholders, clarifies direction, and delivers measurable impact.</p>
+    </div>
+    <div class="process2-right">
+      <div class="p2-steps">
+        <div class="p2-step">
+          <div class="top">
+            <span class="num">01</span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16 L21 21"/></svg></span>
+          </div>
+          <h6>Discover</h6>
+          <p>Research, audit, and stakeholder alignment.</p>
+        </div>
+        <div class="p2-step">
+          <div class="top">
+            <span class="num">02</span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16 M4 12h16 M4 18h10"/></svg></span>
+          </div>
+          <h6>Strategy</h6>
+          <p>Define positioning, messaging, and goals.</p>
+        </div>
+        <div class="p2-step">
+          <div class="top">
+            <span class="num">03</span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
+          </div>
+          <h6>Concept</h6>
+          <p>Big idea, creative direction, and storyboard.</p>
+        </div>
+        <div class="p2-step">
+          <div class="top">
+            <span class="num">04</span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 4 20 12 6 20" fill="currentColor" stroke="none"/></svg></span>
+          </div>
+          <h6>Create</h6>
+          <p>Design, motion, and content production.</p>
+        </div>
+        <div class="p2-step">
+          <div class="top">
+            <span class="num">05</span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 L9 17 L4 12"/></svg></span>
+          </div>
+          <h6>Review</h6>
+          <p>Feedback loops to refine and strengthen.</p>
+        </div>
+        <div class="p2-step">
+          <div class="top">
+            <span class="num">06</span>
+            <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13 L12 4 L20 13 M7 12v8h10v-8"/></svg></span>
+          </div>
+          <h6>Launch</h6>
+          <p>Deliver, optimize, and drive performance.</p>
+        </div>
+      </div>
+      <div class="p2-side">
+        <h6>Project Command Center</h6>
+        <ul>
+          <li>Timeline &amp; Milestones</li>
+          <li>Tasks &amp; Ownership</li>
+          <li>Assets &amp; Approvals</li>
+          <li>Performance Tracking</li>
+        </ul>
+        <div class="chart-label">Course of Implementation</div>
+        <div class="chart">
           <svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true">
             <defs>
-              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stop-color="#6a82ff" stop-opacity=".35"/>
-                <stop offset="1" stop-color="#6a82ff" stop-opacity="0"/>
+              <linearGradient id="gPCC" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#6d5cf6" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#6d5cf6" stop-opacity="0"/>
               </linearGradient>
             </defs>
-            <path d="M0 38 L12 34 L24 36 L36 28 L48 32 L60 22 L72 26 L84 14 L100 8 L100 50 L0 50 Z" fill="url(#g1)"/>
-            <path d="M0 38 L12 34 L24 36 L36 28 L48 32 L60 22 L72 26 L84 14 L100 8" stroke="#5e7dff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M0 40 L12 36 L24 38 L36 30 L48 32 L60 22 L72 24 L84 14 L100 8 L100 50 L0 50 Z" fill="url(#gPCC)"/>
+            <path d="M0 40 L12 36 L24 38 L36 30 L48 32 L60 22 L72 24 L84 14 L100 8" stroke="#6d5cf6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Revenue -->
-      <div class="mcard">
-        <div class="head-row">
-          <span class="label">Revenue</span>
-        </div>
-        <div class="value">$58,430</div>
-        <div class="sub"><span style="color:var(--green)">▲ 18.3%</span> <span>vs last month</span></div>
-        <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="bars-label" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
-      </div>
-
-      <!-- Active Users -->
-      <div class="mcard">
-        <div class="head-row">
-          <span class="label">Active Users</span>
-        </div>
-        <div class="value">1,248</div>
-        <div class="active-donut-wrap">
-          <div class="donut" aria-hidden="true">
-            <svg viewBox="0 0 36 36">
-              <circle cx="18" cy="18" r="14" fill="none" stroke="#eeedf3" stroke-width="5"/>
-              <circle cx="18" cy="18" r="14" fill="none" stroke="#6d5cf6" stroke-width="5" stroke-dasharray="53 88"/>
-              <circle cx="18" cy="18" r="14" fill="none" stroke="#a896ff" stroke-width="5" stroke-dasharray="22 88" stroke-dashoffset="-53"/>
-              <circle cx="18" cy="18" r="14" fill="none" stroke="#cdbcff" stroke-width="5" stroke-dasharray="10 88" stroke-dashoffset="-75"/>
-            </svg>
-          </div>
-          <div class="legend">
-            <div class="row"><span><span class="dot" style="background:#6d5cf6"></span>Web</span><b style="color:var(--ink-2)">60%</b></div>
-            <div class="row"><span><span class="dot" style="background:#a896ff"></span>Mobile</span><b style="color:var(--ink-2)">28%</b></div>
-            <div class="row"><span><span class="dot" style="background:#cdbcff"></span>Other</span><b style="color:var(--ink-2)">12%</b></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Recent Activity -->
-      <div class="mcard">
-        <div class="head-row">
-          <span class="label" style="color:var(--ink-2);font-size:12px;font-weight:700;">Recent Activity</span>
-        </div>
-        <div class="activity">
-          <div class="a-row">
-            <span class="ai" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20" fill="currentColor" stroke="none"/></svg></span>
-            <span class="t">New campaign launched</span>
-            <span class="time">2m</span>
-          </div>
-          <div class="a-row">
-            <span class="ai" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 L9 17 L4 12"/></svg></span>
-            <span class="t">Subscription upgraded</span>
-            <span class="time">15m</span>
-          </div>
-          <div class="a-row">
-            <span class="ai" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 10h16"/></svg></span>
-            <span class="t">Invoice paid</span>
-            <span class="time">1h</span>
-          </div>
-          <div class="a-row">
-            <span class="ai" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/></svg></span>
-            <span class="t">Team member added</span>
-            <span class="time">3h</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pro Plan -->
-      <div class="mcard plan">
+<!-- BY THE NUMBERS -->
+<section>
+  <div class="wrap numbers">
+    <div class="lead">
+      <div class="eyebrow">By the Numbers</div>
+      <h2 class="h-section serif-h">Results that reflect strategy and craft.</h2>
+    </div>
+    <div class="num-grid">
+      <div class="ncard">
+        <div class="value">120+</div>
         <div>
-          <div class="label" style="color:var(--ink-2);font-size:12px;font-weight:700;">Pro Plan</div>
-          <div class="price">$29<span class="per"> /month</span></div>
-          <div class="billed">billed monthly</div>
+          <div class="label">Total Projects</div>
+          <div class="sub">Across agencies &amp; startups</div>
         </div>
-        <ul>
-          <li>Unlimited projects</li>
-          <li>Advanced analytics</li>
-          <li>Priority support</li>
-        </ul>
-        <button class="btn-up" type="button">Upgrade Plan</button>
       </div>
-
+      <div class="ncard">
+        <div class="value">95%</div>
+        <div>
+          <div class="label">Happy Clients</div>
+          <div class="sub">Would work with again</div>
+        </div>
+      </div>
+      <div class="ncard">
+        <div class="value">6.4 <span style="font-size:14px;color:var(--muted);font-weight:600">mo</span></div>
+        <div>
+          <div class="label">Avg. Engagement</div>
+          <div class="sub">Long-term partnerships</div>
+        </div>
+      </div>
+      <div class="ncard">
+        <div class="value">60+</div>
+        <div>
+          <div class="label">Projects Launched</div>
+          <div class="sub">Successful launches</div>
+        </div>
+      </div>
+      <div class="ncard">
+        <div class="value">82%</div>
+        <div>
+          <div class="label">Client Retention</div>
+          <div class="sub">Repeat clients</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="avatar" aria-hidden="true"></div>
+        <p>"Gonzalo brought clarity to our messaging and life to our brand. The results spoke for themselves."</p>
+        <div class="byline">— CEO, Echo</div>
+      </div>
     </div>
   </div>
 </section>
