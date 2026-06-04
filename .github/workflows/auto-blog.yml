@@ -1,0 +1,52 @@
+name: Blog automático
+
+# Genera un artículo nuevo con IA, reconstruye el blog y publica el cambio.
+# Vercel detecta el push y redespliega el sitio automáticamente.
+
+on:
+  # Programado: cada lunes a las 09:00 UTC. Ajusta el cron a tu gusto.
+  schedule:
+    - cron: "0 9 * * 1"
+  # Botón manual desde la pestaña Actions de GitHub (con tema opcional).
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Tema opcional para el artículo (deja vacío para que la IA elija)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repo
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generar artículo con IA
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BLOG_MODEL: ${{ vars.BLOG_MODEL }}
+        run: node scripts/generate-post.mjs "${{ github.event.inputs.topic }}"
+
+      - name: Reconstruir el blog
+        run: node scripts/build-blog.mjs
+
+      - name: Publicar cambios
+        run: |
+          git config user.name "Blog Bot"
+          git config user.email "actions@github.com"
+          git add blog/
+          if git diff --staged --quiet; then
+            echo "Sin cambios que publicar."
+          else
+            git commit -m "blog: nuevo artículo automático"
+            git push
+          fi

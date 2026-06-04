@@ -1,0 +1,10 @@
+{
+  "name": "gonzalo-moreno-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "blog:build": "node scripts/build-blog.mjs",
+    "blog:new": "node scripts/generate-post.mjs",
+    "blog:auto": "node scripts/generate-post.mjs && node scripts/build-blog.mjs"
+  }
+}
