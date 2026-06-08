@@ -3,768 +3,831 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gonzalo Moreno — Motion Films & Visual Systems</title>
-<meta name="description" content="Gonzalo Moreno — Paris-based senior motion designer and art director. Motion films, 3D product visuals and campaign motion systems for brands that need to launch, explain and stand out.">
+<title>Gonzalo Moreno | Art Direction and Motion Design</title>
+<meta name="description" content="Premium video-first portfolio for Gonzalo Moreno, art director and senior 2D/3D motion designer.">
+<script>
+document.documentElement.dataset.theme = localStorage.getItem('gonzalo-portfolio-theme') || 'light';
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#08070f; --bg-2:#0b0a16; --surface:#111021; --surface-2:#16152b;
-    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
-    --ink:#f0eef8; --ink-2:#bcb7d2; --ink-3:#8a85a6;
-    --violet:#8b6dff; --blue:#5b7bff; --cyan:#4fd6ff;
-    --grad:linear-gradient(100deg,#8b6dff,#5b7bff);
-    --grad-3:linear-gradient(100deg,#a98bff,#5b7bff,#4fd6ff);
-    --z-bg:0;--z-base:1;--z-raised:2;--z-nav:100;
-    --ease:cubic-bezier(.16,1,.3,1);
-    --maxw:1280px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;z-index:var(--z-bg);pointer-events:none;
-    background:radial-gradient(46% 40% at 84% -6%,rgba(139,109,255,.30),transparent 64%),radial-gradient(42% 38% at 6% 8%,rgba(91,123,255,.22),transparent 64%),radial-gradient(50% 46% at 96% 88%,rgba(79,214,255,.12),transparent 62%),radial-gradient(60% 50% at 50% 116%,rgba(139,109,255,.16),transparent 60%)}
-  body::after{content:"";position:fixed;inset:0;z-index:var(--z-bg);pointer-events:none;opacity:.5;
-    background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000,transparent 85%)}
-  a{color:inherit;text-decoration:none}
-  ::selection{background:var(--violet);color:#fff}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:var(--z-base)}
-  @media(max-width:640px){.wrap{padding:0 20px}}
-  h1,h2,h3,h4,h5{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.035em;line-height:1.04;margin:0;text-wrap:balance}
-  p{text-wrap:pretty}
-  .grad-text{background:var(--grad-3);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .mono{font-family:"JetBrains Mono",monospace}
-  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--violet);display:inline-flex;align-items:center;gap:12px}
-  .eyebrow::before{content:"";width:30px;height:1px;background:linear-gradient(90deg,var(--violet),transparent)}
-  .eyebrow.c{justify-content:center}.eyebrow.c::after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--violet))}
-  .bracket{position:absolute;width:26px;height:26px;border:1px solid var(--line-2);pointer-events:none;z-index:var(--z-raised)}
-  .br-tl{top:14px;left:14px;border-right:0;border-bottom:0}.br-tr{top:14px;right:14px;border-left:0;border-bottom:0}
-  .br-bl{bottom:14px;left:14px;border-right:0;border-top:0}.br-br{bottom:14px;right:14px;border-left:0;border-top:0}
-
-  .btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:8px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:14px;letter-spacing:.02em;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s,background .35s,border-color .35s;white-space:nowrap}
-  .btn svg{width:16px;height:16px}
-  .btn-grad{background:var(--grad);color:#fff;box-shadow:0 12px 36px -12px rgba(139,109,255,.7)}
-  .btn-grad:hover{transform:translateY(-3px);box-shadow:0 18px 44px -12px rgba(91,123,255,.7)}
-  .btn-line{background:rgba(255,255,255,.03);border-color:var(--line-2);color:var(--ink)}
-  .btn-line:hover{transform:translateY(-3px);border-color:var(--violet);background:rgba(139,109,255,.08)}
-
-  /* header */
-  header{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);transition:background .4s,border-color .4s}
-  header.scrolled{background:rgba(8,7,15,.72);backdrop-filter:saturate(150%) blur(16px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;transition:padding .35s}
-  header.scrolled .nav{padding:12px 0}
-  .brand{display:flex;align-items:center;gap:13px}
-  .logo-gm{width:44px;height:44px;border:1px solid var(--line-2);display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:17px;letter-spacing:-.04em;position:relative;background:var(--surface)}
-  .logo-gm b:last-child{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .logo-gm::after{content:"";position:absolute;right:4px;bottom:4px;width:5px;height:5px;border-right:1px solid var(--violet);border-bottom:1px solid var(--violet)}
-  .brand-text{display:flex;flex-direction:column;line-height:1.15}
-  .brand-text b{font-family:"Space Grotesk";font-weight:600;font-size:14.5px}
-  .brand-text span{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.16em;color:var(--ink-3);text-transform:uppercase;margin-top:3px}
-  nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;font-family:"JetBrains Mono";font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
-  nav ul a{transition:color .25s}nav ul a:hover{color:var(--violet)}
-  @media(max-width:980px){nav ul{display:none}}
-
-  /* hero */
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:150px 0 80px;position:relative}
-  .hero .readout{position:absolute;top:120px;right:32px;font-family:"JetBrains Mono";font-size:11px;line-height:2;color:var(--ink-3);text-align:right;display:none}
-  .hero .readout b{color:var(--violet);font-weight:500}
-  @media(min-width:1100px){.hero .readout{display:block}}
-  .hero .eyebrow{margin-bottom:28px}
-  .hero h1{font-size:clamp(38px,6.4vw,82px);letter-spacing:-.04em;line-height:1.02;max-width:16ch}
-  .hero h1 .line{display:block;overflow:hidden;padding-bottom:.02em}
-  .hero h1 .line>span{display:block;transform:translateY(110%);transition:transform 1s var(--ease)}
-  .loaded .hero h1 .line>span{transform:translateY(0)}
-  .hero h1 .line:nth-child(2)>span{transition-delay:.08s}.hero h1 .line:nth-child(3)>span{transition-delay:.16s}
-  .hero-bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:end;margin-top:46px}
-  .hero-lede{max-width:480px;color:var(--ink-2);font-size:18px;line-height:1.6;opacity:0;transform:translateY(18px);transition:opacity .8s ease .5s,transform .8s var(--ease) .5s}
-  .loaded .hero-lede{opacity:1;transform:none}
-  .hero-ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;opacity:0;transform:translateY(18px);transition:opacity .8s ease .62s,transform .8s var(--ease) .62s}
-  .loaded .hero-ctas{opacity:1;transform:none}
-  .hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;opacity:0;transition:opacity .9s ease .78s}
-  .loaded .hero-tags{opacity:1}
-  .tag{font-family:"JetBrains Mono";font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);padding:7px 13px;border-radius:6px;background:rgba(255,255,255,.02);transition:border-color .3s,color .3s}
-  .tag:hover{border-color:var(--violet);color:var(--violet)}
-  @media(max-width:860px){.hero-bottom{grid-template-columns:1fr;gap:34px}.hero-tags{justify-content:flex-start}}
-  .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
-  .scroll-cue .bar{width:1px;height:42px;background:linear-gradient(var(--violet),transparent);animation:cue 1.9s var(--ease) infinite}
-  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-  /* ticker / marquee */
-  .ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--bg-2);position:relative;z-index:var(--z-base)}
-  .ticker-track{display:inline-flex;align-items:center;padding:15px 0;animation:scroll 34s linear infinite;will-change:transform}
-  .ticker.rev .ticker-track{animation-direction:reverse;animation-duration:40s}
-  .ticker:hover .ticker-track{animation-play-state:paused}
-  .ticker-track span{font-family:"JetBrains Mono";font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2);display:inline-flex;align-items:center;padding:0 22px}
-  .ticker-track span::after{content:"◆";color:var(--violet);margin-left:22px;font-size:8px}
-  .ticker.big .ticker-track span{font-family:"Space Grotesk";font-size:34px;font-weight:600;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
-  .ticker.big .ticker-track span.ghost{color:transparent;-webkit-text-stroke:1px var(--ink-3)}
-  .ticker.big .ticker-track span::after{font-size:14px}
-  @keyframes scroll{to{transform:translateX(-50%)}}
-
-  /* sections */
-  section{padding:120px 0;position:relative;z-index:var(--z-base)}
-  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
-  .sec-head.center{justify-content:center;text-align:center;flex-direction:column;align-items:center}
-  .sec-head .lead{max-width:680px}
-  .sec-head h2{font-size:clamp(30px,4.6vw,54px);margin-top:18px;letter-spacing:-.04em}
-  .sec-head p{color:var(--ink-2);font-size:16px;margin:18px 0 0;max-width:540px}
-  .sec-no{font-family:"JetBrains Mono";font-size:12px;color:var(--ink-3);white-space:nowrap;letter-spacing:.1em}
-
-  /* reveals only hide once JS is ready (content visible by default) */
-  body.anim .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s var(--ease)}
-  body.anim .reveal.in{opacity:1;transform:none}
-  body.anim .reveal.d1{transition-delay:.07s}body.anim .reveal.d2{transition-delay:.14s}body.anim .reveal.d3{transition-delay:.21s}body.anim .reveal.d4{transition-delay:.28s}body.anim .reveal.d5{transition-delay:.35s}
-  /* parallax helpers */
-  .px{will-change:transform}
-  .h-drift{will-change:transform}
-
-  /* intro */
-  .intro .big{font-family:"Space Grotesk";font-weight:500;font-size:clamp(23px,3.2vw,40px);line-height:1.22;letter-spacing:-.02em;max-width:1000px}
-  .intro .big b{font-weight:700}.intro .big .mute{color:var(--ink-3)}
-  .intro-meta{display:flex;gap:48px;margin-top:44px;flex-wrap:wrap}
-  .intro-meta .label{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);display:block;margin-bottom:9px}
-  .intro-meta p{margin:0;font-size:14px;color:var(--ink-2);max-width:220px}
-
-  /* services (cards w/ deliverables) */
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .svc{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--surface);position:relative;overflow:hidden;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s;display:flex;flex-direction:column}
-  .svc::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 100% 0,rgba(139,109,255,.12),transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
-  .svc:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 30px 60px -34px rgba(139,109,255,.6)}
-  .svc:hover::after{opacity:1}
-  .svc .no{font-family:"JetBrains Mono";font-size:12px;color:var(--violet);margin-bottom:18px}
-  .svc h3{font-size:20px;margin-bottom:10px;letter-spacing:-.02em}
-  .svc .desc{color:var(--ink-2);font-size:14px;margin:0 0 18px}
-  .svc .deliv{list-style:none;margin:auto 0 0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
-  .svc .deliv li{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);padding:5px 9px;border-radius:5px}
-  @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
-  .caps{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;justify-content:center}
-  .caps span{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-2);border:1px solid var(--line);padding:8px 14px;border-radius:100px}
-
-  /* featured reel */
-  .reel{position:relative;overflow:hidden;aspect-ratio:21/9;border:1px solid var(--line-2);border-radius:20px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 50%,#1c1340,#08060f)}
-  .reel::before{content:"";position:absolute;inset:0;background:conic-gradient(from 180deg at 50% 50%,rgba(139,109,255,.18),rgba(91,123,255,.12),rgba(79,214,255,.16),rgba(139,109,255,.18));animation:spin2 24s linear infinite;opacity:.7}
-  @keyframes spin2{to{transform:rotate(360deg)}}
-  .reel-inner{position:relative;z-index:var(--z-raised);text-align:center;padding:20px}
-  .reel .play{width:88px;height:88px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin:0 auto 22px;cursor:pointer;transition:transform .4s var(--ease)}
-  .reel .play:hover{transform:scale(1.1)}
-  .reel .play svg{width:28px;height:28px;fill:var(--bg);margin-left:4px}
-  .reel h3{font-size:clamp(24px,4vw,42px);text-transform:uppercase}
-  .reel p{font-family:"Inter";color:var(--ink-2);font-size:14px;margin:12px auto 0;max-width:480px}
-  .reel-stamp{position:absolute;bottom:16px;left:18px;z-index:var(--z-raised);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;color:var(--ink-3)}
-
-  /* work samples grid */
-  .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:230px}
-  .proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;display:block;grid-column:span 2;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s}
-  .proj.big{grid-row:span 2}
-  .proj:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 30px 60px -30px rgba(139,109,255,.5)}
-  .proj .layer{position:absolute;inset:0;transition:transform .9s var(--ease)}
-  .proj:hover .layer{transform:scale(1.06)}
-  .proj .top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:16px;z-index:var(--z-raised)}
-  .proj .pill{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:rgba(8,7,15,.55);backdrop-filter:blur(8px);border:1px solid var(--line-2);padding:6px 11px;border-radius:100px}
-  .proj .bot{position:absolute;left:0;right:0;bottom:0;z-index:var(--z-raised);padding:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;background:linear-gradient(0deg,rgba(6,5,12,.88),transparent)}
-  .proj .bot h3{font-size:19px;margin-bottom:6px}
-  .proj .bot .cat{font-family:"JetBrains Mono";font-size:11px;color:var(--ink-2);letter-spacing:.04em}
-  .proj .arrow{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid var(--line-2);display:grid;place-items:center;flex-shrink:0;transition:background .4s,border-color .4s}
-  .proj .arrow svg{width:15px;height:15px;stroke:var(--ink);transition:transform .4s var(--ease)}
-  .proj:hover .arrow{background:var(--grad);border-color:transparent}.proj:hover .arrow svg{transform:rotate(45deg)}
-  @media(max-width:860px){.work-grid{grid-template-columns:repeat(2,1fr)}.proj,.proj.big{grid-column:span 2;grid-row:span 1}}
-  @media(max-width:520px){.work-grid{grid-template-columns:1fr}.proj,.proj.big{grid-column:span 1}}
-
-  /* thumbnails */
-  .t1{background:radial-gradient(circle at 50% 45%,#241a6b,#0a0816)}
-  .t1 .orb{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 0deg,#8b6dff,#5b7bff,#4fd6ff,#a98bff,#8b6dff);filter:blur(1px);box-shadow:0 0 80px rgba(139,109,255,.6);animation:spin 18s linear infinite}
-  .t1 .orb::after{content:"";position:absolute;inset:22%;border-radius:50%;background:#0a0816}
-  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-  .t2{background:linear-gradient(150deg,#161a44,#0a0816)}
-  .t2 .scan{position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 18px,rgba(91,123,255,.18) 18px 19px)}
-  .t2 .scan2{position:absolute;inset:0;background:repeating-linear-gradient(60deg,transparent 0 26px,rgba(139,109,255,.15) 26px 27px)}
-  .t3{background:linear-gradient(150deg,#2a1556,#100a22)}
-  .t3 .grid3{position:absolute;inset:8% 10%;background-image:linear-gradient(rgba(139,109,255,.36) 1px,transparent 1px),linear-gradient(90deg,rgba(139,109,255,.36) 1px,transparent 1px);background-size:34px 34px;transform:perspective(420px) rotateX(42deg);transform-origin:bottom}
-  .t4{background:linear-gradient(150deg,#0e2350,#0a0c1e)}
-  .t4 .bars{position:absolute;inset:auto 16% 18%;display:flex;gap:8px;align-items:flex-end;height:48%}
-  .t4 .bars i{flex:1;background:linear-gradient(var(--cyan),rgba(79,214,255,.2));border-radius:3px 3px 0 0;animation:eq 1.4s ease-in-out infinite}
-  .t4 .bars i:nth-child(2){animation-delay:.2s}.t4 .bars i:nth-child(3){animation-delay:.4s}.t4 .bars i:nth-child(4){animation-delay:.1s}.t4 .bars i:nth-child(5){animation-delay:.5s}.t4 .bars i:nth-child(6){animation-delay:.3s}.t4 .bars i:nth-child(7){animation-delay:.15s}
-  @keyframes eq{0%,100%{height:26%}50%{height:100%}}
-  .t5{background:linear-gradient(135deg,#3a1b6e,#120a26)}
-  .t5 .kt{position:absolute;inset:0;display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:clamp(30px,7vw,64px);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.3px rgba(255,255,255,.5);text-transform:uppercase}
-  .t6{background:radial-gradient(circle at 35% 30%,#152a6e,#0a0c1c)}
-  .t6 .rings{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58%;aspect-ratio:1}
-  .t6 .rings::before,.t6 .rings::after{content:"";position:absolute;inset:0;border:1px solid rgba(91,123,255,.55);border-radius:50%}
-  .t6 .rings::after{inset:22%;border-color:rgba(79,214,255,.6)}
-  .t6 .dot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:var(--cyan);transform:translate(-50%,-50%);box-shadow:0 0 16px var(--cyan)}
-
-  /* horizontal carousels */
-  .carousel{margin-bottom:64px}
-  .carousel .ch{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:22px;flex-wrap:wrap}
-  .carousel .ch h3{font-size:clamp(22px,2.8vw,32px);letter-spacing:-.03em}
-  .carousel .ch p{color:var(--ink-2);font-size:14px;margin:8px 0 0;max-width:460px}
-  .carousel .ch .drag{font-family:"JetBrains Mono";font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-  .row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;cursor:grab;scrollbar-width:none}
-  .row::-webkit-scrollbar{display:none}
-  .row.drag{cursor:grabbing}
-  .vcard{flex:0 0 380px;scroll-snap-align:start;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);transition:border-color .4s,transform .5s var(--ease)}
-  .vcard:hover{border-color:var(--line-2);transform:translateY(-4px)}
-  .vcard .v{aspect-ratio:16/10;position:relative;overflow:hidden}
-  .vcard .v .play-s{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;z-index:2;opacity:0;transition:opacity .4s,transform .4s var(--ease)}
-  .vcard:hover .v .play-s{opacity:1;transform:translate(-50%,-50%) scale(1.05)}
-  .vcard .v .play-s svg{width:18px;height:18px;fill:#0a0816;margin-left:2px}
-  .vcard .m{padding:18px 20px}
-  .vcard .m h4{font-size:17px;margin-bottom:4px}
-  .vcard .m .type{font-family:"JetBrains Mono";font-size:11px;color:var(--violet);letter-spacing:.04em;text-transform:uppercase}
-  .vcard .m .rt{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-2);line-height:1.5}
-  .vcard .m .rt b{color:var(--ink-3);font-weight:500;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px}
-  @media(max-width:520px){.vcard{flex-basis:300px}}
-
-  /* solutions */
-  .sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .sol{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--surface);transition:transform .5s var(--ease),border-color .4s;min-height:180px;display:flex;flex-direction:column}
-  .sol:hover{transform:translateY(-4px);border-color:var(--line-2)}
-  .sol .no{font-family:"JetBrains Mono";font-size:11px;color:var(--violet);margin-bottom:14px}
-  .sol h4{font-size:16px;margin-bottom:8px;letter-spacing:-.02em}
-  .sol p{color:var(--ink-2);font-size:13px;margin:0}
-  @media(max-width:900px){.sol-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){.sol-grid{grid-template-columns:1fr}}
-
-  /* process */
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line)}
-  .step{padding:32px 20px 28px;border-right:1px solid var(--line);transition:background .4s}
-  .step:last-child{border-right:0}.step:hover{background:rgba(255,255,255,.02)}
-  .step .no{font-family:"JetBrains Mono";font-size:12px;color:var(--violet);margin-bottom:20px}
-  .step h4{font-size:18px;margin-bottom:10px;letter-spacing:-.02em}
-  .step p{color:var(--ink-2);font-size:13px;margin:0;line-height:1.55}
-  @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}.step:nth-child(2n){border-right:0}}
-  @media(max-width:520px){.steps{grid-template-columns:1fr}.step{border-right:0}}
-
-  /* calculator */
-  .calc{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}
-  .calc-form{border:1px solid var(--line);border-radius:18px;padding:30px;background:var(--surface)}
-  .calc-field{margin-bottom:20px}
-  .calc-field:last-child{margin-bottom:0}
-  .calc-field .lab{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:10px}
-  .opts{display:flex;flex-wrap:wrap;gap:8px}
-  .opt{font-family:"Space Grotesk";font-size:13px;font-weight:500;color:var(--ink-2);border:1px solid var(--line);background:rgba(255,255,255,.02);padding:9px 15px;border-radius:8px;cursor:pointer;transition:all .25s}
-  .opt:hover{border-color:var(--line-2)}
-  .opt.sel{background:var(--grad);color:#fff;border-color:transparent}
-  .calc-out{border:1px solid var(--line-2);border-radius:18px;padding:30px;background:linear-gradient(160deg,rgba(139,109,255,.1),rgba(91,123,255,.04));position:relative;overflow:hidden;position:sticky;top:90px}
-  .calc-out .label{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
-  .calc-out .price{font-family:"Space Grotesk";font-weight:700;font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;margin:8px 0 4px}
-  .calc-out .ln{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-top:1px solid var(--line);font-size:14px}
-  .calc-out .ln span{color:var(--ink-3);font-size:13px}.calc-out .ln b{font-weight:600}
-  .calc-out .btn{width:100%;justify-content:center;margin-top:20px}
-  .calc-out .disc{font-size:11px;color:var(--ink-3);margin:16px 0 0;line-height:1.5}
-  @media(max-width:860px){.calc{grid-template-columns:1fr}.calc-out{position:static}}
-
-  /* about + trust */
-  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:stretch}
-  .about .portrait{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#3a2f6e,#161228);position:relative;min-height:420px;border:1px solid var(--line-2)}
-  .about .portrait::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 74%,#2a2348 0 26%,transparent 28%),radial-gradient(circle at 50% 30%,#1c1632 0 15%,transparent 17%)}
-  .about .info{display:flex;flex-direction:column;justify-content:center}
-  .about h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.03em;margin:16px 0 20px}
-  .about p{color:var(--ink-2);font-size:16px;line-height:1.7;margin:0 0 16px;max-width:480px}
-  .about .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-  .about .skills span{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-2);border:1px solid var(--line);padding:7px 13px;border-radius:6px}
-  @media(max-width:860px){.about{grid-template-columns:1fr}.about .portrait{min-height:320px}}
-  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:70px}
-  .stat{padding:30px 18px;border-right:1px solid var(--line);text-align:center}
-  .stat:last-child{border-right:0}
-  .stat .l{font-family:"JetBrains Mono";color:var(--ink-2);font-size:12px;letter-spacing:.04em;line-height:1.5}
-  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2n){border-right:0}}
-
-  /* faq */
-  .faq{max-width:860px;margin:0 auto;border-top:1px solid var(--line)}
-  .faq details{border-bottom:1px solid var(--line)}
-  .faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:"Space Grotesk";font-weight:600;font-size:clamp(16px,2vw,20px);letter-spacing:-.02em;transition:color .3s}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary:hover{color:var(--violet)}
-  .faq summary .ic{width:30px;height:30px;border:1px solid var(--line-2);border-radius:50%;display:grid;place-items:center;flex-shrink:0;transition:transform .4s var(--ease),background .3s}
-  .faq summary .ic svg{width:13px;height:13px;stroke:var(--ink);transition:stroke .3s}
-  .faq details[open] summary .ic{transform:rotate(45deg);background:var(--grad);border-color:transparent}
-  .faq details[open] summary .ic svg{stroke:#fff}
-  .faq .ans{color:var(--ink-2);font-size:15px;line-height:1.65;padding:0 50px 24px 0;margin:0}
-
-  /* contact */
-  .contact{text-align:center;padding:140px 0;position:relative}
-  .contact .eyebrow{margin-bottom:24px}
-  .contact h2{font-size:clamp(34px,6.4vw,84px);line-height:1.0;letter-spacing:-.04em;max-width:16ch;margin:0 auto}
-  .contact .summary{color:var(--ink-2);font-size:17px;max-width:520px;margin:24px auto 0}
-  .contact .email{display:inline-flex;align-items:center;gap:14px;margin-top:34px;font-family:"Space Grotesk";font-weight:500;font-size:clamp(17px,3vw,28px);border-bottom:2px solid var(--line-2);padding-bottom:10px;transition:border-color .4s,gap .4s}
-  .contact .email:hover{border-color:var(--violet);gap:22px}
-  .contact .c-ctas{display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap}
-  .contact .meta{display:flex;justify-content:center;gap:50px;margin-top:50px;flex-wrap:wrap}
-  .contact .meta .l{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-  .contact .meta .v{font-size:14px;margin-top:7px;color:var(--ink)}
-
-  footer.site{border-top:1px solid var(--line);padding:36px 0 46px}
-  footer.site .row{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;font-family:"JetBrains Mono";font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
-  footer.site .links{display:flex;gap:22px}
-  footer.site .links a{color:var(--ink-2);transition:color .3s}footer.site .links a:hover{color:var(--violet)}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none!important;transition-duration:.001s!important}
-    .hero h1 .line>span,.hero-lede,.hero-ctas,.hero-tags{transform:none;opacity:1}
-    .reveal{opacity:1;transform:none}
-  }
+:root{
+  --theme-color:#684DF4;
+  --theme-color2:#684DF4;
+  --theme-color3:#16C784;
+  --electric:#1477FF;
+  --green:#16C784;
+  --title-color:#141D38;
+  --body-color:#4E5568;
+  --muted-color:#737887;
+  --smoke-color:#F5F7FC;
+  --smoke-color2:#E2E8FA;
+  --smoke-color3:#EFF1F9;
+  --white-color:#ffffff;
+  --black-color2:#080E1C;
+  --line:rgba(20,29,56,.12);
+  --title-font:"Barlow",sans-serif;
+  --body-font:"Roboto",sans-serif;
+  --container:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBFCFF;color:var(--body-color);font-family:var(--body-font);font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 8% 10%,rgba(104,77,244,.11),transparent 28%),radial-gradient(circle at 96% 4%,rgba(22,199,132,.12),transparent 26%),linear-gradient(180deg,#fff 0%,#F8FAFF 42%,#fff 100%)}
+html[data-theme="dark"]{color-scheme:dark}
+html[data-theme="dark"] body{background:#060A16;color:#C9D2EE}
+html[data-theme="dark"] body:before{background:radial-gradient(circle at 12% 8%,rgba(104,77,244,.22),transparent 28%),radial-gradient(circle at 88% 2%,rgba(22,199,132,.18),transparent 24%),linear-gradient(180deg,#060A16 0%,#0B1226 46%,#060A16 100%)}
+html[data-theme="dark"] .motion-noise{opacity:.055;mix-blend-mode:screen}
+html[data-theme="dark"] .title,html[data-theme="dark"] .brand strong,html[data-theme="dark"] .menu,html[data-theme="dark"] .video-meta h4,html[data-theme="dark"] .metric b,html[data-theme="dark"] .service-card h3,html[data-theme="dark"] .process-step h3,html[data-theme="dark"] .field label,html[data-theme="dark"] .price,html[data-theme="dark"] .result-item b{color:#F7F9FF}
+html[data-theme="dark"] .body-copy,html[data-theme="dark"] .service-card p,html[data-theme="dark"] .result-item span,html[data-theme="dark"] .estimate-note{color:#B7C0DA}
+html[data-theme="dark"] .header{background:rgba(6,10,22,.82);border-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .hero{background:linear-gradient(180deg,#060A16 0%,#0B1226 58%,#0F1730 100%);border-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .hero:before{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px)}
+html[data-theme="dark"] .ticker,html[data-theme="dark"] .featured-reel,html[data-theme="dark"] .process,html[data-theme="dark"] .contact{background:#060A16;border-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .ticker-track,html[data-theme="dark"] .tag,html[data-theme="dark"] .reel-tags span,html[data-theme="dark"] .spec strong,html[data-theme="dark"] .proof,html[data-theme="dark"] .service-card li{color:#F7F9FF}
+html[data-theme="dark"] .tag,html[data-theme="dark"] .metric,html[data-theme="dark"] .reel-info,html[data-theme="dark"] .video-card,html[data-theme="dark"] .profile-wrap,html[data-theme="dark"] .service-card,html[data-theme="dark"] .process-step,html[data-theme="dark"] .calc-panel,html[data-theme="dark"] .calc-result{background:linear-gradient(180deg,#0E1730,#0A1124);border-color:rgba(255,255,255,.1);box-shadow:0 22px 58px rgba(0,0,0,.28)}
+html[data-theme="dark"] .spec,html[data-theme="dark"] .proof,html[data-theme="dark"] .service-card li,html[data-theme="dark"] .result-item,html[data-theme="dark"] .field select,html[data-theme="dark"] .estimate-note{background:#111B36;border-color:rgba(255,255,255,.09)}
+html[data-theme="dark"] .field select{color:#F7F9FF}
+html[data-theme="dark"] .btn.secondary{background:#0E1730;color:#F7F9FF;border-color:rgba(255,255,255,.12)}
+.scroll-progress{position:fixed;left:0;top:0;z-index:80;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--theme-color),var(--electric),var(--theme-color3));box-shadow:0 0 20px rgba(104,77,244,.45)}
+.motion-noise{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+.pointer-light{position:fixed;left:0;top:0;width:360px;height:360px;z-index:1;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(104,77,244,.14),rgba(20,119,255,.06) 42%,transparent 70%);filter:blur(8px);transform:translate3d(-50%,-50%,0);opacity:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;color:var(--theme-color);font-family:var(--title-font);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow:before{content:"";width:32px;height:2px;background:var(--theme-color)}
+.title{font-family:var(--title-font);color:var(--title-color);font-weight:900;line-height:1.02;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.body-copy{color:var(--body-color);max-width:66ch;margin:0;text-wrap:pretty}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;background:var(--theme-color);color:#fff;font-family:var(--title-font);font-weight:800;border:1px solid transparent;box-shadow:0 16px 36px rgba(104,77,244,.24);transition:transform .22s ease,box-shadow .22s ease,background .22s ease,border-color .22s ease}
+.btn:hover{transform:translateY(-2px);background:#543BD9;box-shadow:0 18px 40px rgba(104,77,244,.32)}
+.btn.secondary{background:#fff;color:var(--title-color);border-color:var(--smoke-color2);box-shadow:0 12px 34px rgba(20,29,56,.08)}
+.btn.secondary:hover{border-color:var(--theme-color);color:var(--theme-color)}
+.btn.accent{background:var(--theme-color3);box-shadow:0 16px 34px rgba(22,199,132,.24)}
+.btn.accent:hover{background:#10A86E}
+.topbar{background:var(--black-color2);color:#DDE3F8;font-size:13px}
+.topbar .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.topbar b{color:#fff}
+.header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(226,232,250,.82)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:center;gap:14px;min-width:220px}
+.brand-mark{width:48px;height:48px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--theme-color),var(--electric));color:#fff;font-family:var(--title-font);font-weight:900;letter-spacing:-.04em;box-shadow:0 15px 34px rgba(104,77,244,.26)}
+.brand strong{display:block;font-family:var(--title-font);font-size:19px;color:var(--title-color);line-height:1}
+.brand small{display:block;margin-top:5px;color:var(--muted-color);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.theme-toggle{min-height:42px;border:1px solid var(--smoke-color2);border-radius:999px;background:#fff;color:var(--title-color);padding:0 14px;font-family:var(--title-font);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 28px rgba(20,29,56,.08);transition:transform .2s ease,border-color .2s ease,background .2s ease,color .2s ease}
+.theme-toggle:hover{transform:translateY(-2px);border-color:rgba(104,77,244,.45)}
+html[data-theme="dark"] .theme-toggle{background:#111B36;color:#F7F9FF;border-color:rgba(255,255,255,.12)}
+.menu{display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0;color:var(--title-color);font-family:var(--title-font);font-weight:800}
+.menu a{position:relative}
+.menu a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--theme-color);transition:right .22s ease}
+.menu a:hover:after{right:0}
+.section{padding:106px 0}
+.section.compact{padding:76px 0}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,460px);gap:40px;align-items:end;margin-bottom:44px}
+.section-head h2{font-size:clamp(34px,4.5vw,58px)}
+.hero{position:relative;overflow:hidden;padding:86px 0 96px;background:linear-gradient(180deg,#fff 0%,#F7F9FF 54%,#EEF3FF 100%);border-bottom:1px solid var(--smoke-color2)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(20,29,56,.052) 1px,transparent 1px),linear-gradient(90deg,rgba(20,29,56,.052) 1px,transparent 1px);background-size:50px 50px;mask-image:linear-gradient(180deg,#000,transparent 88%)}
+.hero:after{content:"";position:absolute;right:-12vw;top:5%;width:48vw;height:48vw;border-radius:50%;background:radial-gradient(circle,rgba(104,77,244,.22),rgba(20,119,255,.1) 42%,rgba(22,199,132,.08) 62%,transparent 72%)}
+.hero .container{position:relative;z-index:1}
+.hero-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(520px,1.2fr);gap:clamp(34px,5vw,64px);align-items:center}
+.hero-kicker{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:var(--theme-color);font-family:var(--title-font);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.hero-kicker span{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--smoke-color2);box-shadow:0 10px 28px rgba(20,29,56,.08)}
+.hero h1{font-size:clamp(50px,7.2vw,98px);max-width:820px}
+.hero h1 em{font-style:normal;color:var(--theme-color)}
+.hero-title-line{display:block;overflow:hidden}
+.hero p{font-size:19px;margin:24px 0 30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.hero-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:620px;margin-top:26px}
+.metric{background:rgba(255,255,255,.74);border:1px solid rgba(226,232,250,.9);border-radius:18px;padding:14px;box-shadow:0 14px 34px rgba(20,29,56,.07);backdrop-filter:blur(16px)}
+.metric b{display:block;color:var(--title-color);font-family:var(--title-font);font-size:22px;line-height:1}
+.metric span{display:block;margin-top:5px;color:var(--muted-color);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.tag-row{display:flex;flex-wrap:wrap;gap:10px;max-width:660px}
+.tag{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:0 12px;border-radius:999px;background:#fff;border:1px solid var(--smoke-color2);color:var(--title-color);font-family:var(--title-font);font-weight:800;font-size:13px;box-shadow:0 9px 24px rgba(20,29,56,.06)}
+.tag:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--theme-color)}
+.tag.accent:before{background:var(--theme-color3)}
+.tag.blue:before{background:var(--electric)}
+.hero-video{position:relative;border-radius:32px;background:radial-gradient(circle at 16% 8%,rgba(104,77,244,.42),transparent 28%),linear-gradient(135deg,#060A16,#141D38 52%,#071120);padding:12px;box-shadow:0 44px 96px rgba(20,29,56,.32)}
+.hero-video,.reel-card,.video-card,.behance-card,.contact-card{transform-style:preserve-3d}
+.hero-video:before{content:"";position:absolute;inset:-1px;border-radius:31px;padding:1px;background:linear-gradient(135deg,rgba(104,77,244,.85),rgba(20,119,255,.42),rgba(22,199,132,.68));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.video-frame{position:relative;aspect-ratio:16/9;background:#050812;border-radius:22px;overflow:hidden}
+.video-frame:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.08),transparent 24%,rgba(0,0,0,.16));mix-blend-mode:screen}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.frame-ui{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:18px 12px 4px;color:#fff}
+.frame-ui h2{font-size:26px;color:#fff}
+.frame-ui span{display:block;color:#AEB8D8;font-family:var(--title-font);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.frame-counter{position:absolute;top:22px;left:22px;z-index:2;background:rgba(8,14,28,.72);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 12px;font-family:var(--title-font);font-weight:900;font-size:13px;backdrop-filter:blur(12px)}
+.production-label{position:absolute;right:22px;bottom:86px;z-index:2;background:rgba(255,255,255,.92);color:var(--title-color);border-radius:16px;padding:12px 14px;box-shadow:0 16px 40px rgba(0,0,0,.18)}
+.production-label b{display:block;font-family:var(--title-font);font-size:14px}
+.production-label small{display:block;color:var(--muted-color);font-weight:700}
+.ticker{border-top:1px solid var(--smoke-color2);border-bottom:1px solid var(--smoke-color2);background:#fff;overflow:hidden}
+.ticker-track{display:flex;gap:42px;min-width:max-content;padding:18px 0;animation:ticker 24s linear infinite;color:var(--title-color);font-family:var(--title-font);font-weight:900;letter-spacing:.1em;text-transform:uppercase;font-size:13px}
+.ticker-track span{display:inline-flex;align-items:center;gap:14px}
+.ticker-track span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--theme-color3)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.featured-reel{padding:86px 0 54px;background:#fff}
+.reel-stage{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);gap:28px;align-items:stretch}
+.reel-card{position:relative;overflow:hidden;border-radius:34px;background:radial-gradient(circle at 15% 10%,rgba(104,77,244,.34),transparent 30%),linear-gradient(135deg,#050812,#111934 58%,#060A16);padding:14px;box-shadow:0 34px 88px rgba(20,29,56,.24)}
+.reel-card .video-frame{border-radius:26px;min-height:360px}
+.reel-play{position:absolute;left:28px;bottom:28px;z-index:3;display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:12px 16px;font-family:var(--title-font);font-weight:900;backdrop-filter:blur(14px)}
+.reel-play:before{content:"";width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 0 0 8px rgba(255,255,255,.1)}
+.reel-info{background:linear-gradient(180deg,#fff,#F8FAFF);border:1px solid var(--smoke-color2);border-radius:30px;padding:32px;box-shadow:0 20px 54px rgba(20,29,56,.09);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.reel-info h2{font-size:clamp(34px,4vw,54px)}
+.reel-tags{display:flex;flex-wrap:wrap;gap:10px}
+.reel-tags span{display:inline-flex;border:1px solid var(--smoke-color2);border-radius:999px;padding:8px 11px;background:#fff;color:var(--title-color);font-family:var(--title-font);font-weight:900;font-size:13px}
+.carousel-stack{display:grid;gap:42px}
+.carousel-block{position:relative;padding:22px 0 10px;border-top:1px solid rgba(226,232,250,.72)}
+.carousel-block:before{content:"";position:absolute;left:-24px;top:20px;width:4px;height:62px;border-radius:999px;background:linear-gradient(180deg,var(--theme-color),var(--theme-color3))}
+.carousel-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}
+.carousel-top h3{font-size:clamp(26px,3.2vw,40px)}
+.carousel-top p{max-width:560px;margin:8px 0 0}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(330px,410px);gap:20px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:6px 8px 28px;margin:0 -8px;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 94%,transparent)}
+.rail::-webkit-scrollbar{height:10px}
+.rail::-webkit-scrollbar-track{background:var(--smoke-color3);border-radius:999px}
+.rail::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--theme-color),var(--electric));border-radius:999px}
+.video-card{scroll-snap-align:start;background:linear-gradient(180deg,#fff,#F9FBFF);border:1px solid var(--smoke-color2);border-radius:26px;padding:12px;box-shadow:0 18px 46px rgba(20,29,56,.09);transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;position:relative;overflow:hidden}
+.video-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 0%,rgba(104,77,244,.12),transparent 28%),radial-gradient(circle at 88% 18%,rgba(22,199,132,.1),transparent 24%);opacity:0;transition:opacity .28s ease;pointer-events:none}
+.video-card:hover:before{opacity:1}
+.video-card:hover{transform:translateY(-5px);border-color:rgba(104,77,244,.35);box-shadow:0 24px 58px rgba(20,29,56,.14)}
+.video-card.is-active{border-color:rgba(22,199,132,.54);box-shadow:0 28px 68px rgba(20,119,255,.16)}
+.video-card .video-frame{border-radius:18px}
+.video-meta{padding:18px 6px 8px}
+.case-line{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.case-line span{font-family:var(--title-font);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--theme-color)}
+.case-line b{font-size:12px;color:var(--muted-color)}
+.video-meta h4{font-family:var(--title-font);font-size:24px;line-height:1.1;color:var(--title-color);margin:0 0 10px}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 18px}
+.spec{background:var(--smoke-color);border-radius:14px;padding:10px}
+.spec small{display:block;color:var(--muted-color);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.spec strong{display:block;color:var(--title-color);font-family:var(--title-font);font-size:14px;line-height:1.25;margin-top:3px}
+.watch{display:inline-flex;align-items:center;gap:8px;color:var(--theme-color);font-family:var(--title-font);font-weight:900}
+.profile-wrap{display:grid;grid-template-columns:minmax(0,.95fr) minmax(320px,1.05fr);gap:42px;align-items:center;background:linear-gradient(180deg,#fff,#F8FAFF);border:1px solid var(--smoke-color2);border-radius:34px;padding:42px;box-shadow:0 24px 64px rgba(20,29,56,.1)}
+.profile-visual{min-height:420px;border-radius:24px;position:relative;overflow:hidden;background:linear-gradient(135deg,#141D38 0%,#684DF4 52%,#1477FF 100%)}
+.profile-visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(180deg,#000,transparent)}
+.profile-visual:after{content:"ART DIRECTION 2D/3D MOTION VFX";position:absolute;left:24px;right:24px;bottom:24px;color:#fff;font-family:var(--title-font);font-size:clamp(34px,6vw,70px);font-weight:900;line-height:.9;letter-spacing:-.04em}
+.profile h2{font-size:clamp(34px,4.5vw,58px)}
+.profile p{font-size:18px;margin:24px 0 28px}
+.proofs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.proof{display:flex;align-items:center;gap:12px;background:var(--smoke-color);border:1px solid var(--smoke-color2);border-radius:18px;padding:14px;color:var(--title-color);font-family:var(--title-font);font-weight:900}
+.proof:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(22,199,132,.12)}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:service}
+.service-card{counter-increment:service;background:#fff;border:1px solid var(--smoke-color2);border-radius:24px;padding:28px;min-height:280px;box-shadow:0 16px 42px rgba(20,29,56,.07);position:relative;overflow:hidden}
+.service-card:before{content:"0" counter(service);position:absolute;right:24px;top:18px;color:rgba(104,77,244,.12);font-family:var(--title-font);font-size:62px;font-weight:900;line-height:1}
+.service-card h3{font-family:var(--title-font);font-size:28px;line-height:1.05;color:var(--title-color);margin:58px 0 14px}
+.service-card p{margin:0;color:var(--body-color)}
+.service-card ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.service-card li{font-size:13px;line-height:1.25;color:var(--title-color);font-weight:700;background:var(--smoke-color);border:1px solid var(--smoke-color2);border-radius:999px;padding:8px 10px}
+.service-card:nth-child(2n):after{content:"";position:absolute;left:-44px;bottom:-44px;width:112px;height:112px;border-radius:50%;background:rgba(22,199,132,.12)}
+.behance-grid{display:grid;grid-template-columns:1.1fr .9fr 1fr;grid-auto-rows:220px;gap:18px}
+.behance-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid var(--smoke-color2);background:#fff;box-shadow:0 16px 42px rgba(20,29,56,.08);padding:22px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.behance-card:nth-child(1){grid-row:span 2}
+.behance-card:nth-child(4){grid-column:span 2}
+.behance-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#141D38,var(--theme-color));z-index:0}
+.behance-card:nth-child(2):before{background:linear-gradient(135deg,#1B2345,var(--electric))}
+.behance-card:nth-child(3):before{background:linear-gradient(135deg,#2C1857,var(--theme-color3))}
+.behance-card:nth-child(4):before{background:linear-gradient(135deg,#071120,#684DF4 55%,#16C784)}
+.behance-card:nth-child(5):before{background:linear-gradient(135deg,#10182E,#1477FF)}
+.behance-card:nth-child(6):before{background:linear-gradient(135deg,#151A32,#16C784)}
+.behance-card:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:34px 34px;opacity:.55;z-index:1}
+.behance-card > *{position:relative;z-index:2}
+.behance-card span{align-self:flex-start;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:7px 10px;font-family:var(--title-font);font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(12px)}
+.behance-card h3{font-family:var(--title-font);font-size:clamp(24px,3vw,38px);line-height:1;color:#fff;margin:18px 0 8px}
+.behance-card p{margin:0;color:rgba(255,255,255,.82)}
+.behance-card small{display:block;margin-top:12px;color:rgba(255,255,255,.7);font-weight:700}
+.archive-cta{display:inline-flex;align-self:flex-start;margin-top:18px;color:#fff;font-family:var(--title-font);font-weight:900;transform:translateY(8px);opacity:.72;transition:transform .22s ease,opacity .22s ease}
+.behance-card:hover .archive-cta{transform:translateY(0);opacity:1}
+.process{background:linear-gradient(180deg,#fff,#F7F9FF);border-top:1px solid var(--smoke-color2);border-bottom:1px solid var(--smoke-color2)}
+.process-list{display:grid;gap:14px;position:relative}
+.process-strip{height:8px;background:#E7ECFA;border-radius:999px;margin:-8px 0 28px;overflow:hidden}
+.process-strip span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--theme-color),var(--electric),var(--theme-color3));border-radius:inherit;transform:scaleX(0);transform-origin:left}
+.process-step{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(260px,.75fr);gap:28px;align-items:start;background:#fff;border:1px solid var(--smoke-color2);border-radius:24px;padding:26px;box-shadow:0 12px 34px rgba(20,29,56,.06)}
+.process-step.is-active{border-color:rgba(104,77,244,.45);box-shadow:0 20px 48px rgba(104,77,244,.13)}
+.process-step .num{font-family:var(--title-font);font-size:42px;font-weight:900;color:var(--theme-color);line-height:1}
+.process-step h3{font-family:var(--title-font);font-size:28px;color:var(--title-color);margin:0}
+.process-step p{margin:0}
+.process-note{margin-top:28px;padding:24px;border-radius:24px;background:var(--black-color2);color:#fff;font-family:var(--title-font);font-size:clamp(26px,4vw,46px);font-weight:900;line-height:1.02}
+.calculator{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.74fr);gap:28px;align-items:start}
+.calc-panel,.calc-result{background:#fff;border:1px solid var(--smoke-color2);border-radius:28px;padding:28px;box-shadow:0 18px 50px rgba(20,29,56,.08)}
+.calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field label{display:block;margin:0 0 8px;color:var(--title-color);font-family:var(--title-font);font-weight:900}
+.field select{width:100%;min-height:50px;border:1px solid var(--smoke-color2);border-radius:16px;background:#F8FAFF;color:var(--title-color);padding:0 14px;outline:none}
+.field select:focus{border-color:var(--theme-color);box-shadow:0 0 0 4px rgba(104,77,244,.12)}
+.calc-result{position:sticky;top:108px}
+.result-label{font-family:var(--title-font);font-weight:900;color:var(--muted-color);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.price{font-family:var(--title-font);font-size:clamp(36px,5vw,58px);font-weight:900;line-height:1;color:var(--title-color);margin:8px 0 22px}
+.result-grid{display:grid;gap:12px;margin:22px 0}
+.result-item{background:var(--smoke-color);border-radius:18px;padding:14px}
+.result-item b{display:block;color:var(--title-color);font-family:var(--title-font);font-size:18px}
+.result-item span{display:block;color:var(--body-color)}
+.estimate-note{margin:18px 0 0;color:var(--body-color);background:linear-gradient(180deg,#F8FAFF,#fff);border:1px solid var(--smoke-color2);border-radius:18px;padding:14px}
+.gantt{margin-top:18px;background:var(--black-color2);border-radius:22px;padding:18px;color:#DDE3F8}
+.gantt-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px;font-family:var(--title-font);font-weight:900}
+.gantt-head span{color:#fff}
+.gantt-row{display:grid;grid-template-columns:86px minmax(0,1fr) 58px;gap:10px;align-items:center;margin:10px 0;font-size:12px;font-weight:700}
+.gantt-track{position:relative;height:16px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+.gantt-track i{position:absolute;left:calc(var(--start,0) * 1%);width:calc(var(--span,30) * 1%);top:0;bottom:0;border-radius:999px;background:linear-gradient(90deg,var(--theme-color),var(--electric),var(--theme-color3));box-shadow:0 0 18px rgba(104,77,244,.32)}
+.contact{padding:118px 0;background:linear-gradient(135deg,#F8FAFF,#fff)}
+.contact-card{position:relative;overflow:hidden;background:radial-gradient(circle at 12% 20%,rgba(104,77,244,.38),transparent 28%),linear-gradient(135deg,#080E1C,#141D38 54%,#071120);border:1px solid rgba(255,255,255,.16);border-radius:36px;padding:60px;box-shadow:0 34px 88px rgba(20,29,56,.22);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center;color:#DDE3F8}
+.contact-card:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(22,199,132,.28),transparent 68%)}
+.contact-card > *{position:relative;z-index:1}
+.contact-card h2{font-size:clamp(38px,5.8vw,72px);max-width:880px;color:#fff}
+.contact-card .body-copy{color:#C9D2EE}
+.contact-card p{font-size:18px;margin:20px 0 0}
+.contact-actions{display:grid;gap:12px;min-width:220px}
+.footer{background:var(--black-color2);color:#B8C0D8;padding:34px 0}
+.footer .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer a{color:#fff;font-weight:700}
+.brand,.menu li,.hero-kicker,.hero h1,.hero .body-copy,.hero-actions,.tag,.hero-video,.frame-counter,.production-label,.featured-reel,.reel-card,.reel-info,.section-head,.video-card,.profile-wrap,.service-card,.behance-card,.process-step,.process-note,.calc-panel,.calc-result,.contact-card{will-change:transform,opacity}
+@media(max-width:1100px){
+  .hero-layout,.profile-wrap,.calculator,.contact-card{grid-template-columns:1fr}
+  .hero-layout{gap:34px}
+  .hero-video{max-width:860px}
+  .reel-stage{grid-template-columns:1fr}
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .behance-grid{grid-template-columns:1fr 1fr}
+  .behance-card:nth-child(1),.behance-card:nth-child(4){grid-column:auto;grid-row:auto}
+  .process-step{grid-template-columns:70px 1fr}
+  .process-step p{grid-column:2}
+  .calc-result{position:static}
+  .menu{display:none}
+}
+@media(max-width:700px){
+  .container{padding:0 18px}
+  .topbar{display:none}
+  .nav{height:72px}
+  .brand small{display:none}
+  .header .btn{display:none}
+  .nav-actions{gap:8px}
+  .theme-toggle{min-height:38px;padding:0 11px;font-size:11px}
+  .section{padding:78px 0}
+  .section-head{grid-template-columns:1fr;margin-bottom:32px}
+  .hero{padding:56px 0 64px}
+  .hero h1{font-size:clamp(42px,14vw,64px)}
+  .hero p{font-size:17px}
+  .hero-actions,.contact-actions{display:grid}
+  .btn{width:100%}
+  .production-label{position:static;margin-top:12px}
+  .frame-ui{grid-template-columns:1fr}
+  .hero-metrics{grid-template-columns:1fr}
+  .featured-reel{padding:70px 0 34px}
+  .reel-card .video-frame{min-height:auto}
+  .gantt-row{grid-template-columns:1fr;gap:6px}
+  .rail{grid-auto-columns:minmax(280px,86vw)}
+  .specs,.proofs,.services,.behance-grid,.calc-grid,.service-card ul{grid-template-columns:1fr}
+  .profile-wrap,.contact-card{padding:28px 24px}
+  .profile-visual{min-height:320px}
+  .process-step{grid-template-columns:1fr;gap:12px}
+  .process-step p{grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  .pointer-light{display:none}
+}
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header id="hdr">
-  <div class="wrap nav">
-    <a class="brand" href="#top">
-      <div class="logo-gm"><b>G</b><b>M</b></div>
-      <div class="brand-text"><b>Gonzalo Moreno</b><span>Motion · Art Direction</span></div>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="motion-noise" aria-hidden="true"></div>
+<div class="pointer-light" aria-hidden="true"></div>
+<div class="topbar">
+  <div class="container">
+    <span><b>Paris based</b> art direction and senior motion design</span>
+    <span>2D / 3D / VFX / Campaign films / SaaS explainers</span>
+  </div>
+</div>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Gonzalo Moreno portfolio home">
+      <span class="brand-mark">GM</span>
+      <span><strong>Gonzalo Moreno</strong><small>Art Direction / Motion</small></span>
     </a>
-    <nav><ul>
+    <ul class="menu" aria-label="Main navigation">
       <li><a href="#work">Work</a></li>
+      <li><a href="#profile">Profile</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#reel">Reel</a></li>
       <li><a href="#process">Process</a></li>
-      <li><a href="#calculator">Calculator</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul></nav>
-    <a href="#calculator" class="btn btn-grad" style="height:46px;padding:0 20px">Estimate a project</a>
+      <li><a href="#estimate">Estimate</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false"><span>Tema oscuro</span></button>
+      <a class="btn secondary" href="#contact">Start a Project</a>
+    </div>
   </div>
 </header>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <span class="bracket br-tl"></span><span class="bracket br-br"></span>
-  <div class="readout">SYS // MOTION.ENGINE<br><b>FPS</b> 24 · 4K · OK<br><b>LAT</b> 48.85 / 2.35<br><b>STATUS</b> ● ONLINE</div>
-  <div class="wrap">
-    <span class="eyebrow">Paris · Senior Motion Designer & Art Director</span>
-    <h1>
-      <span class="line"><span>Motion films and visual</span></span>
-      <span class="line"><span>systems for brands that need</span></span>
-      <span class="line"><span>to <em class="grad-text">launch, explain &amp; stand out.</em></span></span>
-    </h1>
-    <div class="hero-bottom">
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-layout">
       <div>
-        <p class="hero-lede">I create SaaS explainers, 3D product visuals, brand films and campaign motion systems — crafted from visual direction to final delivery.</p>
-        <div class="hero-ctas">
-          <a href="#work" class="btn btn-grad">View motion work
-            <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#calculator" class="btn btn-line">Estimate a project</a>
+        <div class="hero-kicker"><span>01</span> Motion-first portfolio</div>
+        <h1 class="title" id="hero-title"><span class="hero-title-line">Motion films</span><span class="hero-title-line">and visual systems</span><span class="hero-title-line">for brands that need to</span><span class="hero-title-line"><em>launch, explain and stand out.</em></span></h1>
+        <p class="body-copy">SaaS explainers, 3D product visuals, brand films and campaign motion systems, crafted from visual direction to final delivery.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#work">View Motion Work</a>
+          <a class="btn secondary" href="#estimate">Estimate a Project</a>
+        </div>
+        <div class="tag-row" aria-label="Creative capabilities">
+          <span class="tag">SaaS Explainers</span>
+          <span class="tag blue">3D Product Visuals</span>
+          <span class="tag">Brand Films</span>
+          <span class="tag accent">VFX</span>
+          <span class="tag blue">Campaign Motion</span>
+          <span class="tag">Motion Identity</span>
+          <span class="tag accent">Social Ads</span>
+          <span class="tag">AI Assisted Lookdev</span>
+        </div>
+        <div class="hero-metrics" aria-label="Motion production focus">
+          <div class="metric"><b>01</b><span>Motion films</span></div>
+          <div class="metric"><b>02</b><span>3D product worlds</span></div>
+          <div class="metric"><b>03</b><span>Campaign systems</span></div>
         </div>
       </div>
-      <div class="hero-tags">
-        <span class="tag">Art Direction</span><span class="tag">2D Motion</span><span class="tag">3D Motion</span><span class="tag">Brand Films</span><span class="tag">SaaS Explainers</span><span class="tag">Campaign Motion</span><span class="tag">Motion Identity</span>
+      <div class="hero-video" aria-label="Featured Vimeo reel">
+        <span class="frame-counter">00:00:08 / HERO REEL</span>
+        <div class="video-frame">
+          <iframe loading="eager" src="https://player.vimeo.com/video/1014715514?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Featured motion reel"></iframe>
+        </div>
+        <div class="production-label"><b>Production label</b><small>SaaS / 3D / brand film / VFX</small></div>
+        <div class="frame-ui">
+          <div>
+            <span>Featured Reel</span>
+            <h2 class="title">Motion films, product visuals and campaign systems</h2>
+          </div>
+          <a class="btn secondary" href="https://vimeo.com/1014715514" target="_blank" rel="noopener">Open Reel</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>SaaS Explainers</span><span>3D Product Visuals</span><span>Brand Films</span><span>Campaign Motion</span><span>Motion Identity</span><span>Social Ads</span>
-    <span>SaaS Explainers</span><span>3D Product Visuals</span><span>Brand Films</span><span>Campaign Motion</span><span>Motion Identity</span><span>Social Ads</span>
-  </div>
-</div>
-
-<!-- INTRO -->
-<section class="intro">
-  <div class="wrap reveal">
-    <span class="eyebrow" style="margin-bottom:32px">Profile / 00</span>
-    <p class="big">A <b>Paris-based art director and senior motion designer</b> with a background in advertising, digital arts and multimedia direction. I create <b>2D and 3D motion films</b>, product explainers and campaign systems <span class="mute">for brands that need clarity, rhythm and visual character.</span></p>
-    <div class="intro-meta">
-      <div><span class="label">Discipline</span><p>Art direction, 2D/3D motion, VFX and editing.</p></div>
-      <div><span class="label">Sectors</span><p>SaaS, tech, gaming, advertising and digital brands.</p></div>
-      <div><span class="label">Mode</span><p>From concept and direction to final delivery.</p></div>
+  </section>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>SaaS Motion</span><span>3D Product Visualization</span><span>Brand Films</span><span>Campaign Motion Systems</span><span>VFX</span><span>Motion Identity</span><span>Social Motion Ads</span><span>AI Assisted Lookdev</span>
+      <span>SaaS Motion</span><span>3D Product Visualization</span><span>Brand Films</span><span>Campaign Motion Systems</span><span>VFX</span><span>Motion Identity</span><span>Social Motion Ads</span><span>AI Assisted Lookdev</span>
     </div>
   </div>
-</section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Motion services</span><h2>What I create for brands.</h2><p>Six motion services covering the full spectrum — from product explainers to cinematic 3D and campaign systems.</p></div>
-      <span class="sec-no">[ Services / 01 ]</span>
-    </div>
-    <div class="svc-grid">
-      <div class="svc reveal"><div class="no">01</div><h3>SaaS Motion Explainers</h3><p class="desc">Clear, conversion-focused motion videos for SaaS products, apps and digital platforms.</p><ul class="deliv"><li>Product explainers</li><li>UI motion</li><li>App walkthroughs</li><li>Launch videos</li><li>Social cutdowns</li></ul></div>
-      <div class="svc reveal d1"><div class="no">02</div><h3>3D Product Visualization</h3><p class="desc">Cinematic 3D visuals that make products feel tangible, premium and desirable.</p><ul class="deliv"><li>3D product shots</li><li>Lookdev</li><li>Camera animation</li><li>Packshots</li><li>Launch visuals</li></ul></div>
-      <div class="svc reveal d2"><div class="no">03</div><h3>Brand Films</h3><p class="desc">Films combining cinematic rhythm, storytelling and motion design to build perception.</p><ul class="deliv"><li>Brand films</li><li>Manifesto videos</li><li>Campaign films</li><li>Editing</li><li>Motion graphics</li></ul></div>
-      <div class="svc reveal"><div class="no">04</div><h3>Campaign Motion Systems</h3><p class="desc">Modular motion systems for campaigns that need consistency across social, web and paid.</p><ul class="deliv"><li>Campaign assets</li><li>Motion templates</li><li>Format adaptations</li><li>Paid creatives</li></ul></div>
-      <div class="svc reveal d1"><div class="no">05</div><h3>Social Motion Ads</h3><p class="desc">Fast, high-retention motion content for social platforms, launches and paid campaigns.</p><ul class="deliv"><li>Reels</li><li>Short ads</li><li>Kinetic type</li><li>Hooks</li><li>Vertical formats</li></ul></div>
-      <div class="svc reveal d2"><div class="no">06</div><h3>Motion Identity</h3><p class="desc">Animated brand systems that give identity, rhythm and consistency to every touchpoint.</p><ul class="deliv"><li>Logo animation</li><li>Transitions</li><li>Lower thirds</li><li>Intro / outro</li><li>Motion kit</li></ul></div>
-    </div>
-    <div class="caps reveal">
-      <span>VFX &amp; compositing</span><span>AI-assisted styleframes</span><span>Look development</span><span>Video editing</span><span>Sound rhythm</span><span>Format adaptation</span>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED REEL -->
-<section id="reel">
-  <div class="wrap">
-    <div class="reel reveal" role="img" aria-label="Selected Motion Work reel">
-      <span class="bracket br-tl"></span><span class="bracket br-tr"></span><span class="bracket br-bl"></span><span class="bracket br-br"></span>
-      <div class="reel-inner">
-        <div class="play" tabindex="0" role="button" aria-label="Play reel"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div>
-        <h3>Selected Motion Work</h3>
-        <p>A focused selection of motion design, 3D visuals, brand films and campaign assets across advertising, tech, SaaS and digital culture.</p>
+  <section class="featured-reel" id="featured-reel">
+    <div class="container reel-stage">
+      <div class="reel-card">
+        <span class="frame-counter">SHOWREEL / 2026</span>
+        <div class="video-frame">
+          <iframe loading="lazy" src="https://player.vimeo.com/video/1014715514?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Gonzalo Moreno featured showreel"></iframe>
+        </div>
+        <a class="reel-play" href="https://vimeo.com/1014715514" target="_blank" rel="noopener">Watch main reel</a>
       </div>
-      <div class="reel-stamp">PLAY REEL ● 4K / 24FPS</div>
+      <aside class="reel-info">
+        <div>
+          <span class="eyebrow">Featured reel</span>
+          <h2 class="title">One reel for direction, motion and delivery.</h2>
+          <p class="body-copy">A compact look at SaaS explainers, 3D product visuals, campaign motion, editing rhythm and VFX finishing.</p>
+        </div>
+        <div class="reel-tags">
+          <span>SaaS Explainer</span>
+          <span>3D Product Film</span>
+          <span>Campaign Motion</span>
+          <span>Art Direction</span>
+        </div>
+      </aside>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WORK SAMPLES -->
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Selected work</span><h2>Motion that explains, launches and converts.</h2><p>A structure built to hold real case studies — context, direction, motion approach, deliverables and result.</p></div>
-      <span class="sec-no">[ Work / 02 ]</span>
-    </div>
-    <div class="work-grid">
-      <a class="proj big reveal" href="#">
-        <div class="layer t1"><div class="orb"></div></div><span class="bracket br-tr"></span>
-        <div class="top"><span class="pill">Case 001</span><span class="pill">SaaS · 2D</span></div>
-        <div class="bot"><div><h3>SaaS Product Explainer</h3><div class="cat">Animated product video · UI motion</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal d1" href="#">
-        <div class="layer t6"><div class="rings"></div><div class="dot"></div></div>
-        <div class="top"><span class="pill">Case 002</span><span class="pill">3D</span></div>
-        <div class="bot"><div><h3>3D Product Visualization</h3><div class="cat">Cinematic product film · Lookdev</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal" href="#">
-        <div class="layer t2"><div class="scan"></div><div class="scan2"></div></div>
-        <div class="top"><span class="pill">Case 003</span></div>
-        <div class="bot"><div><h3>Brand Film System</h3><div class="cat">Brand & campaign motion</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal d1" href="#">
-        <div class="layer t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-        <div class="top"><span class="pill">Case 004</span><span class="pill">Social</span></div>
-        <div class="bot"><div><h3>Social Motion Campaign</h3><div class="cat">Short-form · Kinetic type</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal" href="#">
-        <div class="layer t3"><div class="grid3"></div></div>
-        <div class="top"><span class="pill">Case 005</span></div>
-        <div class="bot"><div><h3>Motion Identity Kit</h3><div class="cat">Animated brand system</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal d1" href="#">
-        <div class="layer t5"><div class="kt">AI</div></div>
-        <div class="top"><span class="pill">Case 006</span><span class="pill">Lookdev</span></div>
-        <div class="bot"><div><h3>AI Styleframes & Lookdev</h3><div class="cat">Visual research · Art direction</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO CAROUSELS -->
-<section id="archive">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Explore by type</span><h2>Motion archive.</h2><p>Drag to explore. Categorised reels across SaaS, 3D and brand &amp; campaign motion.</p></div>
-      <span class="sec-no">[ Archive / 03 ]</span>
-    </div>
-
-    <div class="carousel reveal">
-      <div class="ch"><div><h3>SaaS Motion Explainers</h3><p>Motion videos that turn complex products into clear, engaging, conversion-focused stories.</p></div><span class="drag">← Drag →</span></div>
-      <div class="row">
-        <div class="vcard"><div class="v t1"><div class="orb"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">SaaS motion video</div><h4>Product Explainer</h4><div class="rt"><b>Role</b>Art direction, motion design, UI animation<br><b style="margin-top:6px">Tools</b>After Effects, Figma, C4D</div></div></div>
-        <div class="vcard"><div class="v t2"><div class="scan"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Product walkthrough</div><h4>Workflow Overview</h4><div class="rt"><b>Role</b>Storyboard, UI motion, animation<br><b style="margin-top:6px">Tools</b>After Effects, Figma, Premiere Pro</div></div></div>
-        <div class="vcard"><div class="v t6"><div class="rings"></div><div class="dot"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">App explainer</div><h4>Onboarding Video</h4><div class="rt"><b>Role</b>Motion design, editing, formats<br><b style="margin-top:6px">Tools</b>After Effects, Illustrator, Premiere</div></div></div>
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Video wall</span>
+          <h2 class="title">See the work first.</h2>
+        </div>
+        <p class="body-copy">Three focused reels for clients scanning fast: SaaS explainers, product visualization, and campaign motion systems.</p>
+      </div>
+      <div class="carousel-stack">
+        <section class="carousel-block" aria-labelledby="carousel-1">
+          <div class="carousel-top">
+            <div>
+              <h3 class="title" id="carousel-1">SaaS Motion Explainers</h3>
+              <p class="body-copy">SaaS explainers, app videos, product walkthroughs, UI motion, software launches and landing page videos.</p>
+            </div>
+          </div>
+          <div class="rail">
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1014765609?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="SaaS motion explainer"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 001</span><b>SaaS explainer</b></div><h4>OUTSCALE x Mistral AI Launch</h4><p class="body-copy">Product-led motion for explaining platform value, flow and launch context.</p><div class="specs"><div class="spec"><small>Role</small><strong>Direction, edit</strong></div><div class="spec"><small>Tools</small><strong>AE, Premiere</strong></div></div><a class="watch" href="https://vimeo.com/1014765609" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1161032273?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Product walkthrough edit"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 002</span><b>Product story</b></div><h4>Platform Walkthrough Edit</h4><p class="body-copy">Editing rhythm and motion structure for a product-led message.</p><div class="specs"><div class="spec"><small>Role</small><strong>Edit, rhythm</strong></div><div class="spec"><small>Tools</small><strong>Premiere, sound</strong></div></div><a class="watch" href="https://vimeo.com/1161032273" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/659142695?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="App launch video"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 003</span><b>Launch video</b></div><h4>App Launch System</h4><p class="body-copy">A modular launch piece designed for web, decks and social cutdowns.</p><div class="specs"><div class="spec"><small>Role</small><strong>Motion system</strong></div><div class="spec"><small>Tools</small><strong>AE, 3D, edit</strong></div></div><a class="watch" href="https://vimeo.com/659142695" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+          </div>
+        </section>
+        <section class="carousel-block" aria-labelledby="carousel-2">
+          <div class="carousel-top">
+            <div>
+              <h3 class="title" id="carousel-2">3D Product Visualization</h3>
+              <p class="body-copy">3D product shots, cinematic lookdev, lighting, packshots, abstract product worlds and launch visuals.</p>
+            </div>
+          </div>
+          <div class="rail">
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/659142697?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="3D product lookdev"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 004</span><b>Product lookdev</b></div><h4>Premium Product Frames</h4><p class="body-copy">2D/3D exploration for product visuals, launch rhythm and visual systems.</p><div class="specs"><div class="spec"><small>Role</small><strong>2D/3D motion</strong></div><div class="spec"><small>Tools</small><strong>AE, C4D</strong></div></div><a class="watch" href="https://vimeo.com/659142697" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1126199772?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="3D visual study"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 005</span><b>3D product</b></div><h4>3D Visual Study</h4><p class="body-copy">Lighting, materials and camera language for a premium product atmosphere.</p><div class="specs"><div class="spec"><small>Role</small><strong>Lighting, camera</strong></div><div class="spec"><small>Tools</small><strong>Blender, AE</strong></div></div><a class="watch" href="https://vimeo.com/1126199772" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1014802183?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Visual loop"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 006</span><b>VFX loop</b></div><h4>Visual Loop System</h4><p class="body-copy">Abstract loop direction for product atmosphere, transitions and campaign cutdowns.</p><div class="specs"><div class="spec"><small>Role</small><strong>Compositing</strong></div><div class="spec"><small>Tools</small><strong>AE, VFX</strong></div></div><a class="watch" href="https://vimeo.com/1014802183" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+          </div>
+        </section>
+        <section class="carousel-block" aria-labelledby="carousel-3">
+          <div class="carousel-top">
+            <div>
+              <h3 class="title" id="carousel-3">Brand Films and Campaign Motion</h3>
+              <p class="body-copy">Brand films, social motion ads, motion identity, paid media adaptations and campaign assets.</p>
+            </div>
+          </div>
+          <div class="rail">
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1014801010?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Campaign motion film"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 007</span><b>Campaign motion</b></div><h4>Campaign Visual System</h4><p class="body-copy">High-retention motion content for launch moments and social campaign rhythm.</p><div class="specs"><div class="spec"><small>Role</small><strong>Edit, motion</strong></div><div class="spec"><small>Tools</small><strong>AE, Premiere</strong></div></div><a class="watch" href="https://vimeo.com/1014801010" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/798881272?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="High energy reel"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 008</span><b>Social motion ad</b></div><h4>High Energy Reel</h4><p class="body-copy">Fast, graphic and rhythmic assets for social-first launches and ads.</p><div class="specs"><div class="spec"><small>Role</small><strong>Edit, sound</strong></div><div class="spec"><small>Tools</small><strong>Premiere, AE</strong></div></div><a class="watch" href="https://vimeo.com/798881272" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+            <article class="video-card">
+              <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/804809314?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Social first motion"></iframe></div>
+              <div class="video-meta"><div class="case-line"><span>Case 009</span><b>Motion identity</b></div><h4>Social First Motion</h4><p class="body-copy">Reusable motion language for reels, transitions and campaign adaptations.</p><div class="specs"><div class="spec"><small>Role</small><strong>Visual rhythm</strong></div><div class="spec"><small>Tools</small><strong>AE, edit</strong></div></div><a class="watch" href="https://vimeo.com/804809314" target="_blank" rel="noopener">Watch project</a></div>
+            </article>
+          </div>
+        </section>
       </div>
     </div>
+  </section>
 
-    <div class="carousel reveal">
-      <div class="ch"><div><h3>3D Product Visualization</h3><p>Cinematic 3D visuals that make products feel premium, tangible and ready to launch.</p></div><span class="drag">← Drag →</span></div>
-      <div class="row">
-        <div class="vcard"><div class="v t6"><div class="rings"></div><div class="dot"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">3D product animation</div><h4>Product Hero Film</h4><div class="rt"><b>Role</b>3D lookdev, camera, lighting, motion<br><b style="margin-top:6px">Tools</b>Blender, C4D, After Effects</div></div></div>
-        <div class="vcard"><div class="v t3"><div class="grid3"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">3D launch visual</div><h4>Device Showcase</h4><div class="rt"><b>Role</b>Art direction, 3D motion, compositing<br><b style="margin-top:6px">Tools</b>Blender, After Effects, Premiere</div></div></div>
-        <div class="vcard"><div class="v t1"><div class="orb"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Cinematic 3D visual</div><h4>Abstract Product World</h4><div class="rt"><b>Role</b>Visual direction, 3D, motion design<br><b style="margin-top:6px">Tools</b>Cinema 4D, Blender, After Effects</div></div></div>
-      </div>
-    </div>
-
-    <div class="carousel reveal" style="margin-bottom:0">
-      <div class="ch"><div><h3>Brand Films & Campaign Motion</h3><p>Cinematic stories and modular motion systems for launches, campaigns and brand perception.</p></div><span class="drag">← Drag →</span></div>
-      <div class="row">
-        <div class="vcard"><div class="v t2"><div class="scan"></div><div class="scan2"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Campaign film</div><h4>Brand Film</h4><div class="rt"><b>Role</b>Art direction, editing, motion graphics<br><b style="margin-top:6px">Tools</b>Premiere, After Effects, DaVinci</div></div></div>
-        <div class="vcard"><div class="v t3"><div class="grid3"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Modular campaign assets</div><h4>Campaign Motion System</h4><div class="rt"><b>Role</b>Motion system, templates, adaptations<br><b style="margin-top:6px">Tools</b>After Effects, Figma, Premiere</div></div></div>
-        <div class="vcard"><div class="v t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Short-form campaign</div><h4>Social Motion Ads</h4><div class="rt"><b>Role</b>Editing, kinetic typography, motion<br><b style="margin-top:6px">Tools</b>After Effects, Premiere, Illustrator</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOLUTIONS -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">What I can make for you</span><h2>Solutions, ready to brief.</h2></div>
-      <span class="sec-no">[ Solutions / 04 ]</span>
-    </div>
-    <div class="sol-grid">
-      <div class="sol reveal"><div class="no">01</div><h4>SaaS Explainer Video</h4><p>Explain a product or feature with a clear animated story for landing pages, launches and sales.</p></div>
-      <div class="sol reveal d1"><div class="no">02</div><h4>Product Launch Film</h4><p>A high-impact motion piece to introduce a new product, app or digital platform.</p></div>
-      <div class="sol reveal d2"><div class="no">03</div><h4>3D Product Film</h4><p>Showcase a product through cinematic lighting, camera movement and 3D lookdev.</p></div>
-      <div class="sol reveal d3"><div class="no">04</div><h4>Brand Film</h4><p>Build perception with storytelling, editing, visual direction and motion graphics.</p></div>
-      <div class="sol reveal"><div class="no">05</div><h4>Campaign Motion System</h4><p>A coherent motion language across multiple assets, formats and channels.</p></div>
-      <div class="sol reveal d1"><div class="no">06</div><h4>Social Motion Kit</h4><p>Short-form animated assets, reels, hooks and cutdowns for social and paid.</p></div>
-      <div class="sol reveal d2"><div class="no">07</div><h4>Motion Identity Kit</h4><p>Logo motion, transitions, lower thirds, intros, outros and reusable elements.</p></div>
-      <div class="sol reveal d3"><div class="no">08</div><h4>AI Lookdev Sprint</h4><p>Explore visual territories and styleframes faster with AI-assisted, art-directed workflows.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- INDUSTRIES MARQUEE -->
-<div class="ticker big rev" aria-hidden="true" style="margin:0 0 0">
-  <div class="ticker-track">
-    <span>SaaS</span><span class="ghost">Technology</span><span>Startups</span><span class="ghost">Gaming</span><span>Media</span><span class="ghost">Advertising</span><span>Product Launches</span><span class="ghost">Agencies</span><span>Digital Brands</span><span class="ghost">E-learning</span><span>Music &amp; Culture</span><span class="ghost">Sports</span>
-    <span>SaaS</span><span class="ghost">Technology</span><span>Startups</span><span class="ghost">Gaming</span><span>Media</span><span class="ghost">Advertising</span><span>Product Launches</span><span class="ghost">Agencies</span><span>Digital Brands</span><span class="ghost">E-learning</span><span>Music &amp; Culture</span><span class="ghost">Sports</span>
-  </div>
-</div>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">How I work</span><h2>From brief to final delivery.</h2></div>
-      <span class="sec-no">[ Process / 05 ]</span>
-    </div>
-    <div class="steps reveal">
-      <div class="step"><div class="no">01</div><h4>Brief & direction</h4><p>Goal, audience, message, references, constraints, formats and desired perception.</p></div>
-      <div class="step"><div class="no">02</div><h4>Visual direction</h4><p>Moodboards, styleframes, rhythm, typography, color, composition and motion language.</p></div>
-      <div class="step"><div class="no">03</div><h4>Storyboard & plan</h4><p>Scenes, timing, deliverables, review process and production schedule.</p></div>
-      <div class="step"><div class="no">04</div><h4>Motion production</h4><p>2D animation, 3D visuals, editing, sound rhythm, VFX, compositing and versions.</p></div>
-      <div class="step"><div class="no">05</div><h4>Review & delivery</h4><p>Feedback, revisions, final exports, optimized files and delivery formats.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CALCULATOR -->
-<section id="calculator">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Project calculator</span><h2>Estimate your motion project.</h2><p>Get a first estimate based on scope, duration, complexity, formats and production needs.</p></div>
-      <span class="sec-no">[ Calculator / 06 ]</span>
-    </div>
-    <div class="calc reveal">
-      <div class="calc-form">
-        <div class="calc-field"><span class="lab">Project type</span><div class="opts" data-group="type">
-          <button class="opt sel" data-v="2600" data-pkg="SaaS Explainer">SaaS Explainer</button>
-          <button class="opt" data-v="4500" data-pkg="3D Product Film">3D Product Film</button>
-          <button class="opt" data-v="6000" data-pkg="Brand Film">Brand Film</button>
-          <button class="opt" data-v="5000" data-pkg="Campaign Motion System">Campaign System</button>
-          <button class="opt" data-v="1200" data-pkg="Essential Motion">Social Motion Ads</button>
-          <button class="opt" data-v="2200" data-pkg="Essential Motion">Motion Identity</button>
-        </div></div>
-        <div class="calc-field"><span class="lab">Video duration</span><div class="opts" data-group="dur">
-          <button class="opt sel" data-v="1">≤15s</button><button class="opt" data-v="1.3">30s</button><button class="opt" data-v="1.7">60s</button><button class="opt" data-v="2.2">90s+</button>
-        </div></div>
-        <div class="calc-field"><span class="lab">Visual complexity</span><div class="opts" data-group="cx">
-          <button class="opt sel" data-v="1">Simple</button><button class="opt" data-v="1.4">Medium</button><button class="opt" data-v="1.9">Complex</button>
-        </div></div>
-        <div class="calc-field"><span class="lab">Technique</span><div class="opts" data-group="tech">
-          <button class="opt sel" data-v="1">2D</button><button class="opt" data-v="1.3">Mixed 2D/3D</button><button class="opt" data-v="1.6">3D</button>
-        </div></div>
-        <div class="calc-field"><span class="lab">Formats</span><div class="opts" data-group="fmt">
-          <button class="opt sel" data-v="0">1 format</button><button class="opt" data-v="600">2–3</button><button class="opt" data-v="1400">4+</button>
-        </div></div>
-        <div class="calc-field"><span class="lab">Add-ons</span><div class="opts" data-group="add" data-multi="1">
-          <button class="opt" data-v="500">Script</button><button class="opt" data-v="450">Voice-over</button><button class="opt" data-v="900">Rush</button>
-        </div></div>
-      </div>
-      <div class="calc-out">
-        <span class="bracket br-tr"></span>
-        <div class="label">Estimated budget range</div>
-        <div class="price" id="calcPrice">€2,300 – €2,900</div>
-        <div class="ln"><span>Production time</span><b id="calcTime">2–3 weeks</b></div>
-        <div class="ln"><span>Recommended package</span><b id="calcPkg">SaaS Explainer</b></div>
-        <a href="#contact" class="btn btn-grad">Request a precise quote
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <p class="disc">This is a starting estimate. Final pricing depends on the brief, production complexity, timeline and deliverables.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="about">
-      <div class="portrait reveal"><span class="bracket br-tl"></span><span class="bracket br-br"></span></div>
-      <div class="info reveal d1">
+  <section class="section compact" id="profile">
+    <div class="container profile-wrap">
+      <div class="profile-visual" aria-hidden="true"></div>
+      <div class="profile">
         <span class="eyebrow">Profile</span>
-        <h2>Paris-based art director & senior motion designer.</h2>
-        <p>I create 2D and 3D motion films, product explainers and campaign systems for brands that need clarity, rhythm and visual character — combining advertising thinking with hands-on motion craft.</p>
-        <div class="skills"><span>Advertising & campaign thinking</span><span>2D & 3D motion</span><span>Tech · SaaS · Gaming</span><span>AI-assisted lookdev</span><span>Multimedia direction</span></div>
+        <h2 class="title">Motion direction with production control.</h2>
+        <p class="body-copy">I am a Paris based art director and senior motion designer with a background in advertising, digital arts and multimedia project direction.</p>
+        <p class="body-copy">I create 2D and 3D motion films, product explainers and campaign systems for brands that need clarity, rhythm and visual character.</p>
+        <div class="proofs">
+          <div class="proof">Advertising and campaign thinking</div>
+          <div class="proof">2D and 3D motion production</div>
+          <div class="proof">Tech, SaaS and gaming visual culture</div>
+          <div class="proof">AI assisted lookdev and faster exploration</div>
+        </div>
       </div>
     </div>
-    <div class="stats reveal">
-      <div class="stat"><div class="l">Paris-based<br>creative profile</div></div>
-      <div class="stat"><div class="l">Advertising &<br>digital arts roots</div></div>
-      <div class="stat"><div class="l">2D & 3D<br>motion workflow</div></div>
-      <div class="stat"><div class="l">Concept to<br>final delivery</div></div>
-      <div class="stat"><div class="l">For agencies,<br>startups & brands</div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section>
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow c">FAQ</span><h2>Common questions.</h2></div>
-    <div class="faq reveal">
-      <details><summary>What kind of motion design projects do you create?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">SaaS explainers, 3D product visuals, brand films, campaign motion systems, social motion ads and motion identity assets.</p></details>
-      <details><summary>Can you manage a project from concept to final delivery?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — from brief, visual direction and styleframes to storyboard, animation, revisions and final exports.</p></details>
-      <details><summary>Do you work with agencies and startups?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — agencies, startups, SaaS companies, creative teams and brands that need motion design support.</p></details>
-      <details><summary>Can you create both 2D and 3D motion?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — 2D motion, kinetic typography, UI animation, 3D visualization, compositing and editing.</p></details>
-      <details><summary>Can you create versions for social media and paid campaigns?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — horizontal, vertical and square formats, plus shorter cutdowns for social and paid media.</p></details>
-      <details><summary>Do you use AI in your creative workflow?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes, when useful — AI-assisted workflows for visual exploration, styleframes and lookdev, always guided by art direction.</p></details>
-      <details><summary>How long does a motion project take?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Simple assets take a few days. SaaS explainers, brand films or 3D videos need more time depending on scope, feedback and complexity.</p></details>
-      <details><summary>How can I get an estimate?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Use the project calculator for a first range, then share your brief or references for a precise quote.</p></details>
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Services</span>
+          <h2 class="title">Motion services for products, brands and campaigns.</h2>
+        </div>
+        <p class="body-copy">Focused services for teams that need to explain software, launch products, build brand perception and adapt motion across channels.</p>
+      </div>
+      <div class="services">
+        <article class="service-card"><h3>SaaS Motion Explainers</h3><p>Clear and conversion focused motion videos for SaaS products, apps and digital platforms.</p><ul><li>Product explainers</li><li>UI motion</li><li>Launch videos</li><li>App walkthroughs</li><li>Landing page videos</li><li>Social cutdowns</li></ul></article>
+        <article class="service-card"><h3>3D Product Visualization</h3><p>Cinematic 3D product visuals designed to make products feel tangible, premium and desirable.</p><ul><li>3D product shots</li><li>Lighting and lookdev</li><li>Camera animation</li><li>Packshot animation</li><li>Abstract worlds</li><li>Launch visuals</li></ul></article>
+        <article class="service-card"><h3>Brand Films</h3><p>Brand films that combine cinematic rhythm, visual storytelling and motion design to build perception.</p><ul><li>Brand films</li><li>Manifesto videos</li><li>Campaign films</li><li>Editing</li><li>Sound rhythm</li><li>Motion graphics</li></ul></article>
+        <article class="service-card"><h3>Campaign Motion Systems</h3><p>Modular motion systems for campaigns that need consistency across social, web and paid media.</p><ul><li>Campaign assets</li><li>Motion templates</li><li>Format adaptations</li><li>Social videos</li><li>Paid creatives</li><li>Visual systems</li></ul></article>
+        <article class="service-card"><h3>Social Motion Ads</h3><p>Fast, high retention motion content designed for social platforms, launches and paid campaigns.</p><ul><li>Reels</li><li>Short ads</li><li>Kinetic typography</li><li>Hooks</li><li>Vertical formats</li><li>Iterations</li></ul></article>
+        <article class="service-card"><h3>Motion Identity</h3><p>Animated brand systems that give identity, rhythm and consistency to every visual touchpoint.</p><ul><li>Logo animation</li><li>Transitions</li><li>Lower thirds</li><li>Intro and outro</li><li>Guidelines</li><li>Brand motion kit</li></ul></article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <span class="bracket br-tl"></span><span class="bracket br-tr"></span><span class="bracket br-bl"></span><span class="bracket br-br"></span>
-  <div class="wrap">
-    <span class="eyebrow c">Let's collaborate / 07</span>
-    <h2>Have a product, campaign or <em class="grad-text">motion project</em> in mind?</h2>
-    <p class="summary">Send the brief, share a reference or start with the calculator. I'll help you turn the idea into a clear motion production plan.</p>
-    <a class="email" href="mailto:hello@gonzalomoreno.com">hello@gonzalomoreno.com
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <div class="c-ctas">
-      <a href="mailto:hello@gonzalomoreno.com" class="btn btn-grad">Start a project</a>
-      <a href="#calculator" class="btn btn-line">Estimate a project</a>
-      <a href="#" class="btn btn-line">View Behance</a>
+  <section class="section compact" id="behance">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Behance</span>
+          <h2 class="title">Selected Behance archive</h2>
+        </div>
+        <p class="body-copy">A visual archive for motion, editing, identity animation, client work and experimental 3D.</p>
+      </div>
+      <div class="behance-grid">
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Motion 2D and 3D</span><h3>Portfolio 2026 Motion Design 2D/3D</h3><p>VFX, montage and motion direction archive.</p><small>Role: art direction, motion design, edit</small><b class="archive-cta">Open Behance</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Video Editing</span><h3>Exposition on James Turrell</h3><p>Editorial rhythm for a visual arts exhibition film.</p><small>Role: editing, rhythm, sound structure</small><b class="archive-cta">Open Behance</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Identity Animation</span><h3>Animation Personal Logo</h3><p>Logo reveal, kinetic identity and transition language.</p><small>Role: logo animation, transitions</small><b class="archive-cta">Open Behance</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Experimental 3D</span><h3>Blender 3D and Dark Art</h3><p>Lookdev, lighting and abstract visual worlds.</p><small>Role: 3D lookdev, lighting, composition</small><b class="archive-cta">Open Behance</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Client Work</span><h3>DirecTV and Black Point Funding</h3><p>Commercial motion assets and production delivery.</p><small>Role: client motion, editing, delivery</small><b class="archive-cta">Open Behance</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Motion Design</span><h3>Banque écologique</h3><p>Motion design and video montage for campaign messaging.</p><small>Role: motion, montage, delivery</small><b class="archive-cta">Open Behance</b></a>
+      </div>
     </div>
-    <div class="meta">
-      <div><div class="l">Based in</div><div class="v">Paris, France</div></div>
-      <div><div class="l">Availability</div><div class="v">Remote & international</div></div>
-      <div><div class="l">Response</div><div class="v">Within 24 hours</div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<footer class="site">
-  <div class="wrap row">
-    <div>© 2026 Gonzalo Moreno — Motion & Art Direction · Paris</div>
-    <div class="links"><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Vimeo</a></div>
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Project management</span>
+          <h2 class="title">How I manage motion projects</h2>
+        </div>
+        <p class="body-copy">A clear structure from brief to delivery, so the project has space for creative work without losing control of scope, formats or feedback.</p>
+      </div>
+      <div class="process-strip" aria-hidden="true"><span></span></div>
+      <div class="process-list">
+        <article class="process-step"><div class="num">01</div><h3>Brief and direction</h3><p>Understand the goal, audience, message, references, constraints, formats and desired perception.</p></article>
+        <article class="process-step"><div class="num">02</div><h3>Visual direction</h3><p>Define moodboards, styleframes, rhythm, typography, color, composition and motion language.</p></article>
+        <article class="process-step"><div class="num">03</div><h3>Storyboard and production plan</h3><p>Structure the narrative, scenes, timing, deliverables, review process and production schedule.</p></article>
+        <article class="process-step"><div class="num">04</div><h3>Motion production</h3><p>Produce 2D animation, 3D visuals, editing, sound rhythm, VFX, compositing and format versions.</p></article>
+        <article class="process-step"><div class="num">05</div><h3>Review and delivery</h3><p>Manage feedback, revisions, final exports, optimized files and delivery formats.</p></article>
+      </div>
+      <div class="process-note">Structured enough to be reliable. Flexible enough to find the unexpected.</div>
+    </div>
+  </section>
+
+  <section class="section" id="estimate">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Project calculator</span>
+          <h2 class="title">Estimate your project range.</h2>
+        </div>
+        <p class="body-copy">Use this as a first range, not a fixed quote. The goal is to start with a realistic production frame.</p>
+      </div>
+      <div class="calculator">
+        <form class="calc-panel" id="project-calculator">
+          <div class="calc-grid">
+            <div class="field"><label for="projectType">Project type</label><select id="projectType"><option value="1900" selected>SaaS Motion Explainer</option><option value="2600">3D Product Visualization</option><option value="2200">Brand Film</option><option value="2800">Campaign Motion System</option><option value="1100">Social Motion Ads</option><option value="1700">Motion Identity</option></select></div>
+            <div class="field"><label for="duration">Video duration</label><select id="duration"><option value="300">Under 15 seconds</option><option value="700" selected>15 to 45 seconds</option><option value="1200">45 to 90 seconds</option><option value="2100">90 seconds plus</option></select></div>
+            <div class="field"><label for="complexity">Visual complexity</label><select id="complexity"><option value="0">Clean and minimal</option><option value="650" selected>Designed motion system</option><option value="1400">Cinematic / complex</option></select></div>
+            <div class="field"><label for="dimension">2D, 3D or mixed</label><select id="dimension"><option value="0">2D only</option><option value="900">3D only</option><option value="1200" selected>Mixed 2D and 3D</option></select></div>
+            <div class="field"><label for="formats">Number of formats</label><select id="formats"><option value="0">1 master format</option><option value="350" selected>3 formats</option><option value="800">5 plus formats</option></select></div>
+            <div class="field"><label for="script">Script needed</label><select id="script"><option value="0">No, script provided</option><option value="450" selected>Script polish</option><option value="900">Script from scratch</option></select></div>
+            <div class="field"><label for="voice">Voice-over needed</label><select id="voice"><option value="0" selected>No voice-over</option><option value="500">Voice-over direction</option><option value="900">Voice-over sourcing</option></select></div>
+            <div class="field"><label for="urgency">Urgency</label><select id="urgency"><option value="0" selected>Normal schedule</option><option value="700">Fast turnaround</option><option value="1400">Urgent production</option></select></div>
+            <div class="field"><label for="rounds">Feedback rounds</label><select id="rounds"><option value="0">1 round</option><option value="350" selected>2 rounds</option><option value="750">3 plus rounds</option></select></div>
+          </div>
+        </form>
+        <aside class="calc-result" aria-live="polite">
+          <div class="result-label">Estimated range</div>
+          <div class="price" id="budgetRange">EUR 4,400 to EUR 6,900</div>
+          <div class="result-grid">
+            <div class="result-item"><span>Estimated production time</span><b id="timeline">3 to 5 weeks</b></div>
+            <div class="result-item"><span>Recommended package</span><b id="packageName">Launch Film</b></div>
+            <div class="result-item"><span>Best for</span><b id="packageDesc">SaaS explainers, product launches and campaign motion.</b></div>
+          </div>
+          <p class="estimate-note">This range includes visual direction, motion production, feedback rounds and delivery-ready exports. It is a starting point, not a fixed quote.</p>
+          <div class="gantt" aria-label="Estimated motion production schedule">
+            <div class="gantt-head"><span>Production plan</span><b id="workingDays">20 working days</b></div>
+            <div class="gantt-row"><span>Direction</span><div class="gantt-track"><i id="ganttDirection"></i></div><b id="directionDays">4d</b></div>
+            <div class="gantt-row"><span>Production</span><div class="gantt-track"><i id="ganttProduction"></i></div><b id="productionDays">14d</b></div>
+            <div class="gantt-row"><span>Delivery</span><div class="gantt-track"><i id="ganttDelivery"></i></div><b id="deliveryDays">2d</b></div>
+          </div>
+          <a class="btn accent" href="mailto:gandresmorenob@gmail.com?subject=Project%20estimate%20request">Request a precise quote</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 class="title">Have a product, campaign or motion project in mind?</h2>
+          <p class="body-copy">Send the brief, share a reference or start with the calculator. I will help you turn the idea into a clear motion production plan.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn" href="#estimate">Estimate a Project</a>
+          <a class="btn secondary" href="mailto:gandresmorenob@gmail.com">Send a Message</a>
+          <a class="btn secondary" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener">View Behance</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <span>2026 Gonzalo Moreno. Art direction, 2D/3D motion, VFX and campaign films.</span>
+    <a href="#top">Back to top</a>
   </div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script>
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const hasGSAP = !!(window.gsap && window.ScrollTrigger);
-  let lenis=null;
-
-  // load + header
-  window.addEventListener('load',()=>document.body.classList.add('loaded'));
-  document.addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>document.body.classList.add('loaded')));
-  const hdr=document.getElementById('hdr');
-  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
-  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-
-  // ---- smooth scroll (Lenis) ----
-  if(!reduce && window.Lenis){
-    lenis=new Lenis({lerp:.092,smoothWheel:true,wheelMultiplier:1});
-    function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
-    requestAnimationFrame(raf);
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){const el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-70})}}});
-    });
+const calculator = document.querySelector('#project-calculator');
+const budgetRange = document.querySelector('#budgetRange');
+const timeline = document.querySelector('#timeline');
+const packageName = document.querySelector('#packageName');
+const packageDesc = document.querySelector('#packageDesc');
+const workingDays = document.querySelector('#workingDays');
+const ganttDirection = document.querySelector('#ganttDirection');
+const ganttProduction = document.querySelector('#ganttProduction');
+const ganttDelivery = document.querySelector('#ganttDelivery');
+const directionDays = document.querySelector('#directionDays');
+const productionDays = document.querySelector('#productionDays');
+const deliveryDays = document.querySelector('#deliveryDays');
+const themeToggle = document.querySelector('.theme-toggle');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function applyTheme(theme){
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem('gonzalo-portfolio-theme',theme);
+  if(themeToggle){
+    themeToggle.setAttribute('aria-pressed',theme === 'dark' ? 'true' : 'false');
+    themeToggle.querySelector('span').textContent = theme === 'dark' ? 'Tema claro' : 'Tema oscuro';
   }
+}
+applyTheme(document.documentElement.dataset.theme || 'light');
+themeToggle?.addEventListener('click',()=>{
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(nextTheme);
+  if(window.gsap && !reduceMotion){
+    gsap.fromTo('body',{autoAlpha:.92},{autoAlpha:1,duration:.32,ease:'power2.out',overwrite:'auto'});
+    gsap.fromTo('.theme-toggle',{scale:.94},{scale:1,duration:.24,ease:'power2.out',overwrite:'auto'});
+  }
+});
+function formatEuro(value){return 'EUR ' + value.toLocaleString('en-US');}
+function setBar(element,start,span){
+  element.style.setProperty('--start',start.toFixed(2));
+  element.style.setProperty('--span',span.toFixed(2));
+}
+function updateGantt(totalDays){
+  const direction = Math.max(2, Math.round(totalDays * .22));
+  const delivery = Math.max(2, Math.round(totalDays * .16));
+  const production = Math.max(4, totalDays - direction - delivery);
+  const directionPct = direction / totalDays * 100;
+  const productionPct = production / totalDays * 100;
+  const deliveryPct = delivery / totalDays * 100;
+  setBar(ganttDirection,0,directionPct);
+  setBar(ganttProduction,directionPct,productionPct);
+  setBar(ganttDelivery,directionPct + productionPct,deliveryPct);
+  workingDays.textContent = totalDays + ' working days';
+  directionDays.textContent = direction + 'd';
+  productionDays.textContent = production + 'd';
+  deliveryDays.textContent = delivery + 'd';
+}
+function updateEstimate(){
+  const selects = [...calculator.querySelectorAll('select')];
+  const values = selects.map((select)=>Number(select.value));
+  const projectType = document.querySelector('#projectType').selectedOptions[0].textContent;
+  const total = values.reduce((sum,value)=>sum + value,0);
+  const low = Math.max(1200, Math.round(total / 100) * 100);
+  const high = Math.round((total * 1.45 + 700) / 100) * 100;
+  let days = total < 2600 ? 10 : total < 5600 ? 20 : 34;
+  budgetRange.textContent = formatEuro(low) + ' to ' + formatEuro(high);
+  if(projectType.includes('SaaS')){
+    packageName.textContent = 'SaaS Explainer';
+    packageDesc.textContent = 'Product explainers, app videos, UI motion and launch videos.';
+  }else if(projectType.includes('3D')){
+    packageName.textContent = '3D Product Film';
+    packageDesc.textContent = 'Product visualization, premium 3D shots, lighting, camera and lookdev.';
+    days += 5;
+  }else if(projectType.includes('Campaign')){
+    packageName.textContent = 'Campaign Motion System';
+    packageDesc.textContent = 'Multiple assets, formats and a coherent campaign motion language.';
+    days += 6;
+  }else if(projectType.includes('Brand')){
+    packageName.textContent = 'Brand Film';
+    packageDesc.textContent = 'Cinematic storytelling, editing, motion design and campaign perception.';
+    days += 3;
+  }else if(projectType.includes('Social')){
+    packageName.textContent = 'Essential Motion';
+    packageDesc.textContent = 'Short motion assets, loops, reels and simple animated content.';
+    days = Math.max(8, days - 4);
+  }else{
+    packageName.textContent = 'Essential Motion';
+    packageDesc.textContent = 'Animated identity assets, transitions and brand motion kit elements.';
+  }
+  const weekLow = Math.max(1, Math.round(days / 7));
+  const weekHigh = Math.max(weekLow + 1, Math.ceil((days + 6) / 5));
+  timeline.textContent = weekLow + ' to ' + weekHigh + ' weeks';
+  updateGantt(days);
+  if(window.gsap && !reduceMotion){
+    gsap.fromTo('.calc-result',{scale:.985},{scale:1,duration:.32,ease:'power2.out',overwrite:'auto'});
+    gsap.fromTo('.price',{y:8,autoAlpha:.72},{y:0,autoAlpha:1,duration:.28,ease:'power2.out',overwrite:'auto'});
+    gsap.fromTo('.gantt-track i',{scaleX:.94,transformOrigin:'left center'},{scaleX:1,duration:.36,ease:'power2.out',overwrite:'auto'});
+  }
+}
+calculator.addEventListener('change', updateEstimate);
+updateEstimate();
+if(window.gsap && window.ScrollTrigger && !reduceMotion){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.defaults({ease:'power3.out',duration:.7});
+  const mm = gsap.matchMedia();
+  const setupSharedMotion = (isDesktop)=>{
+    const hoverCleanups = [];
+    const ctx = gsap.context(()=>{
+      const heroTimeline = gsap.timeline({defaults:{ease:'power4.out'}});
+      heroTimeline
+        .from('.brand',{y:-16,autoAlpha:0,duration:.5})
+        .from('.menu li',{y:-10,autoAlpha:0,stagger:.035,duration:.36},'<.08')
+        .from('.nav-actions > *',{y:-8,autoAlpha:0,stagger:.06,duration:.36},'<.06')
+        .from('.hero-kicker',{y:16,autoAlpha:0,duration:.46},'<.12')
+        .from('.hero-title-line',{yPercent:96,autoAlpha:0,stagger:.09,duration:.86},'<.02')
+        .from('.hero .body-copy',{y:20,autoAlpha:0,duration:.62},'-=.46')
+        .from('.hero-actions .btn',{y:16,autoAlpha:0,stagger:.07,duration:.48},'-=.38')
+        .from('.tag',{y:14,autoAlpha:0,stagger:{each:.03,from:'start'},duration:.42},'-=.3')
+        .from('.metric',{y:18,autoAlpha:0,stagger:.06,duration:.44},'-=.22')
+        .from('.hero-video',{x:isDesktop ? 38 : 0,y:isDesktop ? 18 : 24,scale:.975,autoAlpha:0,duration:.9},'-=.72')
+        .from('.frame-counter,.production-label',{y:12,autoAlpha:0,stagger:.1,duration:.42},'-=.36');
 
-  if(!reduce && hasGSAP){
-    // ===== thefinch-style scroll motion (GSAP ScrollTrigger) =====
-    gsap.registerPlugin(ScrollTrigger);
-    if(lenis){ lenis.on('scroll',ScrollTrigger.update); gsap.ticker.add((t)=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0); }
+      gsap.to('.scroll-progress',{scaleX:1,ease:'none',scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:.35}});
+      gsap.to('.process-strip span',{scaleX:1,ease:'none',scrollTrigger:{trigger:'.process',start:'top 72%',end:'bottom 68%',scrub:.7}});
 
-    // hide reveal targets inline (no CSS transition conflict), then batch-animate
-    gsap.set('.reveal',{opacity:0,y:34});
-    ScrollTrigger.batch('.reveal',{
-      start:'top 88%',
-      onEnter:(els)=>gsap.to(els,{opacity:1,y:0,duration:.9,ease:'power3.out',stagger:.08,overwrite:true}),
-      once:true
-    });
-
-    // hero: parallax out + ambient drift
-    gsap.to('#top .readout',{y:120,opacity:0,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:true}});
-    gsap.to('#top h1',{y:-60,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:.4}});
-    gsap.to('#top .hero-lede,#top .hero-tags',{y:-30,opacity:.2,ease:'none',scrollTrigger:{trigger:'#top',start:'center top',end:'bottom top',scrub:.6}});
-
-    // section headings: subtle parallax lift (opacity handled by parent reveal)
-    gsap.utils.toArray('.sec-head h2,.intro .big,.contact h2').forEach(h=>{
-      gsap.fromTo(h,{yPercent:14},{yPercent:-6,ease:'none',scrollTrigger:{trigger:h,start:'top 90%',end:'top 40%',scrub:.6}});
-    });
-
-    // archive rows drift horizontally on scroll (alternating directions)
-    gsap.utils.toArray('#archive .row').forEach((row,i)=>{
-      const dir = i%2===0 ? 1 : -1;
-      gsap.fromTo(row,{x:40*dir},{x:-40*dir,ease:'none',scrollTrigger:{trigger:row,start:'top bottom',end:'bottom top',scrub:true}});
-    });
-
-    // marquee speed reacts to scroll velocity
-    if(lenis){
-      const tracks=document.querySelectorAll('.ticker-track');
-      lenis.on('scroll',({velocity})=>{
-        const v=Math.min(Math.abs(velocity)/8,6);
-        tracks.forEach(t=>t.style.animationDuration=(34/(1+v))+'s');
+      gsap.utils.toArray('.carousel-block').forEach((block)=>{
+        const cards = block.querySelectorAll('.video-card');
+        if(cards[0]) cards[0].classList.add('is-active');
+        cards.forEach((card)=>{
+          const setActive = ()=> {
+            cards.forEach((item)=>item.classList.remove('is-active'));
+            card.classList.add('is-active');
+          };
+          card.addEventListener('focusin',setActive);
+          card.addEventListener('mouseenter',setActive);
+          hoverCleanups.push(()=> {
+            card.removeEventListener('focusin',setActive);
+            card.removeEventListener('mouseenter',setActive);
+          });
+        });
       });
-    }
 
-    ScrollTrigger.refresh();
-    window.addEventListener('load',()=>ScrollTrigger.refresh());
-  } else if(!reduce){
-    // ---- fallback (no GSAP): CSS transition reveals via IntersectionObserver ----
-    document.body.classList.add('anim');
-    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  }
-  /* reduced motion: no class added → all content visible, no animation */
+      ScrollTrigger.batch('.video-card,.service-card,.behance-card,.process-step', {
+        start:'top 88%',
+        once:true,
+        interval:.08,
+        batchMax:isDesktop ? 4 : 2,
+        onEnter:(batch)=>gsap.fromTo(batch,{y:isDesktop ? 30 : 18,autoAlpha:0},{y:0,autoAlpha:1,stagger:isDesktop ? .07 : .045,duration:isDesktop ? .66 : .48,ease:'power3.out',overwrite:'auto'})
+      });
 
-  // drag-to-scroll carousels (works alongside scroll drift)
-  document.querySelectorAll('.row').forEach(row=>{
-    let down=false,startX,scrollL;
-    row.addEventListener('pointerdown',e=>{down=true;row.classList.add('drag');startX=e.pageX;scrollL=row.scrollLeft});
-    row.addEventListener('pointermove',e=>{if(!down)return;row.scrollLeft=scrollL-(e.pageX-startX)});
-    const up=()=>{down=false;row.classList.remove('drag')};
-    row.addEventListener('pointerup',up);row.addEventListener('pointerleave',up);
-  });
+      gsap.fromTo('.reel-card,.reel-info',{y:isDesktop ? 34 : 18,autoAlpha:0,scale:isDesktop ? .985 : 1},{
+        y:0,
+        autoAlpha:1,
+        scale:1,
+        stagger:.12,
+        duration:isDesktop ? .78 : .52,
+        ease:'power3.out',
+        scrollTrigger:{trigger:'.featured-reel',start:'top 76%',once:true}
+      });
 
-  // project calculator
-  (function(){
-    const groups={type:2600,dur:1,cx:1,tech:1,fmt:0,add:0};
-    let pkg='SaaS Explainer';
-    document.querySelectorAll('.opts').forEach(g=>{
-      const name=g.dataset.group, multi=g.dataset.multi;
-      g.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
-        if(multi){b.classList.toggle('sel');}
-        else{g.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');if(b.dataset.pkg)pkg=b.dataset.pkg;}
-        calc();
-      }));
+      gsap.utils.toArray('.section-head,.profile-wrap,.process-note,.calc-panel,.calc-result,.contact-card').forEach((element)=>{
+        gsap.fromTo(element,{y:isDesktop ? 28 : 16,autoAlpha:0},{
+          y:0,
+          autoAlpha:1,
+          duration:isDesktop ? .72 : .5,
+          ease:'power3.out',
+          scrollTrigger:{trigger:element,start:'top 86%',once:true}
+        });
+      });
+
+      gsap.utils.toArray('.process-step').forEach((step)=>{
+        ScrollTrigger.create({
+          trigger:step,
+          start:'top 58%',
+          end:'bottom 42%',
+          toggleClass:{targets:step,className:'is-active'}
+        });
+      });
+
+      if(isDesktop){
+        gsap.to('.hero-video',{y:-8,duration:5.5,repeat:-1,yoyo:true,ease:'sine.inOut',overwrite:false});
+        gsap.to('.profile-visual',{y:-24,ease:'none',scrollTrigger:{trigger:'.profile-wrap',start:'top bottom',end:'bottom top',scrub:1}});
+        const pointer = document.querySelector('.pointer-light');
+        const xTo = gsap.quickTo(pointer,'x',{duration:.55,ease:'power3'});
+        const yTo = gsap.quickTo(pointer,'y',{duration:.55,ease:'power3'});
+        const movePointer = (event)=>{
+          gsap.to(pointer,{autoAlpha:1,duration:.25,overwrite:'auto'});
+          xTo(event.clientX);
+          yTo(event.clientY);
+        };
+        window.addEventListener('pointermove',movePointer);
+        hoverCleanups.push(()=>window.removeEventListener('pointermove',movePointer));
+      }
+
+      gsap.utils.toArray('.video-card,.service-card,.behance-card,.reel-card').forEach((card)=>{
+        const onEnter = ()=>gsap.to(card,{y:-6,scale:1.01,duration:.22,ease:'power2.out',overwrite:'auto'});
+        const onLeave = ()=>gsap.to(card,{y:0,scale:1,duration:.26,ease:'power2.out',overwrite:'auto'});
+        card.addEventListener('mouseenter',onEnter);
+        card.addEventListener('mouseleave',onLeave);
+        hoverCleanups.push(()=> {
+          card.removeEventListener('mouseenter',onEnter);
+          card.removeEventListener('mouseleave',onLeave);
+        });
+      });
     });
-    function val(name){const g=document.querySelector('.opts[data-group="'+name+'"]');
-      if(g.dataset.multi){let s=0;g.querySelectorAll('.opt.sel').forEach(b=>s+=+b.dataset.v);return s;}
-      const sel=g.querySelector('.opt.sel');return sel?+sel.dataset.v:0;}
-    function fmtE(n){return '€'+Math.round(n/100)*100;}
-    function calc(){
-      const base=val('type'),dur=val('dur'),cx=val('cx'),tech=val('tech'),fmt=val('fmt'),add=val('add');
-      let est=base*dur*cx*tech+fmt+add;
-      const lo=est*0.9, hi=est*1.15;
-      document.getElementById('calcPrice').textContent=fmtE(lo)+' – '+fmtE(hi);
-      const weeks=Math.max(1,Math.round(est/2200));
-      document.getElementById('calcTime').textContent=weeks<=1?'~1 week':weeks+'–'+(weeks+1)+' weeks';
-      document.getElementById('calcPkg').textContent=pkg;
-    }
-    calc();
-  })();
+    return ()=> {
+      hoverCleanups.forEach((cleanup)=>cleanup());
+      ctx.revert();
+    };
+  };
+  mm.add('(min-width: 901px)',()=>setupSharedMotion(true));
+  mm.add('(max-width: 900px)',()=>setupSharedMotion(false));
+}
 </script>
 </body>
 </html>
