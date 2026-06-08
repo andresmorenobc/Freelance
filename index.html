@@ -73,6 +73,7 @@ button{cursor:pointer}
 .hero-kicker span{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--smoke-color2);box-shadow:0 10px 28px rgba(20,29,56,.08)}
 .hero h1{font-size:clamp(48px,6.8vw,92px);max-width:760px}
 .hero h1 em{font-style:normal;color:var(--theme-color)}
+.hero-title-line{display:block}
 .hero p{font-size:19px;margin:24px 0 30px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
 .tag-row{display:flex;flex-wrap:wrap;gap:10px;max-width:660px}
@@ -132,6 +133,8 @@ button{cursor:pointer}
 .service-card:before{content:"0" counter(service);position:absolute;right:24px;top:18px;color:rgba(104,77,244,.12);font-family:var(--title-font);font-size:62px;font-weight:900;line-height:1}
 .service-card h3{font-family:var(--title-font);font-size:28px;line-height:1.05;color:var(--title-color);margin:58px 0 14px}
 .service-card p{margin:0;color:var(--body-color)}
+.service-card ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.service-card li{font-size:13px;line-height:1.25;color:var(--title-color);font-weight:700;background:var(--smoke-color);border:1px solid var(--smoke-color2);border-radius:999px;padding:8px 10px}
 .service-card:nth-child(2n):after{content:"";position:absolute;left:-44px;bottom:-44px;width:112px;height:112px;border-radius:50%;background:rgba(255,129,57,.12)}
 .behance-grid{display:grid;grid-template-columns:1.1fr .9fr 1fr;grid-auto-rows:220px;gap:18px}
 .behance-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid var(--smoke-color2);background:#fff;box-shadow:0 16px 42px rgba(20,29,56,.08);padding:22px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
@@ -207,7 +210,7 @@ button{cursor:pointer}
   .production-label{position:static;margin-top:12px}
   .frame-ui{grid-template-columns:1fr}
   .rail{grid-auto-columns:minmax(280px,86vw)}
-  .specs,.proofs,.services,.behance-grid,.calc-grid{grid-template-columns:1fr}
+  .specs,.proofs,.services,.behance-grid,.calc-grid,.service-card ul{grid-template-columns:1fr}
   .profile-wrap,.contact-card{padding:24px}
   .profile-visual{min-height:320px}
   .process-step{grid-template-columns:1fr;gap:12px}
@@ -246,20 +249,20 @@ button{cursor:pointer}
     <div class="container hero-layout">
       <div>
         <div class="hero-kicker"><span>01</span> Motion-first portfolio</div>
-        <h1 class="title" id="hero-title">I turn brands into <em>moving visual worlds</em></h1>
-        <p class="body-copy">Art direction and 2D/3D motion design for campaigns, product launches, SaaS, gaming and digital brands.</p>
+        <h1 class="title" id="hero-title"><span class="hero-title-line">I create motion films</span><span class="hero-title-line">and visual systems</span><span class="hero-title-line">for brands that need to</span><span class="hero-title-line"><em>launch, explain and stand out.</em></span></h1>
+        <p class="body-copy">SaaS explainers, 3D product visuals, brand films and campaign motion systems for digital brands, startups and creative teams.</p>
         <div class="hero-actions">
           <a class="btn" href="#work">View Motion Work</a>
           <a class="btn secondary" href="#estimate">Estimate a Project</a>
         </div>
         <div class="tag-row" aria-label="Creative capabilities">
-          <span class="tag">Art Direction</span>
-          <span class="tag blue">2D Motion</span>
-          <span class="tag">3D Motion</span>
-          <span class="tag orange">VFX</span>
-          <span class="tag blue">Campaign Films</span>
           <span class="tag">SaaS Explainers</span>
-          <span class="tag orange">Gaming Content</span>
+          <span class="tag blue">3D Product Visuals</span>
+          <span class="tag">Brand Films</span>
+          <span class="tag orange">VFX</span>
+          <span class="tag blue">Campaign Motion</span>
+          <span class="tag">Motion Identity</span>
+          <span class="tag orange">Social Ads</span>
           <span class="tag">AI Assisted Lookdev</span>
         </div>
       </div>
@@ -268,11 +271,11 @@ button{cursor:pointer}
         <div class="video-frame">
           <iframe loading="eager" src="https://player.vimeo.com/video/1014715514?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Featured motion reel"></iframe>
         </div>
-        <div class="production-label"><b>Production label</b><small>Art direction / 2D / 3D / Edit</small></div>
+        <div class="production-label"><b>Production label</b><small>SaaS / 3D / brand film / VFX</small></div>
         <div class="frame-ui">
           <div>
             <span>Featured Reel</span>
-            <h2 class="title">Motion, VFX and visual direction</h2>
+            <h2 class="title">Motion films, product visuals and campaign systems</h2>
           </div>
           <a class="btn secondary" href="https://vimeo.com/1014715514" target="_blank" rel="noopener">Open Reel</a>
         </div>
@@ -281,8 +284,8 @@ button{cursor:pointer}
   </section>
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>Art Direction</span><span>2D Motion</span><span>3D Lookdev</span><span>Campaign Films</span><span>VFX</span><span>SaaS Explainers</span><span>Gaming Content</span><span>AI Assisted Lookdev</span>
-      <span>Art Direction</span><span>2D Motion</span><span>3D Lookdev</span><span>Campaign Films</span><span>VFX</span><span>SaaS Explainers</span><span>Gaming Content</span><span>AI Assisted Lookdev</span>
+      <span>SaaS Motion</span><span>3D Product Visualization</span><span>Brand Films</span><span>Campaign Motion Systems</span><span>VFX</span><span>Motion Identity</span><span>Social Motion Ads</span><span>AI Assisted Lookdev</span>
+      <span>SaaS Motion</span><span>3D Product Visualization</span><span>Brand Films</span><span>Campaign Motion Systems</span><span>VFX</span><span>Motion Identity</span><span>Social Motion Ads</span><span>AI Assisted Lookdev</span>
     </div>
   </div>
 
@@ -293,72 +296,72 @@ button{cursor:pointer}
           <span class="eyebrow">Video wall</span>
           <h2 class="title">The work sells before the copy does.</h2>
         </div>
-        <p class="body-copy">Three focused reels for clients scanning fast: campaign films, motion systems, and high-energy social or gaming content.</p>
+        <p class="body-copy">Three focused reels for clients scanning fast: SaaS explainers, product visualization, and campaign motion systems.</p>
       </div>
       <div class="carousel-stack">
         <section class="carousel-block" aria-labelledby="carousel-1">
           <div class="carousel-top">
             <div>
-              <h3 class="title" id="carousel-1">Campaign films and launch videos</h3>
-              <p class="body-copy">Brand films, product launches, SaaS explainers and campaign pieces.</p>
+              <h3 class="title" id="carousel-1">SaaS Motion and Product Explainers</h3>
+              <p class="body-copy">Clear motion for platforms, apps, launches and product stories that need to be understood quickly.</p>
             </div>
           </div>
           <div class="rail">
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1014715514?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Video introduction"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 001</span><b>Launch film</b></div><h4>Video Introduction</h4><div class="specs"><div class="spec"><small>Role</small><strong>Direction, edit</strong></div><div class="spec"><small>Tools</small><strong>AE, Premiere</strong></div></div><a class="watch" href="https://vimeo.com/1014715514" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 001</span><b>SaaS explainer</b></div><h4>Platform Motion Intro</h4><p class="body-copy">A concise motion piece for explaining product value, flow and visual identity.</p><div class="specs"><div class="spec"><small>Role</small><strong>Direction, edit</strong></div><div class="spec"><small>Tools</small><strong>AE, Premiere</strong></div></div><a class="watch" href="https://vimeo.com/1014715514" target="_blank" rel="noopener">Watch project</a></div>
             </article>
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1161032273?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Editorial campaign cut"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 002</span><b>Campaign edit</b></div><h4>Editorial Cut</h4><div class="specs"><div class="spec"><small>Role</small><strong>Edit, rhythm</strong></div><div class="spec"><small>Tools</small><strong>Premiere, sound</strong></div></div><a class="watch" href="https://vimeo.com/1161032273" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 002</span><b>Product story</b></div><h4>Explainer Edit</h4><p class="body-copy">Editing rhythm and motion structure for a product-led message.</p><div class="specs"><div class="spec"><small>Role</small><strong>Edit, rhythm</strong></div><div class="spec"><small>Tools</small><strong>Premiere, sound</strong></div></div><a class="watch" href="https://vimeo.com/1161032273" target="_blank" rel="noopener">Watch project</a></div>
             </article>
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/529817149?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Brand film system"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 003</span><b>Brand film</b></div><h4>Brand Film System</h4><div class="specs"><div class="spec"><small>Role</small><strong>Motion system</strong></div><div class="spec"><small>Tools</small><strong>AE, 3D, edit</strong></div></div><a class="watch" href="https://vimeo.com/529817149" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 003</span><b>Launch video</b></div><h4>Product Launch System</h4><p class="body-copy">A modular launch piece designed for web, deck and social usage.</p><div class="specs"><div class="spec"><small>Role</small><strong>Motion system</strong></div><div class="spec"><small>Tools</small><strong>AE, 3D, edit</strong></div></div><a class="watch" href="https://vimeo.com/529817149" target="_blank" rel="noopener">Watch project</a></div>
             </article>
           </div>
         </section>
         <section class="carousel-block" aria-labelledby="carousel-2">
           <div class="carousel-top">
             <div>
-              <h3 class="title" id="carousel-2">2D/3D motion and visual systems</h3>
-              <p class="body-copy">Kinetic typography, motion branding, animated layouts, 3D lookdev and VFX loops.</p>
+              <h3 class="title" id="carousel-2">3D Product Visualization and Lookdev</h3>
+              <p class="body-copy">Cinematic 3D, lighting, product worlds, camera movement and VFX-led look development.</p>
             </div>
           </div>
           <div class="rail">
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/659142697?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Motion design reel"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 004</span><b>Motion system</b></div><h4>Motion Design Reel</h4><div class="specs"><div class="spec"><small>Role</small><strong>2D/3D motion</strong></div><div class="spec"><small>Tools</small><strong>AE, C4D</strong></div></div><a class="watch" href="https://vimeo.com/659142697" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 004</span><b>Product lookdev</b></div><h4>Motion Design Reel</h4><p class="body-copy">2D/3D exploration for product visuals, launch rhythm and visual systems.</p><div class="specs"><div class="spec"><small>Role</small><strong>2D/3D motion</strong></div><div class="spec"><small>Tools</small><strong>AE, C4D</strong></div></div><a class="watch" href="https://vimeo.com/659142697" target="_blank" rel="noopener">Watch project</a></div>
             </article>
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1126199772?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="3D visual study"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 005</span><b>3D lookdev</b></div><h4>3D Visual Study</h4><div class="specs"><div class="spec"><small>Role</small><strong>Lighting, camera</strong></div><div class="spec"><small>Tools</small><strong>Blender, AE</strong></div></div><a class="watch" href="https://vimeo.com/1126199772" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 005</span><b>3D product</b></div><h4>3D Visual Study</h4><p class="body-copy">Lighting, materials and camera language for a premium product atmosphere.</p><div class="specs"><div class="spec"><small>Role</small><strong>Lighting, camera</strong></div><div class="spec"><small>Tools</small><strong>Blender, AE</strong></div></div><a class="watch" href="https://vimeo.com/1126199772" target="_blank" rel="noopener">Watch project</a></div>
             </article>
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1014802183?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Visual loop"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 006</span><b>VFX loop</b></div><h4>Visual Loop System</h4><div class="specs"><div class="spec"><small>Role</small><strong>Compositing</strong></div><div class="spec"><small>Tools</small><strong>AE, VFX</strong></div></div><a class="watch" href="https://vimeo.com/1014802183" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 006</span><b>VFX loop</b></div><h4>Visual Loop System</h4><p class="body-copy">Abstract loop direction for product atmosphere, transitions and campaign cutdowns.</p><div class="specs"><div class="spec"><small>Role</small><strong>Compositing</strong></div><div class="spec"><small>Tools</small><strong>AE, VFX</strong></div></div><a class="watch" href="https://vimeo.com/1014802183" target="_blank" rel="noopener">Watch project</a></div>
             </article>
           </div>
         </section>
         <section class="carousel-block" aria-labelledby="carousel-3">
           <div class="carousel-top">
             <div>
-              <h3 class="title" id="carousel-3">Social content, gaming and FPV energy</h3>
-              <p class="body-copy">Vertical formats, reels, gaming visuals, FPV inspired edits and high-energy social assets.</p>
+              <h3 class="title" id="carousel-3">Brand Films and Campaign Motion</h3>
+              <p class="body-copy">Brand films, social motion ads, motion identity, paid media adaptations and campaign assets.</p>
             </div>
           </div>
           <div class="rail">
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1014801010?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Dynamic visual content"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 007</span><b>Social campaign</b></div><h4>Dynamic Visual Content</h4><div class="specs"><div class="spec"><small>Role</small><strong>Edit, motion</strong></div><div class="spec"><small>Tools</small><strong>AE, Premiere</strong></div></div><a class="watch" href="https://vimeo.com/1014801010" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 007</span><b>Campaign motion</b></div><h4>Dynamic Visual Content</h4><p class="body-copy">High-retention motion content for launch moments and social campaign rhythm.</p><div class="specs"><div class="spec"><small>Role</small><strong>Edit, motion</strong></div><div class="spec"><small>Tools</small><strong>AE, Premiere</strong></div></div><a class="watch" href="https://vimeo.com/1014801010" target="_blank" rel="noopener">Watch project</a></div>
             </article>
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/798881272?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="High energy reel"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 008</span><b>FPV energy</b></div><h4>High Energy Reel</h4><div class="specs"><div class="spec"><small>Role</small><strong>Edit, sound</strong></div><div class="spec"><small>Tools</small><strong>Premiere, AE</strong></div></div><a class="watch" href="https://vimeo.com/798881272" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 008</span><b>Social motion ad</b></div><h4>High Energy Reel</h4><p class="body-copy">Fast, graphic and rhythmic assets for social-first launches and ads.</p><div class="specs"><div class="spec"><small>Role</small><strong>Edit, sound</strong></div><div class="spec"><small>Tools</small><strong>Premiere, AE</strong></div></div><a class="watch" href="https://vimeo.com/798881272" target="_blank" rel="noopener">Watch project</a></div>
             </article>
             <article class="video-card">
               <div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/804809314?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Social first motion"></iframe></div>
-              <div class="video-meta"><div class="case-line"><span>Case 009</span><b>Gaming / reels</b></div><h4>Social First Motion</h4><div class="specs"><div class="spec"><small>Role</small><strong>Visual rhythm</strong></div><div class="spec"><small>Tools</small><strong>AE, edit</strong></div></div><a class="watch" href="https://vimeo.com/804809314" target="_blank" rel="noopener">Watch project</a></div>
+              <div class="video-meta"><div class="case-line"><span>Case 009</span><b>Motion identity</b></div><h4>Social First Motion</h4><p class="body-copy">Reusable motion language for reels, transitions and campaign adaptations.</p><div class="specs"><div class="spec"><small>Role</small><strong>Visual rhythm</strong></div><div class="spec"><small>Tools</small><strong>AE, edit</strong></div></div><a class="watch" href="https://vimeo.com/804809314" target="_blank" rel="noopener">Watch project</a></div>
             </article>
           </div>
         </section>
@@ -372,7 +375,8 @@ button{cursor:pointer}
       <div class="profile">
         <span class="eyebrow">Profile</span>
         <h2 class="title">Senior motion direction with a production brain.</h2>
-        <p class="body-copy">I'm a Paris based art director and senior motion designer with a background in advertising, digital arts and multimedia project direction. I create motion systems, campaign films and 2D/3D visual content for brands that need clarity, rhythm and character.</p>
+        <p class="body-copy">I am a Paris based art director and senior motion designer with a background in advertising, digital arts and multimedia project direction.</p>
+        <p class="body-copy">I create motion films, 2D and 3D visuals, campaign systems and visual content for brands that need clarity, rhythm and character.</p>
         <div class="proofs">
           <div class="proof">Advertising background</div>
           <div class="proof">2D and 3D motion workflow</div>
@@ -388,17 +392,17 @@ button{cursor:pointer}
       <div class="section-head">
         <div>
           <span class="eyebrow">Services</span>
-          <h2 class="title">Built around motion and visual direction.</h2>
+          <h2 class="title">Motion services for products, brands and campaigns.</h2>
         </div>
-        <p class="body-copy">No generic agency menu. These are the production lanes that matter when a brand needs visual rhythm, campaign clarity and memorable motion.</p>
+        <p class="body-copy">Focused services for teams that need to explain software, launch products, build brand perception and adapt motion across channels.</p>
       </div>
       <div class="services">
-        <article class="service-card"><h3>Art Direction</h3><p>Concepts, visual territories, moodboards, styleframes and campaign direction.</p></article>
-        <article class="service-card"><h3>2D Motion Design</h3><p>Kinetic typography, animated layouts, social assets, brand motion and modular content systems.</p></article>
-        <article class="service-card"><h3>3D Motion and Lookdev</h3><p>Lighting, camera movement, product visuals, abstract worlds, cinematic compositions and 3D scenes.</p></article>
-        <article class="service-card"><h3>Campaign Films</h3><p>Launch videos, SaaS explainers, brand films and modular campaign assets for web, social and paid media.</p></article>
-        <article class="service-card"><h3>VFX and Compositing</h3><p>Post-production, visual enhancement, cleanup, integration and cinematic finishing.</p></article>
-        <article class="service-card"><h3>AI Creative Lab</h3><p>Styleframes, concept exploration, visual research and AI assisted look development.</p></article>
+        <article class="service-card"><h3>SaaS Motion Explainers</h3><p>Clear and conversion focused motion videos for SaaS products, apps and digital platforms.</p><ul><li>Product explainers</li><li>UI motion</li><li>Launch videos</li><li>App walkthroughs</li><li>Landing page videos</li><li>Social cutdowns</li></ul></article>
+        <article class="service-card"><h3>3D Product Visualization</h3><p>Cinematic 3D product visuals designed to make products feel tangible, premium and desirable.</p><ul><li>3D product shots</li><li>Lighting and lookdev</li><li>Camera animation</li><li>Packshot animation</li><li>Abstract worlds</li><li>Launch visuals</li></ul></article>
+        <article class="service-card"><h3>Brand Films</h3><p>Brand films that combine cinematic rhythm, visual storytelling and motion design to build perception.</p><ul><li>Brand films</li><li>Manifesto videos</li><li>Campaign films</li><li>Editing</li><li>Sound rhythm</li><li>Motion graphics</li></ul></article>
+        <article class="service-card"><h3>Campaign Motion Systems</h3><p>Modular motion systems for campaigns that need consistency across social, web and paid media.</p><ul><li>Campaign assets</li><li>Motion templates</li><li>Format adaptations</li><li>Social videos</li><li>Paid creatives</li><li>Visual systems</li></ul></article>
+        <article class="service-card"><h3>Social Motion Ads</h3><p>Fast, high retention motion content designed for social platforms, launches and paid campaigns.</p><ul><li>Reels</li><li>Short ads</li><li>Kinetic typography</li><li>Hooks</li><li>Vertical formats</li><li>Iterations</li></ul></article>
+        <article class="service-card"><h3>Motion Identity</h3><p>Animated brand systems that give identity, rhythm and consistency to every visual touchpoint.</p><ul><li>Logo animation</li><li>Transitions</li><li>Lower thirds</li><li>Intro and outro</li><li>Guidelines</li><li>Brand motion kit</li></ul></article>
       </div>
     </div>
   </section>
@@ -433,11 +437,11 @@ button{cursor:pointer}
         <p class="body-copy">A clear structure from brief to delivery, so the project has space for creative work without losing control of scope, formats or feedback.</p>
       </div>
       <div class="process-list">
-        <article class="process-step"><div class="num">01</div><h3>Brief and direction</h3><p>Understand the goal, audience, message, constraints, formats and desired perception.</p></article>
-        <article class="process-step"><div class="num">02</div><h3>Moodboard and styleframes</h3><p>Define the visual universe, references, rhythm, color, typography and composition.</p></article>
+        <article class="process-step"><div class="num">01</div><h3>Brief and direction</h3><p>Understand the goal, audience, message, references, constraints, formats and desired perception.</p></article>
+        <article class="process-step"><div class="num">02</div><h3>Visual direction</h3><p>Define moodboards, styleframes, rhythm, typography, color, composition and motion language.</p></article>
         <article class="process-step"><div class="num">03</div><h3>Storyboard and production plan</h3><p>Structure the narrative, scenes, timing, deliverables, review process and production schedule.</p></article>
-        <article class="process-step"><div class="num">04</div><h3>Motion production</h3><p>Produce the 2D/3D animation, editing, sound, compositing, transitions and versions.</p></article>
-        <article class="process-step"><div class="num">05</div><h3>Review and delivery</h3><p>Manage feedback, revisions, final exports, formats and optimized delivery files.</p></article>
+        <article class="process-step"><div class="num">04</div><h3>Motion production</h3><p>Produce 2D animation, 3D visuals, editing, sound rhythm, VFX, compositing and format versions.</p></article>
+        <article class="process-step"><div class="num">05</div><h3>Review and delivery</h3><p>Manage feedback, revisions, final exports, optimized files and delivery formats.</p></article>
       </div>
       <div class="process-note">Structured enough to be reliable. Flexible enough to find the unexpected.</div>
     </div>
@@ -455,7 +459,7 @@ button{cursor:pointer}
       <div class="calculator">
         <form class="calc-panel" id="project-calculator">
           <div class="calc-grid">
-            <div class="field"><label for="projectType">Project type</label><select id="projectType"><option value="900">Social motion / loop</option><option value="1700" selected>Campaign film / launch video</option><option value="2300">SaaS explainer</option><option value="2800">Full visual system</option></select></div>
+            <div class="field"><label for="projectType">Project type</label><select id="projectType"><option value="1900" selected>SaaS Motion Explainer</option><option value="2600">3D Product Visualization</option><option value="2200">Brand Film</option><option value="2800">Campaign Motion System</option><option value="1100">Social Motion Ads</option><option value="1700">Motion Identity</option></select></div>
             <div class="field"><label for="duration">Video duration</label><select id="duration"><option value="300">Under 15 seconds</option><option value="700" selected>15 to 45 seconds</option><option value="1200">45 to 90 seconds</option><option value="2100">90 seconds plus</option></select></div>
             <div class="field"><label for="complexity">Visual complexity</label><select id="complexity"><option value="0">Clean and minimal</option><option value="650" selected>Designed motion system</option><option value="1400">Cinematic / complex</option></select></div>
             <div class="field"><label for="dimension">2D, 3D or mixed</label><select id="dimension"><option value="0">2D only</option><option value="900">3D only</option><option value="1200" selected>Mixed 2D and 3D</option></select></div>
@@ -472,7 +476,7 @@ button{cursor:pointer}
           <div class="result-grid">
             <div class="result-item"><span>Estimated production time</span><b id="timeline">3 to 5 weeks</b></div>
             <div class="result-item"><span>Recommended package</span><b id="packageName">Launch Film</b></div>
-            <div class="result-item"><span>Best for</span><b id="packageDesc">Product launches, SaaS explainers and campaign films.</b></div>
+            <div class="result-item"><span>Best for</span><b id="packageDesc">SaaS explainers, product launches and campaign motion.</b></div>
           </div>
           <a class="btn orange" href="mailto:gandresmorenob@gmail.com?subject=Project%20estimate%20request">Request a precise quote</a>
         </aside>
@@ -485,8 +489,8 @@ button{cursor:pointer}
       <div class="contact-card">
         <div>
           <span class="eyebrow">Contact</span>
-          <h2 class="title">Have a campaign, product launch or motion project in mind?</h2>
-          <p class="body-copy">Send the brief, share a reference or start with the calculator. I will help you turn the idea into a clear production plan.</p>
+          <h2 class="title">Have a product, campaign or motion project in mind?</h2>
+          <p class="body-copy">Send the brief, share a reference or start with the calculator. I will help you turn the idea into a clear motion production plan.</p>
         </div>
         <div class="contact-actions">
           <a class="btn" href="#estimate">Estimate a Project</a>
@@ -526,7 +530,7 @@ function updateEstimate(){
   }else if(total < 5600){
     timeline.textContent = '2 to 4 weeks';
     packageName.textContent = 'Launch Film';
-    packageDesc.textContent = 'Product launches, SaaS explainers and campaign films.';
+    packageDesc.textContent = 'SaaS explainers, product launches and campaign motion.';
   }else{
     timeline.textContent = '4 to 7 weeks';
     packageName.textContent = 'Visual System';
@@ -539,47 +543,67 @@ function updateEstimate(){
 }
 calculator.addEventListener('change', updateEstimate);
 updateEstimate();
-if(window.gsap && !reduceMotion){
+if(window.gsap && window.ScrollTrigger && !reduceMotion){
   gsap.registerPlugin(ScrollTrigger);
-  gsap.defaults({ease:'power3.out',duration:.8});
-  const heroTimeline = gsap.timeline({defaults:{ease:'power4.out'}});
-  heroTimeline
-    .from('.brand',{y:-18,autoAlpha:0,duration:.55})
-    .from('.menu li',{y:-12,autoAlpha:0,stagger:.045,duration:.42},'<.08')
-    .from('.header .btn',{y:-10,autoAlpha:0,duration:.45},'<.08')
-    .from('.hero-kicker',{y:18,autoAlpha:0,duration:.55},'<.12')
-    .from('#hero-title',{y:46,autoAlpha:0,duration:1.05},'<.08')
-    .from('.hero .body-copy',{y:24,autoAlpha:0,duration:.75},'-=.58')
-    .from('.hero-actions .btn',{y:20,autoAlpha:0,stagger:.08,duration:.55},'-=.5')
-    .from('.tag',{y:18,autoAlpha:0,stagger:{each:.035,from:'start'},duration:.48},'-=.34')
-    .from('.hero-video',{x:46,y:18,scale:.965,autoAlpha:0,duration:1.08},'-=.9')
-    .from('.frame-counter,.production-label',{y:14,autoAlpha:0,stagger:.12,duration:.48},'-=.45');
+  gsap.defaults({ease:'power3.out',duration:.7});
+  const mm = gsap.matchMedia();
+  const setupSharedMotion = (isDesktop)=>{
+    const hoverCleanups = [];
+    const ctx = gsap.context(()=>{
+      const heroTimeline = gsap.timeline({defaults:{ease:'power4.out'}});
+      heroTimeline
+        .from('.brand',{y:-16,autoAlpha:0,duration:.5})
+        .from('.menu li',{y:-10,autoAlpha:0,stagger:.035,duration:.36},'<.08')
+        .from('.header .btn',{y:-8,autoAlpha:0,duration:.36},'<.06')
+        .from('.hero-kicker',{y:16,autoAlpha:0,duration:.46},'<.12')
+        .from('.hero-title-line',{yPercent:96,autoAlpha:0,stagger:.09,duration:.86},'<.02')
+        .from('.hero .body-copy',{y:20,autoAlpha:0,duration:.62},'-=.46')
+        .from('.hero-actions .btn',{y:16,autoAlpha:0,stagger:.07,duration:.48},'-=.38')
+        .from('.tag',{y:14,autoAlpha:0,stagger:{each:.03,from:'start'},duration:.42},'-=.3')
+        .from('.hero-video',{x:isDesktop ? 38 : 0,y:isDesktop ? 18 : 24,scale:.975,autoAlpha:0,duration:.9},'-=.72')
+        .from('.frame-counter,.production-label',{y:12,autoAlpha:0,stagger:.1,duration:.42},'-=.36');
 
-  ScrollTrigger.batch('.video-card,.service-card,.behance-card,.process-step', {
-    start:'top 86%',
-    once:true,
-    interval:.08,
-    batchMax:4,
-    onEnter:(batch)=>gsap.fromTo(batch,{y:34,autoAlpha:0},{y:0,autoAlpha:1,stagger:.08,duration:.72,ease:'power3.out',overwrite:'auto'})
-  });
+      ScrollTrigger.batch('.video-card,.service-card,.behance-card,.process-step', {
+        start:'top 88%',
+        once:true,
+        interval:.08,
+        batchMax:isDesktop ? 4 : 2,
+        onEnter:(batch)=>gsap.fromTo(batch,{y:isDesktop ? 30 : 18,autoAlpha:0},{y:0,autoAlpha:1,stagger:isDesktop ? .07 : .045,duration:isDesktop ? .66 : .48,ease:'power3.out',overwrite:'auto'})
+      });
 
-  gsap.utils.toArray('.section-head,.profile-wrap,.process-note,.calc-panel,.calc-result,.contact-card').forEach((element)=>{
-    gsap.fromTo(element,{y:30,autoAlpha:0},{
-      y:0,
-      autoAlpha:1,
-      duration:.8,
-      ease:'power3.out',
-      scrollTrigger:{trigger:element,start:'top 84%',once:true}
+      gsap.utils.toArray('.section-head,.profile-wrap,.process-note,.calc-panel,.calc-result,.contact-card').forEach((element)=>{
+        gsap.fromTo(element,{y:isDesktop ? 28 : 16,autoAlpha:0},{
+          y:0,
+          autoAlpha:1,
+          duration:isDesktop ? .72 : .5,
+          ease:'power3.out',
+          scrollTrigger:{trigger:element,start:'top 86%',once:true}
+        });
+      });
+
+      if(isDesktop){
+        gsap.to('.hero-video',{y:-8,duration:5.5,repeat:-1,yoyo:true,ease:'sine.inOut',overwrite:false});
+        gsap.to('.profile-visual',{y:-24,ease:'none',scrollTrigger:{trigger:'.profile-wrap',start:'top bottom',end:'bottom top',scrub:1}});
+      }
+
+      gsap.utils.toArray('.video-card,.service-card,.behance-card').forEach((card)=>{
+        const onEnter = ()=>gsap.to(card,{y:-6,scale:1.01,duration:.22,ease:'power2.out',overwrite:'auto'});
+        const onLeave = ()=>gsap.to(card,{y:0,scale:1,duration:.26,ease:'power2.out',overwrite:'auto'});
+        card.addEventListener('mouseenter',onEnter);
+        card.addEventListener('mouseleave',onLeave);
+        hoverCleanups.push(()=> {
+          card.removeEventListener('mouseenter',onEnter);
+          card.removeEventListener('mouseleave',onLeave);
+        });
+      });
     });
-  });
-
-  gsap.to('.hero-video',{y:-8,duration:5.5,repeat:-1,yoyo:true,ease:'sine.inOut',overwrite:false});
-  gsap.to('.profile-visual',{y:-28,ease:'none',scrollTrigger:{trigger:'.profile-wrap',start:'top bottom',end:'bottom top',scrub:1}});
-
-  gsap.utils.toArray('.video-card,.service-card,.behance-card').forEach((card)=>{
-    card.addEventListener('mouseenter',()=>gsap.to(card,{y:-6,scale:1.012,duration:.24,ease:'power2.out',overwrite:'auto'}));
-    card.addEventListener('mouseleave',()=>gsap.to(card,{y:0,scale:1,duration:.28,ease:'power2.out',overwrite:'auto'}));
-  });
+    return ()=> {
+      hoverCleanups.forEach((cleanup)=>cleanup());
+      ctx.revert();
+    };
+  };
+  mm.add('(min-width: 901px)',()=>setupSharedMotion(true));
+  mm.add('(max-width: 900px)',()=>setupSharedMotion(false));
 }
 </script>
 </body>
