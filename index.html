@@ -3,81 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gonzalo Moreno — Art Direction & Motion Systems</title>
-<meta name="description" content="Gonzalo Moreno — Paris-based art director and 2D/3D motion designer. I turn strategy into moving visual worlds for campaigns, product launches, SaaS explainers, gaming content and digital brands.">
+<title>Gonzalo Moreno — Motion Films & Visual Systems</title>
+<meta name="description" content="Gonzalo Moreno — Paris-based senior motion designer and art director. Motion films, 3D product visuals and campaign motion systems for brands that need to launch, explain and stand out.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#08070f;
-    --bg-2:#0b0a16;
-    --surface:#111021;
-    --surface-2:#16152b;
-    --line:rgba(255,255,255,.09);
-    --line-2:rgba(255,255,255,.16);
-    --ink:#f0eef8;
-    --ink-2:#bcb7d2;
-    --ink-3:#8a85a6;
-    --violet:#8b6dff;
-    --blue:#5b7bff;
-    --cyan:#4fd6ff;
+    --bg:#08070f; --bg-2:#0b0a16; --surface:#111021; --surface-2:#16152b;
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+    --ink:#f0eef8; --ink-2:#bcb7d2; --ink-3:#8a85a6;
+    --violet:#8b6dff; --blue:#5b7bff; --cyan:#4fd6ff;
     --grad:linear-gradient(100deg,#8b6dff,#5b7bff);
     --grad-3:linear-gradient(100deg,#a98bff,#5b7bff,#4fd6ff);
-    /* semantic z-scale */
-    --z-bg:0; --z-base:1; --z-raised:2; --z-sticky:50; --z-nav:100;
+    --z-bg:0;--z-base:1;--z-raised:2;--z-nav:100;
     --ease:cubic-bezier(.16,1,.3,1);
     --maxw:1280px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  /* ambient cinematic light */
   body::before{content:"";position:fixed;inset:0;z-index:var(--z-bg);pointer-events:none;
-    background:
-      radial-gradient(46% 40% at 84% -6%, rgba(139,109,255,.30), transparent 64%),
-      radial-gradient(42% 38% at 6% 8%, rgba(91,123,255,.22), transparent 64%),
-      radial-gradient(50% 46% at 96% 88%, rgba(79,214,255,.12), transparent 62%),
-      radial-gradient(60% 50% at 50% 116%, rgba(139,109,255,.16), transparent 60%);}
-  /* faint global grid + grain (HUD layer) */
+    background:radial-gradient(46% 40% at 84% -6%,rgba(139,109,255,.30),transparent 64%),radial-gradient(42% 38% at 6% 8%,rgba(91,123,255,.22),transparent 64%),radial-gradient(50% 46% at 96% 88%,rgba(79,214,255,.12),transparent 62%),radial-gradient(60% 50% at 50% 116%,rgba(139,109,255,.16),transparent 60%)}
   body::after{content:"";position:fixed;inset:0;z-index:var(--z-bg);pointer-events:none;opacity:.5;
-    background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
-    background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000,transparent 85%)}
+    background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000,transparent 85%)}
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--violet);color:#fff}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:var(--z-base)}
-  @media(max-width:640px){.wrap{padding:0 22px}}
-
+  @media(max-width:640px){.wrap{padding:0 20px}}
   h1,h2,h3,h4,h5{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.035em;line-height:1.04;margin:0;text-wrap:balance}
   p{text-wrap:pretty}
   .grad-text{background:var(--grad-3);-webkit-background-clip:text;background-clip:text;color:transparent}
   .mono{font-family:"JetBrains Mono",monospace}
-
-  /* HUD eyebrow */
   .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--violet);display:inline-flex;align-items:center;gap:12px}
   .eyebrow::before{content:"";width:30px;height:1px;background:linear-gradient(90deg,var(--violet),transparent)}
   .eyebrow.c{justify-content:center}.eyebrow.c::after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--violet))}
-
-  /* corner brackets */
   .bracket{position:absolute;width:26px;height:26px;border:1px solid var(--line-2);pointer-events:none;z-index:var(--z-raised)}
-  .br-tl{top:14px;left:14px;border-right:0;border-bottom:0}
-  .br-tr{top:14px;right:14px;border-left:0;border-bottom:0}
-  .br-bl{bottom:14px;left:14px;border-right:0;border-top:0}
-  .br-br{bottom:14px;right:14px;border-left:0;border-top:0}
+  .br-tl{top:14px;left:14px;border-right:0;border-bottom:0}.br-tr{top:14px;right:14px;border-left:0;border-bottom:0}
+  .br-bl{bottom:14px;left:14px;border-right:0;border-top:0}.br-br{bottom:14px;right:14px;border-left:0;border-top:0}
 
-  /* buttons */
-  .btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:8px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s,background .35s,border-color .35s;white-space:nowrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:8px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:14px;letter-spacing:.02em;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s,background .35s,border-color .35s;white-space:nowrap}
   .btn svg{width:16px;height:16px}
   .btn-grad{background:var(--grad);color:#fff;box-shadow:0 12px 36px -12px rgba(139,109,255,.7)}
   .btn-grad:hover{transform:translateY(-3px);box-shadow:0 18px 44px -12px rgba(91,123,255,.7)}
   .btn-line{background:rgba(255,255,255,.03);border-color:var(--line-2);color:var(--ink)}
   .btn-line:hover{transform:translateY(-3px);border-color:var(--violet);background:rgba(139,109,255,.08)}
 
-  /* ---------- header ---------- */
+  /* header */
   header{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);transition:background .4s,border-color .4s}
   header.scrolled{background:rgba(8,7,15,.72);backdrop-filter:saturate(150%) blur(16px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;transition:padding .35s}
-  header.scrolled .nav{padding:13px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;transition:padding .35s}
+  header.scrolled .nav{padding:12px 0}
   .brand{display:flex;align-items:center;gap:13px}
   .logo-gm{width:44px;height:44px;border:1px solid var(--line-2);display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:17px;letter-spacing:-.04em;position:relative;background:var(--surface)}
   .logo-gm b:last-child{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -85,26 +61,23 @@
   .brand-text{display:flex;flex-direction:column;line-height:1.15}
   .brand-text b{font-family:"Space Grotesk";font-weight:600;font-size:14.5px}
   .brand-text span{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.16em;color:var(--ink-3);text-transform:uppercase;margin-top:3px}
-  nav ul{list-style:none;display:flex;gap:32px;margin:0;padding:0;font-family:"JetBrains Mono";font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
-  nav ul a{position:relative;transition:color .25s}
-  nav ul a .ix{color:var(--ink-3);margin-right:5px;font-size:10px}
-  nav ul a:hover{color:var(--violet)}
-  @media(max-width:900px){nav ul{display:none}}
+  nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;font-family:"JetBrains Mono";font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+  nav ul a{transition:color .25s}nav ul a:hover{color:var(--violet)}
+  @media(max-width:980px){nav ul{display:none}}
 
-  /* ---------- hero ---------- */
+  /* hero */
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:150px 0 80px;position:relative}
   .hero .readout{position:absolute;top:120px;right:32px;font-family:"JetBrains Mono";font-size:11px;line-height:2;color:var(--ink-3);text-align:right;display:none}
   .hero .readout b{color:var(--violet);font-weight:500}
   @media(min-width:1100px){.hero .readout{display:block}}
-  .hero .eyebrow{margin-bottom:30px}
-  .hero h1{font-size:clamp(42px,8vw,96px);letter-spacing:-.04em;line-height:1.0}
-  .hero h1 .line{display:block;overflow:hidden;padding-bottom:.04em}
+  .hero .eyebrow{margin-bottom:28px}
+  .hero h1{font-size:clamp(38px,6.4vw,82px);letter-spacing:-.04em;line-height:1.02;max-width:16ch}
+  .hero h1 .line{display:block;overflow:hidden;padding-bottom:.02em}
   .hero h1 .line>span{display:block;transform:translateY(110%);transition:transform 1s var(--ease)}
   .loaded .hero h1 .line>span{transform:translateY(0)}
-  .hero h1 .line:nth-child(2)>span{transition-delay:.1s}
-  .hero h1 em{font-style:normal}
-  .hero-bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:end;margin-top:52px}
-  .hero-lede{max-width:460px;color:var(--ink-2);font-size:18px;line-height:1.6;opacity:0;transform:translateY(18px);transition:opacity .8s ease .5s,transform .8s var(--ease) .5s}
+  .hero h1 .line:nth-child(2)>span{transition-delay:.08s}.hero h1 .line:nth-child(3)>span{transition-delay:.16s}
+  .hero-bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:end;margin-top:46px}
+  .hero-lede{max-width:480px;color:var(--ink-2);font-size:18px;line-height:1.6;opacity:0;transform:translateY(18px);transition:opacity .8s ease .5s,transform .8s var(--ease) .5s}
   .loaded .hero-lede{opacity:1;transform:none}
   .hero-ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;opacity:0;transform:translateY(18px);transition:opacity .8s ease .62s,transform .8s var(--ease) .62s}
   .loaded .hero-ctas{opacity:1;transform:none}
@@ -113,78 +86,89 @@
   .tag{font-family:"JetBrains Mono";font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);padding:7px 13px;border-radius:6px;background:rgba(255,255,255,.02);transition:border-color .3s,color .3s}
   .tag:hover{border-color:var(--violet);color:var(--violet)}
   @media(max-width:860px){.hero-bottom{grid-template-columns:1fr;gap:34px}.hero-tags{justify-content:flex-start}}
-  .scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+  .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
   .scroll-cue .bar{width:1px;height:42px;background:linear-gradient(var(--violet),transparent);animation:cue 1.9s var(--ease) infinite}
   @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-  /* ---------- ticker ---------- */
+  /* ticker / marquee */
   .ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--bg-2);position:relative;z-index:var(--z-base)}
-  .ticker-track{display:inline-flex;align-items:center;padding:15px 0;animation:scroll 32s linear infinite;will-change:transform}
+  .ticker-track{display:inline-flex;align-items:center;padding:15px 0;animation:scroll 34s linear infinite;will-change:transform}
+  .ticker.rev .ticker-track{animation-direction:reverse;animation-duration:40s}
   .ticker:hover .ticker-track{animation-play-state:paused}
   .ticker-track span{font-family:"JetBrains Mono";font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2);display:inline-flex;align-items:center;padding:0 22px}
   .ticker-track span::after{content:"◆";color:var(--violet);margin-left:22px;font-size:8px}
+  .ticker.big .ticker-track span{font-family:"Space Grotesk";font-size:34px;font-weight:600;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
+  .ticker.big .ticker-track span.ghost{color:transparent;-webkit-text-stroke:1px var(--ink-3)}
+  .ticker.big .ticker-track span::after{font-size:14px}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
-  /* ---------- sections ---------- */
+  /* sections */
   section{padding:120px 0;position:relative;z-index:var(--z-base)}
-  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
   .sec-head.center{justify-content:center;text-align:center;flex-direction:column;align-items:center}
   .sec-head .lead{max-width:680px}
-  .sec-head h2{font-size:clamp(32px,5vw,58px);margin-top:18px;letter-spacing:-.04em}
-  .sec-head p{color:var(--ink-2);font-size:16.5px;margin:18px 0 0;max-width:540px}
+  .sec-head h2{font-size:clamp(30px,4.6vw,54px);margin-top:18px;letter-spacing:-.04em}
+  .sec-head p{color:var(--ink-2);font-size:16px;margin:18px 0 0;max-width:540px}
   .sec-no{font-family:"JetBrains Mono";font-size:12px;color:var(--ink-3);white-space:nowrap;letter-spacing:.1em}
 
   .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s var(--ease)}
   .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+  .reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}.reveal.d3{transition-delay:.21s}.reveal.d4{transition-delay:.28s}.reveal.d5{transition-delay:.35s}
 
-  /* ---------- manifesto ---------- */
-  .manifesto .big{font-family:"Space Grotesk";font-weight:500;font-size:clamp(24px,3.4vw,42px);line-height:1.22;letter-spacing:-.02em;max-width:1000px}
-  .manifesto .big b{font-weight:700}
-  .manifesto .big .mute{color:var(--ink-3)}
-  .manifesto-meta{display:flex;gap:56px;margin-top:46px;flex-wrap:wrap}
-  .manifesto-meta .label{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);display:block;margin-bottom:9px}
-  .manifesto-meta p{margin:0;font-size:14.5px;color:var(--ink-2);max-width:230px}
+  /* intro */
+  .intro .big{font-family:"Space Grotesk";font-weight:500;font-size:clamp(23px,3.2vw,40px);line-height:1.22;letter-spacing:-.02em;max-width:1000px}
+  .intro .big b{font-weight:700}.intro .big .mute{color:var(--ink-3)}
+  .intro-meta{display:flex;gap:48px;margin-top:44px;flex-wrap:wrap}
+  .intro-meta .label{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);display:block;margin-bottom:9px}
+  .intro-meta p{margin:0;font-size:14px;color:var(--ink-2);max-width:220px}
 
-  /* ---------- services ---------- */
-  .svc-list{border-top:1px solid var(--line)}
-  .svc{display:grid;grid-template-columns:80px 1fr 1.1fr auto;gap:32px;align-items:start;padding:36px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .4s var(--ease)}
-  .svc::after{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:linear-gradient(90deg,rgba(139,109,255,.06),transparent 40%);opacity:0;transition:opacity .4s}
-  .svc:hover{padding-left:20px}
+  /* services (cards w/ deliverables) */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .svc{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--surface);position:relative;overflow:hidden;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s;display:flex;flex-direction:column}
+  .svc::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 100% 0,rgba(139,109,255,.12),transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+  .svc:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 30px 60px -34px rgba(139,109,255,.6)}
   .svc:hover::after{opacity:1}
-  .svc>*{position:relative;z-index:var(--z-raised)}
-  .svc .no{font-family:"JetBrains Mono";font-size:13px;color:var(--violet);padding-top:7px}
-  .svc h3{font-size:clamp(21px,2.4vw,29px);letter-spacing:-.025em}
-  .svc .desc{color:var(--ink-2);font-size:15px}
-  .svc .tools{display:flex;flex-direction:column;gap:7px;align-items:flex-end;text-align:right}
-  .svc .tools span{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
-  @media(max-width:900px){.svc{grid-template-columns:50px 1fr;gap:12px 16px}.svc .tools{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:flex-start;text-align:left;margin-top:4px}}
+  .svc .no{font-family:"JetBrains Mono";font-size:12px;color:var(--violet);margin-bottom:18px}
+  .svc h3{font-size:20px;margin-bottom:10px;letter-spacing:-.02em}
+  .svc .desc{color:var(--ink-2);font-size:14px;margin:0 0 18px}
+  .svc .deliv{list-style:none;margin:auto 0 0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+  .svc .deliv li{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);padding:5px 9px;border-radius:5px}
+  @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+  .caps{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;justify-content:center}
+  .caps span{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-2);border:1px solid var(--line);padding:8px 14px;border-radius:100px}
 
-  /* ---------- work ---------- */
-  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
-  .filter{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);background:rgba(255,255,255,.02);padding:9px 16px;border-radius:6px;cursor:pointer;transition:all .3s}
-  .filter:hover{border-color:var(--line-2);transform:translateY(-2px)}
-  .filter.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  /* featured reel */
+  .reel{position:relative;overflow:hidden;aspect-ratio:21/9;border:1px solid var(--line-2);border-radius:20px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 50%,#1c1340,#08060f)}
+  .reel::before{content:"";position:absolute;inset:0;background:conic-gradient(from 180deg at 50% 50%,rgba(139,109,255,.18),rgba(91,123,255,.12),rgba(79,214,255,.16),rgba(139,109,255,.18));animation:spin2 24s linear infinite;opacity:.7}
+  @keyframes spin2{to{transform:rotate(360deg)}}
+  .reel-inner{position:relative;z-index:var(--z-raised);text-align:center;padding:20px}
+  .reel .play{width:88px;height:88px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin:0 auto 22px;cursor:pointer;transition:transform .4s var(--ease)}
+  .reel .play:hover{transform:scale(1.1)}
+  .reel .play svg{width:28px;height:28px;fill:var(--bg);margin-left:4px}
+  .reel h3{font-size:clamp(24px,4vw,42px);text-transform:uppercase}
+  .reel p{font-family:"Inter";color:var(--ink-2);font-size:14px;margin:12px auto 0;max-width:480px}
+  .reel-stamp{position:absolute;bottom:16px;left:18px;z-index:var(--z-raised);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;color:var(--ink-3)}
+
+  /* work samples grid */
   .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:230px}
-  .proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;display:block;grid-column:span 2;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s,opacity .4s}
+  .proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;display:block;grid-column:span 2;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s}
   .proj.big{grid-row:span 2}
   .proj:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 30px 60px -30px rgba(139,109,255,.5)}
-  .proj.hide{display:none}
   .proj .layer{position:absolute;inset:0;transition:transform .9s var(--ease)}
   .proj:hover .layer{transform:scale(1.06)}
   .proj .top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:16px;z-index:var(--z-raised)}
   .proj .pill{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:rgba(8,7,15,.55);backdrop-filter:blur(8px);border:1px solid var(--line-2);padding:6px 11px;border-radius:100px}
-  .proj .bot{position:absolute;left:0;right:0;bottom:0;z-index:var(--z-raised);padding:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;background:linear-gradient(0deg,rgba(6,5,12,.85),transparent)}
-  .proj .bot h3{font-size:20px;margin-bottom:6px}
-  .proj .bot .cat{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-2);letter-spacing:.04em}
+  .proj .bot{position:absolute;left:0;right:0;bottom:0;z-index:var(--z-raised);padding:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;background:linear-gradient(0deg,rgba(6,5,12,.88),transparent)}
+  .proj .bot h3{font-size:19px;margin-bottom:6px}
+  .proj .bot .cat{font-family:"JetBrains Mono";font-size:11px;color:var(--ink-2);letter-spacing:.04em}
   .proj .arrow{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid var(--line-2);display:grid;place-items:center;flex-shrink:0;transition:background .4s,border-color .4s}
   .proj .arrow svg{width:15px;height:15px;stroke:var(--ink);transition:transform .4s var(--ease)}
-  .proj:hover .arrow{background:var(--grad);border-color:transparent}
-  .proj:hover .arrow svg{transform:rotate(45deg)}
+  .proj:hover .arrow{background:var(--grad);border-color:transparent}.proj:hover .arrow svg{transform:rotate(45deg)}
   @media(max-width:860px){.work-grid{grid-template-columns:repeat(2,1fr)}.proj,.proj.big{grid-column:span 2;grid-row:span 1}}
   @media(max-width:520px){.work-grid{grid-template-columns:1fr}.proj,.proj.big{grid-column:span 1}}
 
-  /* cinematic thumbnails (violet/blue) */
+  /* thumbnails */
   .t1{background:radial-gradient(circle at 50% 45%,#241a6b,#0a0816)}
   .t1 .orb{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 0deg,#8b6dff,#5b7bff,#4fd6ff,#a98bff,#8b6dff);filter:blur(1px);box-shadow:0 0 80px rgba(139,109,255,.6);animation:spin 18s linear infinite}
   .t1 .orb::after{content:"";position:absolute;inset:22%;border-radius:50%;background:#0a0816}
@@ -200,90 +184,118 @@
   .t4 .bars i:nth-child(2){animation-delay:.2s}.t4 .bars i:nth-child(3){animation-delay:.4s}.t4 .bars i:nth-child(4){animation-delay:.1s}.t4 .bars i:nth-child(5){animation-delay:.5s}.t4 .bars i:nth-child(6){animation-delay:.3s}.t4 .bars i:nth-child(7){animation-delay:.15s}
   @keyframes eq{0%,100%{height:26%}50%{height:100%}}
   .t5{background:linear-gradient(135deg,#3a1b6e,#120a26)}
-  .t5 .kt{position:absolute;inset:0;display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:clamp(36px,8vw,80px);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.3px rgba(255,255,255,.5);text-transform:uppercase}
+  .t5 .kt{position:absolute;inset:0;display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:clamp(30px,7vw,64px);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.3px rgba(255,255,255,.5);text-transform:uppercase}
   .t6{background:radial-gradient(circle at 35% 30%,#152a6e,#0a0c1c)}
   .t6 .rings{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58%;aspect-ratio:1}
   .t6 .rings::before,.t6 .rings::after{content:"";position:absolute;inset:0;border:1px solid rgba(91,123,255,.55);border-radius:50%}
   .t6 .rings::after{inset:22%;border-color:rgba(79,214,255,.6)}
   .t6 .dot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:var(--cyan);transform:translate(-50%,-50%);box-shadow:0 0 16px var(--cyan)}
 
-  /* ---------- showreel ---------- */
-  .reel{position:relative;overflow:hidden;aspect-ratio:21/9;border:1px solid var(--line-2);border-radius:20px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 50%,#1c1340,#08060f)}
-  .reel::before{content:"";position:absolute;inset:0;background:conic-gradient(from 180deg at 50% 50%,rgba(139,109,255,.18),rgba(91,123,255,.12),rgba(79,214,255,.16),rgba(139,109,255,.18));animation:spin2 24s linear infinite;opacity:.7}
-  @keyframes spin2{to{transform:rotate(360deg)}}
-  .reel-inner{position:relative;z-index:var(--z-raised);text-align:center}
-  .reel .play{width:88px;height:88px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin:0 auto 22px;cursor:pointer;transition:transform .4s var(--ease)}
-  .reel .play:hover{transform:scale(1.1)}
-  .reel .play svg{width:28px;height:28px;fill:var(--bg);margin-left:4px}
-  .reel h3{font-size:clamp(26px,4vw,46px);text-transform:uppercase}
-  .reel .meta{font-family:"JetBrains Mono";color:var(--ink-2);letter-spacing:.16em;text-transform:uppercase;font-size:12px;margin-top:10px}
-  .reel-stamp{position:absolute;bottom:16px;left:18px;z-index:var(--z-raised);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;color:var(--ink-3)}
+  /* horizontal carousels */
+  .carousel{margin-bottom:64px}
+  .carousel .ch{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:22px;flex-wrap:wrap}
+  .carousel .ch h3{font-size:clamp(22px,2.8vw,32px);letter-spacing:-.03em}
+  .carousel .ch p{color:var(--ink-2);font-size:14px;margin:8px 0 0;max-width:460px}
+  .carousel .ch .drag{font-family:"JetBrains Mono";font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+  .row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;cursor:grab;scrollbar-width:none}
+  .row::-webkit-scrollbar{display:none}
+  .row.drag{cursor:grabbing}
+  .vcard{flex:0 0 380px;scroll-snap-align:start;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);transition:border-color .4s,transform .5s var(--ease)}
+  .vcard:hover{border-color:var(--line-2);transform:translateY(-4px)}
+  .vcard .v{aspect-ratio:16/10;position:relative;overflow:hidden}
+  .vcard .v .play-s{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;z-index:2;opacity:0;transition:opacity .4s,transform .4s var(--ease)}
+  .vcard:hover .v .play-s{opacity:1;transform:translate(-50%,-50%) scale(1.05)}
+  .vcard .v .play-s svg{width:18px;height:18px;fill:#0a0816;margin-left:2px}
+  .vcard .m{padding:18px 20px}
+  .vcard .m h4{font-size:17px;margin-bottom:4px}
+  .vcard .m .type{font-family:"JetBrains Mono";font-size:11px;color:var(--violet);letter-spacing:.04em;text-transform:uppercase}
+  .vcard .m .rt{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-2);line-height:1.5}
+  .vcard .m .rt b{color:var(--ink-3);font-weight:500;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px}
+  @media(max-width:520px){.vcard{flex-basis:300px}}
 
-  /* ---------- process ---------- */
+  /* solutions */
+  .sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .sol{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--surface);transition:transform .5s var(--ease),border-color .4s;min-height:180px;display:flex;flex-direction:column}
+  .sol:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .sol .no{font-family:"JetBrains Mono";font-size:11px;color:var(--violet);margin-bottom:14px}
+  .sol h4{font-size:16px;margin-bottom:8px;letter-spacing:-.02em}
+  .sol p{color:var(--ink-2);font-size:13px;margin:0}
+  @media(max-width:900px){.sol-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.sol-grid{grid-template-columns:1fr}}
+
+  /* process */
   .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line)}
-  .step{padding:32px 22px 28px;border-right:1px solid var(--line);position:relative;transition:background .4s}
-  .step:last-child{border-right:0}
-  .step:hover{background:rgba(255,255,255,.02)}
-  .step .no{font-family:"JetBrains Mono";font-size:12px;color:var(--violet);margin-bottom:22px}
-  .step h4{font-size:19px;margin-bottom:10px;letter-spacing:-.02em}
-  .step p{color:var(--ink-2);font-size:13.5px;margin:0;line-height:1.55}
-  .step .strip{display:flex;gap:3px;margin-top:20px}
-  .step .strip i{height:3px;flex:1;background:var(--line-2)}
-  .step .strip i.on{background:var(--violet)}
-  .process-foot{font-family:"Space Grotesk";font-size:clamp(18px,2.4vw,26px);font-weight:500;letter-spacing:-.02em;margin-top:46px;text-align:center}
-  .process-foot .mute{color:var(--ink-3)}
+  .step{padding:32px 20px 28px;border-right:1px solid var(--line);transition:background .4s}
+  .step:last-child{border-right:0}.step:hover{background:rgba(255,255,255,.02)}
+  .step .no{font-family:"JetBrains Mono";font-size:12px;color:var(--violet);margin-bottom:20px}
+  .step h4{font-size:18px;margin-bottom:10px;letter-spacing:-.02em}
+  .step p{color:var(--ink-2);font-size:13px;margin:0;line-height:1.55}
   @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}.step:nth-child(2n){border-right:0}}
   @media(max-width:520px){.steps{grid-template-columns:1fr}.step{border-right:0}}
 
-  /* ---------- lab ---------- */
-  .lab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;grid-auto-rows:200px}
-  .lab{border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s}
-  .lab.w2{grid-column:span 2}
-  .lab:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 24px 50px -28px rgba(139,109,255,.5)}
-  .lab .layer{position:absolute;inset:0;transition:transform .8s var(--ease)}
-  .lab:hover .layer{transform:scale(1.06)}
-  .lab .lm{position:absolute;left:0;right:0;bottom:0;z-index:var(--z-raised);padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:linear-gradient(0deg,rgba(6,5,12,.8),transparent)}
-  .lab .lm h4{font-size:15px}
-  .lab .lm span{font-family:"JetBrains Mono";font-size:10.5px;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase}
-  @media(max-width:860px){.lab-grid{grid-template-columns:repeat(2,1fr)}.lab.w2{grid-column:span 2}}
-  @media(max-width:520px){.lab-grid{grid-template-columns:1fr}.lab.w2{grid-column:span 1}}
+  /* calculator */
+  .calc{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}
+  .calc-form{border:1px solid var(--line);border-radius:18px;padding:30px;background:var(--surface)}
+  .calc-field{margin-bottom:20px}
+  .calc-field:last-child{margin-bottom:0}
+  .calc-field .lab{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:10px}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opt{font-family:"Space Grotesk";font-size:13px;font-weight:500;color:var(--ink-2);border:1px solid var(--line);background:rgba(255,255,255,.02);padding:9px 15px;border-radius:8px;cursor:pointer;transition:all .25s}
+  .opt:hover{border-color:var(--line-2)}
+  .opt.sel{background:var(--grad);color:#fff;border-color:transparent}
+  .calc-out{border:1px solid var(--line-2);border-radius:18px;padding:30px;background:linear-gradient(160deg,rgba(139,109,255,.1),rgba(91,123,255,.04));position:relative;overflow:hidden;position:sticky;top:90px}
+  .calc-out .label{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .calc-out .price{font-family:"Space Grotesk";font-weight:700;font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;margin:8px 0 4px}
+  .calc-out .ln{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-top:1px solid var(--line);font-size:14px}
+  .calc-out .ln span{color:var(--ink-3);font-size:13px}.calc-out .ln b{font-weight:600}
+  .calc-out .btn{width:100%;justify-content:center;margin-top:20px}
+  .calc-out .disc{font-size:11px;color:var(--ink-3);margin:16px 0 0;line-height:1.5}
+  @media(max-width:860px){.calc{grid-template-columns:1fr}.calc-out{position:static}}
 
-  /* ---------- about ---------- */
+  /* about + trust */
   .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:stretch}
-  .about .portrait{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#3a2f6e,#161228);position:relative;min-height:400px;border:1px solid var(--line-2)}
+  .about .portrait{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#3a2f6e,#161228);position:relative;min-height:420px;border:1px solid var(--line-2)}
   .about .portrait::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 74%,#2a2348 0 26%,transparent 28%),radial-gradient(circle at 50% 30%,#1c1632 0 15%,transparent 17%)}
   .about .info{display:flex;flex-direction:column;justify-content:center}
-  .about h2{font-size:clamp(26px,3.4vw,42px);letter-spacing:-.03em;margin:16px 0 20px}
+  .about h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.03em;margin:16px 0 20px}
   .about p{color:var(--ink-2);font-size:16px;line-height:1.7;margin:0 0 16px;max-width:480px}
-  .about .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .about .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
   .about .skills span{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-2);border:1px solid var(--line);padding:7px 13px;border-radius:6px}
   @media(max-width:860px){.about{grid-template-columns:1fr}.about .portrait{min-height:320px}}
-
-  /* stats */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:80px}
-  .stat{padding:38px 22px;border-right:1px solid var(--line)}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:70px}
+  .stat{padding:30px 18px;border-right:1px solid var(--line);text-align:center}
   .stat:last-child{border-right:0}
-  .stat .v{font-family:"Space Grotesk";font-weight:700;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em;line-height:1.15}
-  .stat .l{font-family:"JetBrains Mono";color:var(--ink-3);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-top:12px}
-  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2n){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+  .stat .l{font-family:"JetBrains Mono";color:var(--ink-2);font-size:12px;letter-spacing:.04em;line-height:1.5}
+  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2n){border-right:0}}
 
-  /* ---------- contact ---------- */
+  /* faq */
+  .faq{max-width:860px;margin:0 auto;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:"Space Grotesk";font-weight:600;font-size:clamp(16px,2vw,20px);letter-spacing:-.02em;transition:color .3s}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover{color:var(--violet)}
+  .faq summary .ic{width:30px;height:30px;border:1px solid var(--line-2);border-radius:50%;display:grid;place-items:center;flex-shrink:0;transition:transform .4s var(--ease),background .3s}
+  .faq summary .ic svg{width:13px;height:13px;stroke:var(--ink);transition:stroke .3s}
+  .faq details[open] summary .ic{transform:rotate(45deg);background:var(--grad);border-color:transparent}
+  .faq details[open] summary .ic svg{stroke:#fff}
+  .faq .ans{color:var(--ink-2);font-size:15px;line-height:1.65;padding:0 50px 24px 0;margin:0}
+
+  /* contact */
   .contact{text-align:center;padding:140px 0;position:relative}
   .contact .eyebrow{margin-bottom:24px}
-  .contact h2{font-size:clamp(40px,8vw,104px);text-transform:uppercase;line-height:.98;letter-spacing:-.04em}
-  .contact h2 em{font-style:normal}
-  .contact .email{display:inline-flex;align-items:center;gap:14px;margin-top:38px;font-family:"Space Grotesk";font-weight:500;font-size:clamp(18px,3vw,30px);border-bottom:2px solid var(--line-2);padding-bottom:10px;transition:border-color .4s,gap .4s}
+  .contact h2{font-size:clamp(34px,6.4vw,84px);line-height:1.0;letter-spacing:-.04em;max-width:16ch;margin:0 auto}
+  .contact .summary{color:var(--ink-2);font-size:17px;max-width:520px;margin:24px auto 0}
+  .contact .email{display:inline-flex;align-items:center;gap:14px;margin-top:34px;font-family:"Space Grotesk";font-weight:500;font-size:clamp(17px,3vw,28px);border-bottom:2px solid var(--line-2);padding-bottom:10px;transition:border-color .4s,gap .4s}
   .contact .email:hover{border-color:var(--violet);gap:22px}
-  .contact .meta{display:flex;justify-content:center;gap:50px;margin-top:56px;flex-wrap:wrap}
+  .contact .c-ctas{display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+  .contact .meta{display:flex;justify-content:center;gap:50px;margin-top:50px;flex-wrap:wrap}
   .contact .meta .l{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-  .contact .meta .v{font-size:15px;margin-top:7px;color:var(--ink)}
+  .contact .meta .v{font-size:14px;margin-top:7px;color:var(--ink)}
 
-  /* footer */
   footer.site{border-top:1px solid var(--line);padding:36px 0 46px}
   footer.site .row{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;font-family:"JetBrains Mono";font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
   footer.site .links{display:flex;gap:22px}
-  footer.site .links a{color:var(--ink-2);transition:color .3s}
-  footer.site .links a:hover{color:var(--violet)}
+  footer.site .links a{color:var(--ink-2);transition:color .3s}footer.site .links a:hover{color:var(--violet)}
 
   @media (prefers-reduced-motion: reduce){
     *{animation:none!important;transition-duration:.001s!important}
@@ -299,17 +311,17 @@
   <div class="wrap nav">
     <a class="brand" href="#top">
       <div class="logo-gm"><b>G</b><b>M</b></div>
-      <div class="brand-text"><b>Gonzalo Moreno</b><span>Art Director · Motion</span></div>
+      <div class="brand-text"><b>Gonzalo Moreno</b><span>Motion · Art Direction</span></div>
     </a>
     <nav><ul>
-      <li><a href="#work"><span class="ix">01</span>Work</a></li>
-      <li><a href="#approach"><span class="ix">02</span>Approach</a></li>
-      <li><a href="#lab"><span class="ix">03</span>Lab</a></li>
-      <li><a href="#about"><span class="ix">04</span>About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reel">Reel</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#calculator">Calculator</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul></nav>
-    <a href="#contact" class="btn btn-grad" style="height:46px;padding:0 22px">Let's talk
-      <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <a href="#calculator" class="btn btn-grad" style="height:46px;padding:0 20px">Estimate a project</a>
   </div>
 </header>
 
@@ -318,23 +330,24 @@
   <span class="bracket br-tl"></span><span class="bracket br-br"></span>
   <div class="readout">SYS // MOTION.ENGINE<br><b>FPS</b> 24 · 4K · OK<br><b>LAT</b> 48.85 / 2.35<br><b>STATUS</b> ● ONLINE</div>
   <div class="wrap">
-    <span class="eyebrow">Paris · Art Direction × 2D/3D Motion</span>
+    <span class="eyebrow">Paris · Senior Motion Designer & Art Director</span>
     <h1>
-      <span class="line"><span>I turn strategy into</span></span>
-      <span class="line"><span><em class="grad-text">moving visual worlds.</em></span></span>
+      <span class="line"><span>Motion films and visual</span></span>
+      <span class="line"><span>systems for brands that need</span></span>
+      <span class="line"><span>to <em class="grad-text">launch, explain &amp; stand out.</em></span></span>
     </h1>
     <div class="hero-bottom">
       <div>
-        <p class="hero-lede">Art direction and 2D/3D motion design for campaigns, product launches, SaaS explainers, gaming content and digital brands.</p>
+        <p class="hero-lede">I create SaaS explainers, 3D product visuals, brand films and campaign motion systems — crafted from visual direction to final delivery.</p>
         <div class="hero-ctas">
-          <a href="#work" class="btn btn-grad">View selected work
+          <a href="#work" class="btn btn-grad">View motion work
             <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="#approach" class="btn btn-line">See motion approach</a>
+          <a href="#calculator" class="btn btn-line">Estimate a project</a>
         </div>
       </div>
       <div class="hero-tags">
-        <span class="tag">Art Direction</span><span class="tag">2D Motion</span><span class="tag">3D Motion</span><span class="tag">Campaign Films</span><span class="tag">SaaS Explainers</span><span class="tag">Gaming Content</span><span class="tag">Visual Systems</span><span class="tag">AI Lookdev</span>
+        <span class="tag">Art Direction</span><span class="tag">2D Motion</span><span class="tag">3D Motion</span><span class="tag">Brand Films</span><span class="tag">SaaS Explainers</span><span class="tag">Campaign Motion</span><span class="tag">Motion Identity</span>
       </div>
     </div>
   </div>
@@ -344,133 +357,228 @@
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Art Direction</span><span>2D / 3D Motion</span><span>Campaign Systems</span><span>Kinetic Typography</span><span>Cinematic Lookdev</span><span>AI-Assisted</span>
-    <span>Art Direction</span><span>2D / 3D Motion</span><span>Campaign Systems</span><span>Kinetic Typography</span><span>Cinematic Lookdev</span><span>AI-Assisted</span>
+    <span>SaaS Explainers</span><span>3D Product Visuals</span><span>Brand Films</span><span>Campaign Motion</span><span>Motion Identity</span><span>Social Ads</span>
+    <span>SaaS Explainers</span><span>3D Product Visuals</span><span>Brand Films</span><span>Campaign Motion</span><span>Motion Identity</span><span>Social Ads</span>
   </div>
 </div>
 
-<!-- MANIFESTO -->
-<section class="manifesto">
+<!-- INTRO -->
+<section class="intro">
   <div class="wrap reveal">
-    <span class="eyebrow" style="margin-bottom:32px">Manifesto / 00</span>
-    <p class="big">I work where <b>motion meets strategy</b>, cinematic language and digital culture. My approach combines <b>cinematic rhythm</b>, strategic storytelling and <b>modular visual systems</b> <span class="mute">to help brands launch, explain and stand out.</span></p>
-    <div class="manifesto-meta">
-      <div><span class="label">Discipline</span><p>Art direction, 2D/3D motion and visual systems.</p></div>
-      <div><span class="label">Sectors</span><p>Tech, SaaS, gaming, advertising and digital brands.</p></div>
+    <span class="eyebrow" style="margin-bottom:32px">Profile / 00</span>
+    <p class="big">A <b>Paris-based art director and senior motion designer</b> with a background in advertising, digital arts and multimedia direction. I create <b>2D and 3D motion films</b>, product explainers and campaign systems <span class="mute">for brands that need clarity, rhythm and visual character.</span></p>
+    <div class="intro-meta">
+      <div><span class="label">Discipline</span><p>Art direction, 2D/3D motion, VFX and editing.</p></div>
+      <div><span class="label">Sectors</span><p>SaaS, tech, gaming, advertising and digital brands.</p></div>
       <div><span class="label">Mode</span><p>From concept and direction to final delivery.</p></div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="approach">
+<section id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">What I do</span><h2>Motion with strategy, rhythm and visual direction.</h2></div>
-      <span class="sec-no">[ Services / 05 ]</span>
+      <div class="lead"><span class="eyebrow">Motion services</span><h2>What I create for brands.</h2><p>Six motion services covering the full spectrum — from product explainers to cinematic 3D and campaign systems.</p></div>
+      <span class="sec-no">[ Services / 01 ]</span>
     </div>
-    <div class="svc-list">
-      <div class="svc reveal"><div class="no">01</div><h3>Art Direction &amp; Visual Systems</h3><div class="desc">Concepts, moodboards, styleframes and visual languages for brands, campaigns and digital products.</div><div class="tools"><span>Concept</span><span>Styleframes</span><span>Systems</span></div></div>
-      <div class="svc reveal"><div class="no">02</div><h3>2D Motion &amp; Kinetic Typography</h3><div class="desc">Animated layouts, type systems and social assets designed for rhythm, clarity and retention.</div><div class="tools"><span>After Effects</span><span>Kinetic Type</span><span>Social</span></div></div>
-      <div class="svc reveal"><div class="no">03</div><h3>3D Motion &amp; Cinematic Lookdev</h3><div class="desc">3D scenes, product visuals, lighting, camera movement and cinematic compositions.</div><div class="tools"><span>Cinema 4D</span><span>Blender</span><span>Octane</span></div></div>
-      <div class="svc reveal"><div class="no">04</div><h3>Campaign Films &amp; Product Launches</h3><div class="desc">Brand films, SaaS explainers and modular assets for web, social and paid campaigns.</div><div class="tools"><span>Direction</span><span>Editing</span><span>Launch</span></div></div>
-      <div class="svc reveal"><div class="no">05</div><h3>AI-Assisted Creative Development</h3><div class="desc">Fast visual exploration and experimental workflows — AI as a creative accelerator, not a gimmick.</div><div class="tools"><span>Runway</span><span>Midjourney</span><span>ComfyUI</span></div></div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="no">01</div><h3>SaaS Motion Explainers</h3><p class="desc">Clear, conversion-focused motion videos for SaaS products, apps and digital platforms.</p><ul class="deliv"><li>Product explainers</li><li>UI motion</li><li>App walkthroughs</li><li>Launch videos</li><li>Social cutdowns</li></ul></div>
+      <div class="svc reveal d1"><div class="no">02</div><h3>3D Product Visualization</h3><p class="desc">Cinematic 3D visuals that make products feel tangible, premium and desirable.</p><ul class="deliv"><li>3D product shots</li><li>Lookdev</li><li>Camera animation</li><li>Packshots</li><li>Launch visuals</li></ul></div>
+      <div class="svc reveal d2"><div class="no">03</div><h3>Brand Films</h3><p class="desc">Films combining cinematic rhythm, storytelling and motion design to build perception.</p><ul class="deliv"><li>Brand films</li><li>Manifesto videos</li><li>Campaign films</li><li>Editing</li><li>Motion graphics</li></ul></div>
+      <div class="svc reveal"><div class="no">04</div><h3>Campaign Motion Systems</h3><p class="desc">Modular motion systems for campaigns that need consistency across social, web and paid.</p><ul class="deliv"><li>Campaign assets</li><li>Motion templates</li><li>Format adaptations</li><li>Paid creatives</li></ul></div>
+      <div class="svc reveal d1"><div class="no">05</div><h3>Social Motion Ads</h3><p class="desc">Fast, high-retention motion content for social platforms, launches and paid campaigns.</p><ul class="deliv"><li>Reels</li><li>Short ads</li><li>Kinetic type</li><li>Hooks</li><li>Vertical formats</li></ul></div>
+      <div class="svc reveal d2"><div class="no">06</div><h3>Motion Identity</h3><p class="desc">Animated brand systems that give identity, rhythm and consistency to every touchpoint.</p><ul class="deliv"><li>Logo animation</li><li>Transitions</li><li>Lower thirds</li><li>Intro / outro</li><li>Motion kit</li></ul></div>
+    </div>
+    <div class="caps reveal">
+      <span>VFX &amp; compositing</span><span>AI-assisted styleframes</span><span>Look development</span><span>Video editing</span><span>Sound rhythm</span><span>Format adaptation</span>
     </div>
   </div>
 </section>
 
-<!-- WORK -->
+<!-- FEATURED REEL -->
+<section id="reel">
+  <div class="wrap">
+    <div class="reel reveal" role="img" aria-label="Selected Motion Work reel">
+      <span class="bracket br-tl"></span><span class="bracket br-tr"></span><span class="bracket br-bl"></span><span class="bracket br-br"></span>
+      <div class="reel-inner">
+        <div class="play" tabindex="0" role="button" aria-label="Play reel"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div>
+        <h3>Selected Motion Work</h3>
+        <p>A focused selection of motion design, 3D visuals, brand films and campaign assets across advertising, tech, SaaS and digital culture.</p>
+      </div>
+      <div class="reel-stamp">PLAY REEL ● 4K / 24FPS</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK SAMPLES -->
 <section id="work">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Selected work</span><h2>From campaign idea to animated system.</h2><p>Organised by the problem each project solves. A structure built to hold real case studies — context, direction, motion approach, deliverables and result.</p></div>
-      <span class="sec-no">[ Index / 06 ]</span>
+      <div class="lead"><span class="eyebrow">Selected work</span><h2>Motion that explains, launches and converts.</h2><p>A structure built to hold real case studies — context, direction, motion approach, deliverables and result.</p></div>
+      <span class="sec-no">[ Work / 02 ]</span>
     </div>
-    <div class="filters reveal">
-      <button class="filter active" data-cat="all">All</button>
-      <button class="filter" data-cat="launch">Launch Films</button>
-      <button class="filter" data-cat="systems">Motion Systems</button>
-      <button class="filter" data-cat="3d">3D Worlds</button>
-      <button class="filter" data-cat="campaign">Campaign</button>
-      <button class="filter" data-cat="lab">Lab</button>
-    </div>
-    <div class="work-grid" id="workGrid">
-      <a class="proj big reveal" href="#" data-cat="launch">
+    <div class="work-grid">
+      <a class="proj big reveal" href="#">
         <div class="layer t1"><div class="orb"></div></div><span class="bracket br-tr"></span>
-        <div class="top"><span class="pill">Case 001</span><span class="pill">SaaS Launch</span></div>
-        <div class="bot"><div><h3>Product Launch Film</h3><div class="cat">Launch Film · 2D/3D · Tech</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="top"><span class="pill">Case 001</span><span class="pill">SaaS · 2D</span></div>
+        <div class="bot"><div><h3>SaaS Product Explainer</h3><div class="cat">Animated product video · UI motion</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </a>
-      <a class="proj reveal d1" href="#" data-cat="systems">
-        <div class="layer t2"><div class="scan"></div><div class="scan2"></div></div>
-        <div class="top"><span class="pill">Case 002</span></div>
-        <div class="bot"><div><h3>Animated Brand System</h3><div class="cat">Motion System · Social</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal" href="#" data-cat="3d">
-        <div class="layer t3"><div class="grid3"></div></div>
-        <div class="top"><span class="pill">Case 003</span></div>
-        <div class="bot"><div><h3>3D Visual World</h3><div class="cat">3D Motion · Lookdev</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal d1" href="#" data-cat="campaign">
-        <div class="layer t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-        <div class="top"><span class="pill">Case 004</span><span class="pill">Gaming / FPV</span></div>
-        <div class="bot"><div><h3>Gaming Drop Campaign</h3><div class="cat">Campaign · Kinetic Type</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal" href="#" data-cat="launch">
+      <a class="proj reveal d1" href="#">
         <div class="layer t6"><div class="rings"></div><div class="dot"></div></div>
-        <div class="top"><span class="pill">Case 005</span><span class="pill">Explainer</span></div>
-        <div class="bot"><div><h3>SaaS Onboarding Explainer</h3><div class="cat">Launch · UI Motion</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="top"><span class="pill">Case 002</span><span class="pill">3D</span></div>
+        <div class="bot"><div><h3>3D Product Visualization</h3><div class="cat">Cinematic product film · Lookdev</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </a>
-      <a class="proj reveal d1" href="#" data-cat="lab">
-        <div class="layer t5"><div class="kt">FLOW</div></div>
-        <div class="top"><span class="pill">Case 006</span><span class="pill">AI Lookdev</span></div>
-        <div class="bot"><div><h3>AI Lookdev Study</h3><div class="cat">Experimental · Styleframes</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      <a class="proj reveal" href="#">
+        <div class="layer t2"><div class="scan"></div><div class="scan2"></div></div>
+        <div class="top"><span class="pill">Case 003</span></div>
+        <div class="bot"><div><h3>Brand Film System</h3><div class="cat">Brand & campaign motion</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </a>
-    </div>
-
-    <div class="reel reveal" style="margin-top:54px" role="img" aria-label="Showreel 2025">
-      <span class="bracket br-tl"></span><span class="bracket br-tr"></span><span class="bracket br-bl"></span><span class="bracket br-br"></span>
-      <div class="reel-inner">
-        <div class="play" tabindex="0" role="button" aria-label="Play showreel"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div>
-        <h3>Showreel ’25</h3>
-        <div class="meta">02:18 · Direction × Motion</div>
-      </div>
-      <div class="reel-stamp">REC ● 4K / 24FPS</div>
+      <a class="proj reveal d1" href="#">
+        <div class="layer t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="top"><span class="pill">Case 004</span><span class="pill">Social</span></div>
+        <div class="bot"><div><h3>Social Motion Campaign</h3><div class="cat">Short-form · Kinetic type</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </a>
+      <a class="proj reveal" href="#">
+        <div class="layer t3"><div class="grid3"></div></div>
+        <div class="top"><span class="pill">Case 005</span></div>
+        <div class="bot"><div><h3>Motion Identity Kit</h3><div class="cat">Animated brand system</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </a>
+      <a class="proj reveal d1" href="#">
+        <div class="layer t5"><div class="kt">AI</div></div>
+        <div class="top"><span class="pill">Case 006</span><span class="pill">Lookdev</span></div>
+        <div class="bot"><div><h3>AI Styleframes & Lookdev</h3><div class="cat">Visual research · Art direction</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </a>
     </div>
   </div>
 </section>
+
+<!-- VIDEO CAROUSELS -->
+<section id="archive">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="lead"><span class="eyebrow">Explore by type</span><h2>Motion archive.</h2><p>Drag to explore. Categorised reels across SaaS, 3D and brand &amp; campaign motion.</p></div>
+      <span class="sec-no">[ Archive / 03 ]</span>
+    </div>
+
+    <div class="carousel reveal">
+      <div class="ch"><div><h3>SaaS Motion Explainers</h3><p>Motion videos that turn complex products into clear, engaging, conversion-focused stories.</p></div><span class="drag">← Drag →</span></div>
+      <div class="row">
+        <div class="vcard"><div class="v t1"><div class="orb"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">SaaS motion video</div><h4>Product Explainer</h4><div class="rt"><b>Role</b>Art direction, motion design, UI animation<br><b style="margin-top:6px">Tools</b>After Effects, Figma, C4D</div></div></div>
+        <div class="vcard"><div class="v t2"><div class="scan"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Product walkthrough</div><h4>Workflow Overview</h4><div class="rt"><b>Role</b>Storyboard, UI motion, animation<br><b style="margin-top:6px">Tools</b>After Effects, Figma, Premiere Pro</div></div></div>
+        <div class="vcard"><div class="v t6"><div class="rings"></div><div class="dot"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">App explainer</div><h4>Onboarding Video</h4><div class="rt"><b>Role</b>Motion design, editing, formats<br><b style="margin-top:6px">Tools</b>After Effects, Illustrator, Premiere</div></div></div>
+      </div>
+    </div>
+
+    <div class="carousel reveal">
+      <div class="ch"><div><h3>3D Product Visualization</h3><p>Cinematic 3D visuals that make products feel premium, tangible and ready to launch.</p></div><span class="drag">← Drag →</span></div>
+      <div class="row">
+        <div class="vcard"><div class="v t6"><div class="rings"></div><div class="dot"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">3D product animation</div><h4>Product Hero Film</h4><div class="rt"><b>Role</b>3D lookdev, camera, lighting, motion<br><b style="margin-top:6px">Tools</b>Blender, C4D, After Effects</div></div></div>
+        <div class="vcard"><div class="v t3"><div class="grid3"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">3D launch visual</div><h4>Device Showcase</h4><div class="rt"><b>Role</b>Art direction, 3D motion, compositing<br><b style="margin-top:6px">Tools</b>Blender, After Effects, Premiere</div></div></div>
+        <div class="vcard"><div class="v t1"><div class="orb"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Cinematic 3D visual</div><h4>Abstract Product World</h4><div class="rt"><b>Role</b>Visual direction, 3D, motion design<br><b style="margin-top:6px">Tools</b>Cinema 4D, Blender, After Effects</div></div></div>
+      </div>
+    </div>
+
+    <div class="carousel reveal" style="margin-bottom:0">
+      <div class="ch"><div><h3>Brand Films & Campaign Motion</h3><p>Cinematic stories and modular motion systems for launches, campaigns and brand perception.</p></div><span class="drag">← Drag →</span></div>
+      <div class="row">
+        <div class="vcard"><div class="v t2"><div class="scan"></div><div class="scan2"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Campaign film</div><h4>Brand Film</h4><div class="rt"><b>Role</b>Art direction, editing, motion graphics<br><b style="margin-top:6px">Tools</b>Premiere, After Effects, DaVinci</div></div></div>
+        <div class="vcard"><div class="v t3"><div class="grid3"></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Modular campaign assets</div><h4>Campaign Motion System</h4><div class="rt"><b>Role</b>Motion system, templates, adaptations<br><b style="margin-top:6px">Tools</b>After Effects, Figma, Premiere</div></div></div>
+        <div class="vcard"><div class="v t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="play-s"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div></div><div class="m"><div class="type">Short-form campaign</div><h4>Social Motion Ads</h4><div class="rt"><b>Role</b>Editing, kinetic typography, motion<br><b style="margin-top:6px">Tools</b>After Effects, Premiere, Illustrator</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="lead"><span class="eyebrow">What I can make for you</span><h2>Solutions, ready to brief.</h2></div>
+      <span class="sec-no">[ Solutions / 04 ]</span>
+    </div>
+    <div class="sol-grid">
+      <div class="sol reveal"><div class="no">01</div><h4>SaaS Explainer Video</h4><p>Explain a product or feature with a clear animated story for landing pages, launches and sales.</p></div>
+      <div class="sol reveal d1"><div class="no">02</div><h4>Product Launch Film</h4><p>A high-impact motion piece to introduce a new product, app or digital platform.</p></div>
+      <div class="sol reveal d2"><div class="no">03</div><h4>3D Product Film</h4><p>Showcase a product through cinematic lighting, camera movement and 3D lookdev.</p></div>
+      <div class="sol reveal d3"><div class="no">04</div><h4>Brand Film</h4><p>Build perception with storytelling, editing, visual direction and motion graphics.</p></div>
+      <div class="sol reveal"><div class="no">05</div><h4>Campaign Motion System</h4><p>A coherent motion language across multiple assets, formats and channels.</p></div>
+      <div class="sol reveal d1"><div class="no">06</div><h4>Social Motion Kit</h4><p>Short-form animated assets, reels, hooks and cutdowns for social and paid.</p></div>
+      <div class="sol reveal d2"><div class="no">07</div><h4>Motion Identity Kit</h4><p>Logo motion, transitions, lower thirds, intros, outros and reusable elements.</p></div>
+      <div class="sol reveal d3"><div class="no">08</div><h4>AI Lookdev Sprint</h4><p>Explore visual territories and styleframes faster with AI-assisted, art-directed workflows.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES MARQUEE -->
+<div class="ticker big rev" aria-hidden="true" style="margin:0 0 0">
+  <div class="ticker-track">
+    <span>SaaS</span><span class="ghost">Technology</span><span>Startups</span><span class="ghost">Gaming</span><span>Media</span><span class="ghost">Advertising</span><span>Product Launches</span><span class="ghost">Agencies</span><span>Digital Brands</span><span class="ghost">E-learning</span><span>Music &amp; Culture</span><span class="ghost">Sports</span>
+    <span>SaaS</span><span class="ghost">Technology</span><span>Startups</span><span class="ghost">Gaming</span><span>Media</span><span class="ghost">Advertising</span><span>Product Launches</span><span class="ghost">Agencies</span><span>Digital Brands</span><span class="ghost">E-learning</span><span>Music &amp; Culture</span><span class="ghost">Sports</span>
+  </div>
+</div>
 
 <!-- PROCESS -->
 <section id="process">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">How I work</span><h2>Visual direction for brands that need more than decoration.</h2></div>
-      <span class="sec-no">[ Process / 07 ]</span>
+      <div class="lead"><span class="eyebrow">How I work</span><h2>From brief to final delivery.</h2></div>
+      <span class="sec-no">[ Process / 05 ]</span>
     </div>
     <div class="steps reveal">
-      <div class="step"><div class="no">01</div><h4>Decode</h4><p>Understand the brand, audience, message and desired perception.</p><div class="strip"><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
-      <div class="step"><div class="no">02</div><h4>Frame</h4><p>Define the visual direction, references, mood and narrative.</p><div class="strip"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div>
-      <div class="step"><div class="no">03</div><h4>Design</h4><p>Styleframes, layouts, motion principles and a modular system.</p><div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
-      <div class="step"><div class="no">04</div><h4>Animate</h4><p>2D/3D animation, camera moves, transitions and compositing.</p><div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
-      <div class="step"><div class="no">05</div><h4>Deliver</h4><p>Campaign-ready assets, formats, versions and implementation.</p><div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+      <div class="step"><div class="no">01</div><h4>Brief & direction</h4><p>Goal, audience, message, references, constraints, formats and desired perception.</p></div>
+      <div class="step"><div class="no">02</div><h4>Visual direction</h4><p>Moodboards, styleframes, rhythm, typography, color, composition and motion language.</p></div>
+      <div class="step"><div class="no">03</div><h4>Storyboard & plan</h4><p>Scenes, timing, deliverables, review process and production schedule.</p></div>
+      <div class="step"><div class="no">04</div><h4>Motion production</h4><p>2D animation, 3D visuals, editing, sound rhythm, VFX, compositing and versions.</p></div>
+      <div class="step"><div class="no">05</div><h4>Review & delivery</h4><p>Feedback, revisions, final exports, optimized files and delivery formats.</p></div>
     </div>
-    <p class="process-foot reveal">Structured enough to be reliable. <span class="mute">Flexible enough to find the unexpected.</span></p>
   </div>
 </section>
 
-<!-- LAB -->
-<section id="lab">
+<!-- CALCULATOR -->
+<section id="calculator">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Motion Lab</span><h2>Where the next visual language gets tested.</h2><p>A space for experiments, visual research and emerging workflows — how AI, realtime tools, 3D and motion shape the next generation of brand content.</p></div>
-      <span class="sec-no">[ Lab / 08 ]</span>
+      <div class="lead"><span class="eyebrow">Project calculator</span><h2>Estimate your motion project.</h2><p>Get a first estimate based on scope, duration, complexity, formats and production needs.</p></div>
+      <span class="sec-no">[ Calculator / 06 ]</span>
     </div>
-    <div class="lab-grid">
-      <div class="lab w2 reveal"><div class="layer t5"><div class="kt">AI</div></div><div class="lm"><h4>AI Styleframes</h4><span>Runway · MJ</span></div></div>
-      <div class="lab reveal d1"><div class="layer t6"><div class="rings"></div><div class="dot"></div></div><div class="lm"><h4>Realtime</h4><span>Unreal · Blender</span></div></div>
-      <div class="lab reveal d2"><div class="layer t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="lm"><h4>FPV &amp; Gaming</h4><span>Speed · Overlays</span></div></div>
-      <div class="lab reveal"><div class="layer t2"><div class="scan"></div><div class="scan2"></div></div><div class="lm"><h4>Interface Motion</h4><span>UI · Systems</span></div></div>
-      <div class="lab reveal d1"><div class="layer t3"><div class="grid3"></div></div><div class="lm"><h4>3D Lookdev</h4><span>Lighting · Camera</span></div></div>
-      <div class="lab w2 reveal d2"><div class="layer t1"><div class="orb"></div></div><div class="lm"><h4>Kinetic Type</h4><span>Rhythm · Shaders</span></div></div>
+    <div class="calc reveal">
+      <div class="calc-form">
+        <div class="calc-field"><span class="lab">Project type</span><div class="opts" data-group="type">
+          <button class="opt sel" data-v="2600" data-pkg="SaaS Explainer">SaaS Explainer</button>
+          <button class="opt" data-v="4500" data-pkg="3D Product Film">3D Product Film</button>
+          <button class="opt" data-v="6000" data-pkg="Brand Film">Brand Film</button>
+          <button class="opt" data-v="5000" data-pkg="Campaign Motion System">Campaign System</button>
+          <button class="opt" data-v="1200" data-pkg="Essential Motion">Social Motion Ads</button>
+          <button class="opt" data-v="2200" data-pkg="Essential Motion">Motion Identity</button>
+        </div></div>
+        <div class="calc-field"><span class="lab">Video duration</span><div class="opts" data-group="dur">
+          <button class="opt sel" data-v="1">≤15s</button><button class="opt" data-v="1.3">30s</button><button class="opt" data-v="1.7">60s</button><button class="opt" data-v="2.2">90s+</button>
+        </div></div>
+        <div class="calc-field"><span class="lab">Visual complexity</span><div class="opts" data-group="cx">
+          <button class="opt sel" data-v="1">Simple</button><button class="opt" data-v="1.4">Medium</button><button class="opt" data-v="1.9">Complex</button>
+        </div></div>
+        <div class="calc-field"><span class="lab">Technique</span><div class="opts" data-group="tech">
+          <button class="opt sel" data-v="1">2D</button><button class="opt" data-v="1.3">Mixed 2D/3D</button><button class="opt" data-v="1.6">3D</button>
+        </div></div>
+        <div class="calc-field"><span class="lab">Formats</span><div class="opts" data-group="fmt">
+          <button class="opt sel" data-v="0">1 format</button><button class="opt" data-v="600">2–3</button><button class="opt" data-v="1400">4+</button>
+        </div></div>
+        <div class="calc-field"><span class="lab">Add-ons</span><div class="opts" data-group="add" data-multi="1">
+          <button class="opt" data-v="500">Script</button><button class="opt" data-v="450">Voice-over</button><button class="opt" data-v="900">Rush</button>
+        </div></div>
+      </div>
+      <div class="calc-out">
+        <span class="bracket br-tr"></span>
+        <div class="label">Estimated budget range</div>
+        <div class="price" id="calcPrice">€2,300 – €2,900</div>
+        <div class="ln"><span>Production time</span><b id="calcTime">2–3 weeks</b></div>
+        <div class="ln"><span>Recommended package</span><b id="calcPkg">SaaS Explainer</b></div>
+        <a href="#contact" class="btn btn-grad">Request a precise quote
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="disc">This is a starting estimate. Final pricing depends on the brief, production complexity, timeline and deliverables.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -481,18 +589,35 @@
     <div class="about">
       <div class="portrait reveal"><span class="bracket br-tl"></span><span class="bracket br-br"></span></div>
       <div class="info reveal d1">
-        <span class="eyebrow">About</span>
-        <h2>Designed to explain, seduce and convert.</h2>
-        <p>I'm a Paris-based art director and motion designer with a background in advertising, digital arts and multimedia project direction.</p>
-        <p>My work connects campaign thinking, visual storytelling and 2D/3D motion design for brands that need content with rhythm, clarity and character — from concept to final delivery.</p>
-        <div class="skills"><span>Advertising background</span><span>Motion design</span><span>Digital arts</span><span>Project direction</span><span>Tech · SaaS · Gaming</span><span>AI-aware workflow</span></div>
+        <span class="eyebrow">Profile</span>
+        <h2>Paris-based art director & senior motion designer.</h2>
+        <p>I create 2D and 3D motion films, product explainers and campaign systems for brands that need clarity, rhythm and visual character — combining advertising thinking with hands-on motion craft.</p>
+        <div class="skills"><span>Advertising & campaign thinking</span><span>2D & 3D motion</span><span>Tech · SaaS · Gaming</span><span>AI-assisted lookdev</span><span>Multimedia direction</span></div>
       </div>
     </div>
     <div class="stats reveal">
-      <div class="stat"><div class="v grad-text">7+ years</div><div class="l">Design &amp; motion</div></div>
-      <div class="stat"><div class="v grad-text">2D · 3D · Campaign</div><div class="l">Workflows</div></div>
-      <div class="stat"><div class="v grad-text">Advertising</div><div class="l">&amp; digital arts roots</div></div>
-      <div class="stat"><div class="v grad-text">Concept → Delivery</div><div class="l">End to end</div></div>
+      <div class="stat"><div class="l">Paris-based<br>creative profile</div></div>
+      <div class="stat"><div class="l">Advertising &<br>digital arts roots</div></div>
+      <div class="stat"><div class="l">2D & 3D<br>motion workflow</div></div>
+      <div class="stat"><div class="l">Concept to<br>final delivery</div></div>
+      <div class="stat"><div class="l">For agencies,<br>startups & brands</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow c">FAQ</span><h2>Common questions.</h2></div>
+    <div class="faq reveal">
+      <details><summary>What kind of motion design projects do you create?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">SaaS explainers, 3D product visuals, brand films, campaign motion systems, social motion ads and motion identity assets.</p></details>
+      <details><summary>Can you manage a project from concept to final delivery?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — from brief, visual direction and styleframes to storyboard, animation, revisions and final exports.</p></details>
+      <details><summary>Do you work with agencies and startups?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — agencies, startups, SaaS companies, creative teams and brands that need motion design support.</p></details>
+      <details><summary>Can you create both 2D and 3D motion?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — 2D motion, kinetic typography, UI animation, 3D visualization, compositing and editing.</p></details>
+      <details><summary>Can you create versions for social media and paid campaigns?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes — horizontal, vertical and square formats, plus shorter cutdowns for social and paid media.</p></details>
+      <details><summary>Do you use AI in your creative workflow?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Yes, when useful — AI-assisted workflows for visual exploration, styleframes and lookdev, always guided by art direction.</p></details>
+      <details><summary>How long does a motion project take?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Simple assets take a few days. SaaS explainers, brand films or 3D videos need more time depending on scope, feedback and complexity.</p></details>
+      <details><summary>How can I get an estimate?<span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke-width="2" stroke-linecap="round"/></svg></span></summary><p class="ans">Use the project calculator for a first range, then share your brief or references for a precise quote.</p></details>
     </div>
   </div>
 </section>
@@ -501,42 +626,93 @@
 <section class="contact" id="contact">
   <span class="bracket br-tl"></span><span class="bracket br-tr"></span><span class="bracket br-bl"></span><span class="bracket br-br"></span>
   <div class="wrap">
-    <span class="eyebrow c">Let's collaborate / 09</span>
-    <h2>Let's build a<br><em class="grad-text">moving</em> world</h2>
-    <a class="email" href="mailto:hello@gonzalomoreno.studio">hello@gonzalomoreno.studio
+    <span class="eyebrow c">Let's collaborate / 07</span>
+    <h2>Have a product, campaign or <em class="grad-text">motion project</em> in mind?</h2>
+    <p class="summary">Send the brief, share a reference or start with the calculator. I'll help you turn the idea into a clear motion production plan.</p>
+    <a class="email" href="mailto:hello@gonzalomoreno.com">hello@gonzalomoreno.com
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
+    <div class="c-ctas">
+      <a href="mailto:hello@gonzalomoreno.com" class="btn btn-grad">Start a project</a>
+      <a href="#calculator" class="btn btn-line">Estimate a project</a>
+      <a href="#" class="btn btn-line">View Behance</a>
+    </div>
     <div class="meta">
-      <div><div class="l">Based in</div><div class="v">Paris · Remote worldwide</div></div>
+      <div><div class="l">Based in</div><div class="v">Paris, France</div></div>
+      <div><div class="l">Availability</div><div class="v">Remote & international</div></div>
       <div><div class="l">Response</div><div class="v">Within 24 hours</div></div>
-      <div><div class="l">Status</div><div class="v">Open for projects</div></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="site">
   <div class="wrap row">
-    <div>© 2026 Gonzalo Moreno — Art Direction × Motion</div>
-    <div class="links"><a href="#">Instagram</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Vimeo</a></div>
+    <div>© 2026 Gonzalo Moreno — Motion & Art Direction · Paris</div>
+    <div class="links"><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">Vimeo</a></div>
   </div>
 </footer>
 
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // smooth scroll (lenis) — guarded
+  if(!reduce && window.Lenis){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
+    requestAnimationFrame(raf);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){const el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-70})}}});
+    });
+  }
+
+  // load + header
   window.addEventListener('load',()=>document.body.classList.add('loaded'));
   document.addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>document.body.classList.add('loaded')));
   const hdr=document.getElementById('hdr');
   const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
   onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -7% 0px'});
+
+  // reveals
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  const filters=document.querySelectorAll('.filter');
-  const projs=document.querySelectorAll('#workGrid .proj');
-  filters.forEach(b=>b.addEventListener('click',()=>{
-    filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');
-    const c=b.dataset.cat;
-    projs.forEach(p=>p.classList.toggle('hide',c!=='all'&&p.dataset.cat!==c));
-  }));
+
+  // drag-to-scroll carousels
+  document.querySelectorAll('.row').forEach(row=>{
+    let down=false,startX,scrollL;
+    row.addEventListener('pointerdown',e=>{down=true;row.classList.add('drag');startX=e.pageX;scrollL=row.scrollLeft});
+    row.addEventListener('pointermove',e=>{if(!down)return;row.scrollLeft=scrollL-(e.pageX-startX)});
+    const up=()=>{down=false;row.classList.remove('drag')};
+    row.addEventListener('pointerup',up);row.addEventListener('pointerleave',up);
+  });
+
+  // project calculator
+  (function(){
+    const groups={type:2600,dur:1,cx:1,tech:1,fmt:0,add:0};
+    let pkg='SaaS Explainer';
+    document.querySelectorAll('.opts').forEach(g=>{
+      const name=g.dataset.group, multi=g.dataset.multi;
+      g.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+        if(multi){b.classList.toggle('sel');}
+        else{g.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');if(b.dataset.pkg)pkg=b.dataset.pkg;}
+        calc();
+      }));
+    });
+    function val(name){const g=document.querySelector('.opts[data-group="'+name+'"]');
+      if(g.dataset.multi){let s=0;g.querySelectorAll('.opt.sel').forEach(b=>s+=+b.dataset.v);return s;}
+      const sel=g.querySelector('.opt.sel');return sel?+sel.dataset.v:0;}
+    function fmtE(n){return '€'+Math.round(n/100)*100;}
+    function calc(){
+      const base=val('type'),dur=val('dur'),cx=val('cx'),tech=val('tech'),fmt=val('fmt'),add=val('add');
+      let est=base*dur*cx*tech+fmt+add;
+      const lo=est*0.9, hi=est*1.15;
+      document.getElementById('calcPrice').textContent=fmtE(lo)+' – '+fmtE(hi);
+      const weeks=Math.max(1,Math.round(est/2200));
+      document.getElementById('calcTime').textContent=weeks<=1?'~1 week':weeks+'–'+(weeks+1)+' weeks';
+      document.getElementById('calcPkg').textContent=pkg;
+    }
+    calc();
+  })();
 </script>
 </body>
 </html>
