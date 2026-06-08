@@ -3,540 +3,303 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gonzalo Moreno — Art Direction & Motion Systems</title>
-<meta name="description" content="Gonzalo Moreno — Paris-based art director and 2D/3D motion designer. I turn strategy into moving visual worlds for campaigns, product launches, SaaS explainers, gaming content and digital brands.">
+<title>Immersite Portfolio | Gonzalo Andres Moreno</title>
+<meta name="description" content="Video-first portfolio using the Immersite visual system, colors and WordPress JSON content.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#08070f;
-    --bg-2:#0b0a16;
-    --surface:#111021;
-    --surface-2:#16152b;
-    --line:rgba(255,255,255,.09);
-    --line-2:rgba(255,255,255,.16);
-    --ink:#f0eef8;
-    --ink-2:#bcb7d2;
-    --ink-3:#8a85a6;
-    --violet:#8b6dff;
-    --blue:#5b7bff;
-    --cyan:#4fd6ff;
-    --grad:linear-gradient(100deg,#8b6dff,#5b7bff);
-    --grad-3:linear-gradient(100deg,#a98bff,#5b7bff,#4fd6ff);
-    /* semantic z-scale */
-    --z-bg:0; --z-base:1; --z-raised:2; --z-sticky:50; --z-nav:100;
-    --ease:cubic-bezier(.16,1,.3,1);
-    --maxw:1280px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  /* ambient cinematic light */
-  body::before{content:"";position:fixed;inset:0;z-index:var(--z-bg);pointer-events:none;
-    background:
-      radial-gradient(46% 40% at 84% -6%, rgba(139,109,255,.30), transparent 64%),
-      radial-gradient(42% 38% at 6% 8%, rgba(91,123,255,.22), transparent 64%),
-      radial-gradient(50% 46% at 96% 88%, rgba(79,214,255,.12), transparent 62%),
-      radial-gradient(60% 50% at 50% 116%, rgba(139,109,255,.16), transparent 60%);}
-  /* faint global grid + grain (HUD layer) */
-  body::after{content:"";position:fixed;inset:0;z-index:var(--z-bg);pointer-events:none;opacity:.5;
-    background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
-    background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000,transparent 85%)}
-  a{color:inherit;text-decoration:none}
-  ::selection{background:var(--violet);color:#fff}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:var(--z-base)}
-  @media(max-width:640px){.wrap{padding:0 22px}}
-
-  h1,h2,h3,h4,h5{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.035em;line-height:1.04;margin:0;text-wrap:balance}
-  p{text-wrap:pretty}
-  .grad-text{background:var(--grad-3);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .mono{font-family:"JetBrains Mono",monospace}
-
-  /* HUD eyebrow */
-  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--violet);display:inline-flex;align-items:center;gap:12px}
-  .eyebrow::before{content:"";width:30px;height:1px;background:linear-gradient(90deg,var(--violet),transparent)}
-  .eyebrow.c{justify-content:center}.eyebrow.c::after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--violet))}
-
-  /* corner brackets */
-  .bracket{position:absolute;width:26px;height:26px;border:1px solid var(--line-2);pointer-events:none;z-index:var(--z-raised)}
-  .br-tl{top:14px;left:14px;border-right:0;border-bottom:0}
-  .br-tr{top:14px;right:14px;border-left:0;border-bottom:0}
-  .br-bl{bottom:14px;left:14px;border-right:0;border-top:0}
-  .br-br{bottom:14px;right:14px;border-left:0;border-top:0}
-
-  /* buttons */
-  .btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:8px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;cursor:pointer;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s,background .35s,border-color .35s;white-space:nowrap}
-  .btn svg{width:16px;height:16px}
-  .btn-grad{background:var(--grad);color:#fff;box-shadow:0 12px 36px -12px rgba(139,109,255,.7)}
-  .btn-grad:hover{transform:translateY(-3px);box-shadow:0 18px 44px -12px rgba(91,123,255,.7)}
-  .btn-line{background:rgba(255,255,255,.03);border-color:var(--line-2);color:var(--ink)}
-  .btn-line:hover{transform:translateY(-3px);border-color:var(--violet);background:rgba(139,109,255,.08)}
-
-  /* ---------- header ---------- */
-  header{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);transition:background .4s,border-color .4s}
-  header.scrolled{background:rgba(8,7,15,.72);backdrop-filter:saturate(150%) blur(16px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;transition:padding .35s}
-  header.scrolled .nav{padding:13px 0}
-  .brand{display:flex;align-items:center;gap:13px}
-  .logo-gm{width:44px;height:44px;border:1px solid var(--line-2);display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:17px;letter-spacing:-.04em;position:relative;background:var(--surface)}
-  .logo-gm b:last-child{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .logo-gm::after{content:"";position:absolute;right:4px;bottom:4px;width:5px;height:5px;border-right:1px solid var(--violet);border-bottom:1px solid var(--violet)}
-  .brand-text{display:flex;flex-direction:column;line-height:1.15}
-  .brand-text b{font-family:"Space Grotesk";font-weight:600;font-size:14.5px}
-  .brand-text span{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.16em;color:var(--ink-3);text-transform:uppercase;margin-top:3px}
-  nav ul{list-style:none;display:flex;gap:32px;margin:0;padding:0;font-family:"JetBrains Mono";font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
-  nav ul a{position:relative;transition:color .25s}
-  nav ul a .ix{color:var(--ink-3);margin-right:5px;font-size:10px}
-  nav ul a:hover{color:var(--violet)}
-  @media(max-width:900px){nav ul{display:none}}
-
-  /* ---------- hero ---------- */
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:150px 0 80px;position:relative}
-  .hero .readout{position:absolute;top:120px;right:32px;font-family:"JetBrains Mono";font-size:11px;line-height:2;color:var(--ink-3);text-align:right;display:none}
-  .hero .readout b{color:var(--violet);font-weight:500}
-  @media(min-width:1100px){.hero .readout{display:block}}
-  .hero .eyebrow{margin-bottom:30px}
-  .hero h1{font-size:clamp(42px,8vw,96px);letter-spacing:-.04em;line-height:1.0}
-  .hero h1 .line{display:block;overflow:hidden;padding-bottom:.04em}
-  .hero h1 .line>span{display:block;transform:translateY(110%);transition:transform 1s var(--ease)}
-  .loaded .hero h1 .line>span{transform:translateY(0)}
-  .hero h1 .line:nth-child(2)>span{transition-delay:.1s}
-  .hero h1 em{font-style:normal}
-  .hero-bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:end;margin-top:52px}
-  .hero-lede{max-width:460px;color:var(--ink-2);font-size:18px;line-height:1.6;opacity:0;transform:translateY(18px);transition:opacity .8s ease .5s,transform .8s var(--ease) .5s}
-  .loaded .hero-lede{opacity:1;transform:none}
-  .hero-ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;opacity:0;transform:translateY(18px);transition:opacity .8s ease .62s,transform .8s var(--ease) .62s}
-  .loaded .hero-ctas{opacity:1;transform:none}
-  .hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;opacity:0;transition:opacity .9s ease .78s}
-  .loaded .hero-tags{opacity:1}
-  .tag{font-family:"JetBrains Mono";font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);padding:7px 13px;border-radius:6px;background:rgba(255,255,255,.02);transition:border-color .3s,color .3s}
-  .tag:hover{border-color:var(--violet);color:var(--violet)}
-  @media(max-width:860px){.hero-bottom{grid-template-columns:1fr;gap:34px}.hero-tags{justify-content:flex-start}}
-  .scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
-  .scroll-cue .bar{width:1px;height:42px;background:linear-gradient(var(--violet),transparent);animation:cue 1.9s var(--ease) infinite}
-  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-  /* ---------- ticker ---------- */
-  .ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--bg-2);position:relative;z-index:var(--z-base)}
-  .ticker-track{display:inline-flex;align-items:center;padding:15px 0;animation:scroll 32s linear infinite;will-change:transform}
-  .ticker:hover .ticker-track{animation-play-state:paused}
-  .ticker-track span{font-family:"JetBrains Mono";font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2);display:inline-flex;align-items:center;padding:0 22px}
-  .ticker-track span::after{content:"◆";color:var(--violet);margin-left:22px;font-size:8px}
-  @keyframes scroll{to{transform:translateX(-50%)}}
-
-  /* ---------- sections ---------- */
-  section{padding:120px 0;position:relative;z-index:var(--z-base)}
-  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
-  .sec-head.center{justify-content:center;text-align:center;flex-direction:column;align-items:center}
-  .sec-head .lead{max-width:680px}
-  .sec-head h2{font-size:clamp(32px,5vw,58px);margin-top:18px;letter-spacing:-.04em}
-  .sec-head p{color:var(--ink-2);font-size:16.5px;margin:18px 0 0;max-width:540px}
-  .sec-no{font-family:"JetBrains Mono";font-size:12px;color:var(--ink-3);white-space:nowrap;letter-spacing:.1em}
-
-  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
-
-  /* ---------- manifesto ---------- */
-  .manifesto .big{font-family:"Space Grotesk";font-weight:500;font-size:clamp(24px,3.4vw,42px);line-height:1.22;letter-spacing:-.02em;max-width:1000px}
-  .manifesto .big b{font-weight:700}
-  .manifesto .big .mute{color:var(--ink-3)}
-  .manifesto-meta{display:flex;gap:56px;margin-top:46px;flex-wrap:wrap}
-  .manifesto-meta .label{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);display:block;margin-bottom:9px}
-  .manifesto-meta p{margin:0;font-size:14.5px;color:var(--ink-2);max-width:230px}
-
-  /* ---------- services ---------- */
-  .svc-list{border-top:1px solid var(--line)}
-  .svc{display:grid;grid-template-columns:80px 1fr 1.1fr auto;gap:32px;align-items:start;padding:36px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .4s var(--ease)}
-  .svc::after{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:linear-gradient(90deg,rgba(139,109,255,.06),transparent 40%);opacity:0;transition:opacity .4s}
-  .svc:hover{padding-left:20px}
-  .svc:hover::after{opacity:1}
-  .svc>*{position:relative;z-index:var(--z-raised)}
-  .svc .no{font-family:"JetBrains Mono";font-size:13px;color:var(--violet);padding-top:7px}
-  .svc h3{font-size:clamp(21px,2.4vw,29px);letter-spacing:-.025em}
-  .svc .desc{color:var(--ink-2);font-size:15px}
-  .svc .tools{display:flex;flex-direction:column;gap:7px;align-items:flex-end;text-align:right}
-  .svc .tools span{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
-  @media(max-width:900px){.svc{grid-template-columns:50px 1fr;gap:12px 16px}.svc .tools{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:flex-start;text-align:left;margin-top:4px}}
-
-  /* ---------- work ---------- */
-  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
-  .filter{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);background:rgba(255,255,255,.02);padding:9px 16px;border-radius:6px;cursor:pointer;transition:all .3s}
-  .filter:hover{border-color:var(--line-2);transform:translateY(-2px)}
-  .filter.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:230px}
-  .proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;display:block;grid-column:span 2;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s,opacity .4s}
-  .proj.big{grid-row:span 2}
-  .proj:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 30px 60px -30px rgba(139,109,255,.5)}
-  .proj.hide{display:none}
-  .proj .layer{position:absolute;inset:0;transition:transform .9s var(--ease)}
-  .proj:hover .layer{transform:scale(1.06)}
-  .proj .top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:16px;z-index:var(--z-raised)}
-  .proj .pill{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:rgba(8,7,15,.55);backdrop-filter:blur(8px);border:1px solid var(--line-2);padding:6px 11px;border-radius:100px}
-  .proj .bot{position:absolute;left:0;right:0;bottom:0;z-index:var(--z-raised);padding:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;background:linear-gradient(0deg,rgba(6,5,12,.85),transparent)}
-  .proj .bot h3{font-size:20px;margin-bottom:6px}
-  .proj .bot .cat{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-2);letter-spacing:.04em}
-  .proj .arrow{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid var(--line-2);display:grid;place-items:center;flex-shrink:0;transition:background .4s,border-color .4s}
-  .proj .arrow svg{width:15px;height:15px;stroke:var(--ink);transition:transform .4s var(--ease)}
-  .proj:hover .arrow{background:var(--grad);border-color:transparent}
-  .proj:hover .arrow svg{transform:rotate(45deg)}
-  @media(max-width:860px){.work-grid{grid-template-columns:repeat(2,1fr)}.proj,.proj.big{grid-column:span 2;grid-row:span 1}}
-  @media(max-width:520px){.work-grid{grid-template-columns:1fr}.proj,.proj.big{grid-column:span 1}}
-
-  /* cinematic thumbnails (violet/blue) */
-  .t1{background:radial-gradient(circle at 50% 45%,#241a6b,#0a0816)}
-  .t1 .orb{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 0deg,#8b6dff,#5b7bff,#4fd6ff,#a98bff,#8b6dff);filter:blur(1px);box-shadow:0 0 80px rgba(139,109,255,.6);animation:spin 18s linear infinite}
-  .t1 .orb::after{content:"";position:absolute;inset:22%;border-radius:50%;background:#0a0816}
-  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-  .t2{background:linear-gradient(150deg,#161a44,#0a0816)}
-  .t2 .scan{position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 18px,rgba(91,123,255,.18) 18px 19px)}
-  .t2 .scan2{position:absolute;inset:0;background:repeating-linear-gradient(60deg,transparent 0 26px,rgba(139,109,255,.15) 26px 27px)}
-  .t3{background:linear-gradient(150deg,#2a1556,#100a22)}
-  .t3 .grid3{position:absolute;inset:8% 10%;background-image:linear-gradient(rgba(139,109,255,.36) 1px,transparent 1px),linear-gradient(90deg,rgba(139,109,255,.36) 1px,transparent 1px);background-size:34px 34px;transform:perspective(420px) rotateX(42deg);transform-origin:bottom}
-  .t4{background:linear-gradient(150deg,#0e2350,#0a0c1e)}
-  .t4 .bars{position:absolute;inset:auto 16% 18%;display:flex;gap:8px;align-items:flex-end;height:48%}
-  .t4 .bars i{flex:1;background:linear-gradient(var(--cyan),rgba(79,214,255,.2));border-radius:3px 3px 0 0;animation:eq 1.4s ease-in-out infinite}
-  .t4 .bars i:nth-child(2){animation-delay:.2s}.t4 .bars i:nth-child(3){animation-delay:.4s}.t4 .bars i:nth-child(4){animation-delay:.1s}.t4 .bars i:nth-child(5){animation-delay:.5s}.t4 .bars i:nth-child(6){animation-delay:.3s}.t4 .bars i:nth-child(7){animation-delay:.15s}
-  @keyframes eq{0%,100%{height:26%}50%{height:100%}}
-  .t5{background:linear-gradient(135deg,#3a1b6e,#120a26)}
-  .t5 .kt{position:absolute;inset:0;display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:clamp(36px,8vw,80px);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.3px rgba(255,255,255,.5);text-transform:uppercase}
-  .t6{background:radial-gradient(circle at 35% 30%,#152a6e,#0a0c1c)}
-  .t6 .rings{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58%;aspect-ratio:1}
-  .t6 .rings::before,.t6 .rings::after{content:"";position:absolute;inset:0;border:1px solid rgba(91,123,255,.55);border-radius:50%}
-  .t6 .rings::after{inset:22%;border-color:rgba(79,214,255,.6)}
-  .t6 .dot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:var(--cyan);transform:translate(-50%,-50%);box-shadow:0 0 16px var(--cyan)}
-
-  /* ---------- showreel ---------- */
-  .reel{position:relative;overflow:hidden;aspect-ratio:21/9;border:1px solid var(--line-2);border-radius:20px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 50%,#1c1340,#08060f)}
-  .reel::before{content:"";position:absolute;inset:0;background:conic-gradient(from 180deg at 50% 50%,rgba(139,109,255,.18),rgba(91,123,255,.12),rgba(79,214,255,.16),rgba(139,109,255,.18));animation:spin2 24s linear infinite;opacity:.7}
-  @keyframes spin2{to{transform:rotate(360deg)}}
-  .reel-inner{position:relative;z-index:var(--z-raised);text-align:center}
-  .reel .play{width:88px;height:88px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin:0 auto 22px;cursor:pointer;transition:transform .4s var(--ease)}
-  .reel .play:hover{transform:scale(1.1)}
-  .reel .play svg{width:28px;height:28px;fill:var(--bg);margin-left:4px}
-  .reel h3{font-size:clamp(26px,4vw,46px);text-transform:uppercase}
-  .reel .meta{font-family:"JetBrains Mono";color:var(--ink-2);letter-spacing:.16em;text-transform:uppercase;font-size:12px;margin-top:10px}
-  .reel-stamp{position:absolute;bottom:16px;left:18px;z-index:var(--z-raised);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.12em;color:var(--ink-3)}
-
-  /* ---------- process ---------- */
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line)}
-  .step{padding:32px 22px 28px;border-right:1px solid var(--line);position:relative;transition:background .4s}
-  .step:last-child{border-right:0}
-  .step:hover{background:rgba(255,255,255,.02)}
-  .step .no{font-family:"JetBrains Mono";font-size:12px;color:var(--violet);margin-bottom:22px}
-  .step h4{font-size:19px;margin-bottom:10px;letter-spacing:-.02em}
-  .step p{color:var(--ink-2);font-size:13.5px;margin:0;line-height:1.55}
-  .step .strip{display:flex;gap:3px;margin-top:20px}
-  .step .strip i{height:3px;flex:1;background:var(--line-2)}
-  .step .strip i.on{background:var(--violet)}
-  .process-foot{font-family:"Space Grotesk";font-size:clamp(18px,2.4vw,26px);font-weight:500;letter-spacing:-.02em;margin-top:46px;text-align:center}
-  .process-foot .mute{color:var(--ink-3)}
-  @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}.step:nth-child(2n){border-right:0}}
-  @media(max-width:520px){.steps{grid-template-columns:1fr}.step{border-right:0}}
-
-  /* ---------- lab ---------- */
-  .lab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;grid-auto-rows:200px}
-  .lab{border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;transition:transform .5s var(--ease),border-color .4s,box-shadow .4s}
-  .lab.w2{grid-column:span 2}
-  .lab:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 24px 50px -28px rgba(139,109,255,.5)}
-  .lab .layer{position:absolute;inset:0;transition:transform .8s var(--ease)}
-  .lab:hover .layer{transform:scale(1.06)}
-  .lab .lm{position:absolute;left:0;right:0;bottom:0;z-index:var(--z-raised);padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:linear-gradient(0deg,rgba(6,5,12,.8),transparent)}
-  .lab .lm h4{font-size:15px}
-  .lab .lm span{font-family:"JetBrains Mono";font-size:10.5px;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase}
-  @media(max-width:860px){.lab-grid{grid-template-columns:repeat(2,1fr)}.lab.w2{grid-column:span 2}}
-  @media(max-width:520px){.lab-grid{grid-template-columns:1fr}.lab.w2{grid-column:span 1}}
-
-  /* ---------- about ---------- */
-  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:stretch}
-  .about .portrait{border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#3a2f6e,#161228);position:relative;min-height:400px;border:1px solid var(--line-2)}
-  .about .portrait::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 74%,#2a2348 0 26%,transparent 28%),radial-gradient(circle at 50% 30%,#1c1632 0 15%,transparent 17%)}
-  .about .info{display:flex;flex-direction:column;justify-content:center}
-  .about h2{font-size:clamp(26px,3.4vw,42px);letter-spacing:-.03em;margin:16px 0 20px}
-  .about p{color:var(--ink-2);font-size:16px;line-height:1.7;margin:0 0 16px;max-width:480px}
-  .about .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-  .about .skills span{font-family:"JetBrains Mono";font-size:11.5px;color:var(--ink-2);border:1px solid var(--line);padding:7px 13px;border-radius:6px}
-  @media(max-width:860px){.about{grid-template-columns:1fr}.about .portrait{min-height:320px}}
-
-  /* stats */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:80px}
-  .stat{padding:38px 22px;border-right:1px solid var(--line)}
-  .stat:last-child{border-right:0}
-  .stat .v{font-family:"Space Grotesk";font-weight:700;font-size:clamp(20px,2.2vw,27px);letter-spacing:-.02em;line-height:1.15}
-  .stat .l{font-family:"JetBrains Mono";color:var(--ink-3);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-top:12px}
-  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2n){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-
-  /* ---------- contact ---------- */
-  .contact{text-align:center;padding:140px 0;position:relative}
-  .contact .eyebrow{margin-bottom:24px}
-  .contact h2{font-size:clamp(40px,8vw,104px);text-transform:uppercase;line-height:.98;letter-spacing:-.04em}
-  .contact h2 em{font-style:normal}
-  .contact .email{display:inline-flex;align-items:center;gap:14px;margin-top:38px;font-family:"Space Grotesk";font-weight:500;font-size:clamp(18px,3vw,30px);border-bottom:2px solid var(--line-2);padding-bottom:10px;transition:border-color .4s,gap .4s}
-  .contact .email:hover{border-color:var(--violet);gap:22px}
-  .contact .meta{display:flex;justify-content:center;gap:50px;margin-top:56px;flex-wrap:wrap}
-  .contact .meta .l{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-  .contact .meta .v{font-size:15px;margin-top:7px;color:var(--ink)}
-
-  /* footer */
-  footer.site{border-top:1px solid var(--line);padding:36px 0 46px}
-  footer.site .row{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;font-family:"JetBrains Mono";font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
-  footer.site .links{display:flex;gap:22px}
-  footer.site .links a{color:var(--ink-2);transition:color .3s}
-  footer.site .links a:hover{color:var(--violet)}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none!important;transition-duration:.001s!important}
-    .hero h1 .line>span,.hero-lede,.hero-ctas,.hero-tags{transform:none;opacity:1}
-    .reveal{opacity:1;transform:none}
-  }
+:root{
+  --theme-color:#684DF4;
+  --theme-color2:#684DF4;
+  --theme-color3:#FF8139;
+  --title-color:#141D38;
+  --body-color:#737887;
+  --smoke-color:#F5F5F5;
+  --smoke-color2:#E2E8FA;
+  --smoke-color3:#EFF1F9;
+  --black-color:#000000;
+  --black-color2:#080E1C;
+  --white-color:#ffffff;
+  --light-color:#72849B;
+  --border-color:#E0E0E0;
+  --title-font:"Barlow",sans-serif;
+  --body-font:"Roboto",sans-serif;
+  --container:1220px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--body-color);font-family:var(--body-font);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.title{font-family:var(--title-font);color:var(--title-color);font-weight:800;line-height:1.06;letter-spacing:-.025em;margin:0}
+.sub-title{font-family:var(--title-font);color:var(--theme-color);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;display:inline-flex;gap:10px;align-items:center;margin-bottom:18px}
+.sub-title:before{content:"";width:34px;height:2px;background:var(--theme-color)}
+.text{color:var(--body-color);margin:0}
+.th-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;background:var(--theme-color);color:#fff;font-family:var(--title-font);font-weight:700;border:0;box-shadow:0 10px 30px rgba(104,77,244,.28);transition:.3s ease}
+.th-btn:hover{background:var(--theme-color3);transform:translateY(-3px);box-shadow:0 14px 34px rgba(255,129,57,.28)}
+.th-btn.style2{background:#fff;color:var(--title-color);border:1px solid var(--smoke-color2);box-shadow:none}
+.th-btn.style2:hover{background:var(--theme-color);color:#fff;border-color:var(--theme-color)}
+.topbar{background:var(--black-color2);color:#fff;font-size:14px}
+.topbar .container{height:40px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.topbar span{opacity:.85}
+.header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 10px 35px rgba(20,29,56,.07)}
+.nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:144px;height:auto}
+.brand-mark{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--theme-color);color:#fff;font-family:var(--title-font);font-weight:800;font-size:18px}
+.brand small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--light-color);margin-top:3px}
+.menu{display:flex;list-style:none;margin:0;padding:0;gap:34px;font-family:var(--title-font);font-weight:700;color:var(--title-color)}
+.menu a:hover{color:var(--theme-color)}
+.hero-video{position:relative;overflow:hidden;background:#F8FAFF url("https://immersite.io/wp-content/uploads/2024/10/hero_bg_3-1.png") center/cover no-repeat;padding:92px 0 110px}
+.hero-video:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.82) 48%,rgba(255,255,255,.58))}
+.hero-video .container{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:46px;align-items:center}
+.hero-copy h1{font-size:clamp(42px,6vw,78px);max-width:620px}
+.hero-copy h1 span{color:var(--theme-color)}
+.hero-copy p{font-size:18px;max-width:560px;margin:24px 0 34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.video-shell{position:relative;border-radius:28px;background:var(--title-color);padding:12px;box-shadow:0 30px 70px rgba(20,29,56,.28)}
+.video-shell:after{content:"";position:absolute;right:-20px;bottom:-20px;width:120px;height:120px;border-radius:50%;background:var(--theme-color3);z-index:-1}
+.video-frame{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-caption{display:flex;align-items:center;justify-content:space-between;gap:18px;color:#fff;padding:18px 10px 4px}
+.video-caption h2{font-size:26px;color:#fff}
+.video-caption span{font-family:var(--title-font);font-size:14px;color:#B8C0D8;text-transform:uppercase;font-weight:700}
+.video-playlist{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:26px}
+.mini-video{background:#fff;border-radius:20px;padding:10px;box-shadow:0 10px 32px rgba(20,29,56,.09);border:1px solid var(--smoke-color2)}
+.mini-video .video-frame{border-radius:14px;aspect-ratio:16/10}
+.mini-video h3{font-family:var(--title-font);font-size:17px;line-height:1.2;color:var(--title-color);margin:12px 4px 3px}
+.mini-video span{display:block;margin:0 4px 4px;font-size:12px;color:var(--theme-color);font-weight:700;text-transform:uppercase}
+.section{padding:105px 0}
+.section.gray{background:var(--smoke-color)}
+.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:48px}
+.section-title h2{font-size:clamp(34px,4.5vw,56px);max-width:720px}
+.section-title p{max-width:520px}
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.work-card{background:#fff;border-radius:22px;padding:32px 28px;border:1px solid var(--smoke-color2);box-shadow:0 10px 30px rgba(20,29,56,.06);transition:.3s ease}
+.work-card:hover{transform:translateY(-8px);box-shadow:0 18px 44px rgba(20,29,56,.11)}
+.iconbox{width:70px;height:70px;border-radius:50%;background:rgba(104,77,244,.1);display:grid;place-items:center;margin-bottom:24px}
+.iconbox img{width:40px;height:40px}
+.work-card h3{font-size:28px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:service}
+.service-card{counter-increment:service;background:#fff;border-radius:24px;border:1px solid var(--smoke-color2);padding:34px 26px;min-height:310px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(20,29,56,.06)}
+.service-card:before{content:"0" counter(service);position:absolute;right:22px;top:20px;font-family:var(--title-font);font-size:54px;font-weight:800;color:rgba(104,77,244,.09)}
+.service-card h3{font-size:26px;margin:72px 0 14px}
+.service-card ul{margin:18px 0 0;padding:0;list-style:none;color:var(--body-color)}
+.service-card li{margin:9px 0}
+.service-card li:before{content:"+";color:var(--theme-color);font-weight:700;margin-right:8px}
+.about{background:var(--black-color2) url("https://immersite.io/wp-content/uploads/2024/10/about_bg_2-1.jpg") center/cover no-repeat;color:#C8D0E8}
+.about .section-title h2,.about h3{color:#fff}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+.about-media{border-radius:26px;overflow:hidden;box-shadow:0 26px 70px rgba(0,0,0,.32)}
+.about-media img{width:100%;height:450px;object-fit:cover}
+.about-list{display:grid;gap:16px;margin-top:30px}
+.about-row{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}
+.about-row b{font-family:var(--title-font);font-size:20px;color:#fff;display:block}
+.about-row span{display:block;color:#C8D0E8}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.project{border-radius:24px;overflow:hidden;position:relative;background:var(--title-color);min-height:270px;box-shadow:0 14px 40px rgba(20,29,56,.12)}
+.project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.45s ease}
+.project:hover img{transform:scale(1.06)}
+.project:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,29,56,.05),rgba(20,29,56,.84))}
+.project div{position:absolute;left:24px;right:24px;bottom:24px;z-index:1}
+.project span{color:var(--theme-color3);font-weight:700;text-transform:uppercase;font-size:13px}
+.project h3{color:#fff;font-size:26px;margin:6px 0 0}
+.behance{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.behance-card{background:#fff;border:1px solid var(--smoke-color2);border-radius:22px;padding:28px;box-shadow:0 10px 30px rgba(20,29,56,.06)}
+.behance-card span{color:var(--theme-color);font-weight:700;text-transform:uppercase;font-size:13px}
+.behance-card h3{font-size:24px;margin-top:34px}
+.contact{background:#F8FAFF url("https://immersite.io/wp-content/uploads/2024/12/contact_bg_9-1.jpg") center/cover no-repeat}
+.contact-box{background:#fff;border-radius:28px;padding:54px;box-shadow:0 20px 55px rgba(20,29,56,.12);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.contact-box h2{font-size:clamp(34px,5vw,58px)}
+.contact-info{display:grid;gap:12px;color:var(--title-color);font-weight:700}
+.footer{background:var(--black-color2);color:#B8C0D8;padding:36px 0}
+.footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer a{color:#fff}
+@media(max-width:1050px){.hero-grid,.about-grid,.contact-box{grid-template-columns:1fr}.video-playlist,.services,.workflow{grid-template-columns:repeat(2,1fr)}.projects,.behance{grid-template-columns:1fr 1fr}.section-title{display:block}.section-title p{margin-top:16px}.menu{display:none}}
+@media(max-width:640px){.container{padding:0 18px}.topbar{display:none}.nav{height:74px}.brand img{width:122px}.hero-video{padding:64px 0 80px}.video-playlist,.services,.workflow,.projects,.behance{grid-template-columns:1fr}.contact-box{padding:34px 22px}.th-btn{width:100%}.hero-actions{display:grid}.about-media img{height:320px}}
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header id="hdr">
-  <div class="wrap nav">
-    <a class="brand" href="#top">
-      <div class="logo-gm"><b>G</b><b>M</b></div>
-      <div class="brand-text"><b>Gonzalo Moreno</b><span>Art Director · Motion</span></div>
-    </a>
-    <nav><ul>
-      <li><a href="#work"><span class="ix">01</span>Work</a></li>
-      <li><a href="#approach"><span class="ix">02</span>Approach</a></li>
-      <li><a href="#lab"><span class="ix">03</span>Lab</a></li>
-      <li><a href="#about"><span class="ix">04</span>About</a></li>
-    </ul></nav>
-    <a href="#contact" class="btn btn-grad" style="height:46px;padding:0 22px">Let's talk
-      <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <span class="bracket br-tl"></span><span class="bracket br-br"></span>
-  <div class="readout">SYS // MOTION.ENGINE<br><b>FPS</b> 24 · 4K · OK<br><b>LAT</b> 48.85 / 2.35<br><b>STATUS</b> ● ONLINE</div>
-  <div class="wrap">
-    <span class="eyebrow">Paris · Art Direction × 2D/3D Motion</span>
-    <h1>
-      <span class="line"><span>I turn strategy into</span></span>
-      <span class="line"><span><em class="grad-text">moving visual worlds.</em></span></span>
-    </h1>
-    <div class="hero-bottom">
-      <div>
-        <p class="hero-lede">Art direction and 2D/3D motion design for campaigns, product launches, SaaS explainers, gaming content and digital brands.</p>
-        <div class="hero-ctas">
-          <a href="#work" class="btn btn-grad">View selected work
-            <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#approach" class="btn btn-line">See motion approach</a>
-        </div>
-      </div>
-      <div class="hero-tags">
-        <span class="tag">Art Direction</span><span class="tag">2D Motion</span><span class="tag">3D Motion</span><span class="tag">Campaign Films</span><span class="tag">SaaS Explainers</span><span class="tag">Gaming Content</span><span class="tag">Visual Systems</span><span class="tag">AI Lookdev</span>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>Art Direction</span><span>2D / 3D Motion</span><span>Campaign Systems</span><span>Kinetic Typography</span><span>Cinematic Lookdev</span><span>AI-Assisted</span>
-    <span>Art Direction</span><span>2D / 3D Motion</span><span>Campaign Systems</span><span>Kinetic Typography</span><span>Cinematic Lookdev</span><span>AI-Assisted</span>
+<div class="topbar">
+  <div class="container">
+    <span>Paris, 75018</span>
+    <span>Available for freelance projects</span>
+    <span>+33 7 66 87 47 06</span>
   </div>
 </div>
-
-<!-- MANIFESTO -->
-<section class="manifesto">
-  <div class="wrap reveal">
-    <span class="eyebrow" style="margin-bottom:32px">Manifesto / 00</span>
-    <p class="big">I work where <b>motion meets strategy</b>, cinematic language and digital culture. My approach combines <b>cinematic rhythm</b>, strategic storytelling and <b>modular visual systems</b> <span class="mute">to help brands launch, explain and stand out.</span></p>
-    <div class="manifesto-meta">
-      <div><span class="label">Discipline</span><p>Art direction, 2D/3D motion and visual systems.</p></div>
-      <div><span class="label">Sectors</span><p>Tech, SaaS, gaming, advertising and digital brands.</p></div>
-      <div><span class="label">Mode</span><p>From concept and direction to final delivery.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="approach">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">What I do</span><h2>Motion with strategy, rhythm and visual direction.</h2></div>
-      <span class="sec-no">[ Services / 05 ]</span>
-    </div>
-    <div class="svc-list">
-      <div class="svc reveal"><div class="no">01</div><h3>Art Direction &amp; Visual Systems</h3><div class="desc">Concepts, moodboards, styleframes and visual languages for brands, campaigns and digital products.</div><div class="tools"><span>Concept</span><span>Styleframes</span><span>Systems</span></div></div>
-      <div class="svc reveal"><div class="no">02</div><h3>2D Motion &amp; Kinetic Typography</h3><div class="desc">Animated layouts, type systems and social assets designed for rhythm, clarity and retention.</div><div class="tools"><span>After Effects</span><span>Kinetic Type</span><span>Social</span></div></div>
-      <div class="svc reveal"><div class="no">03</div><h3>3D Motion &amp; Cinematic Lookdev</h3><div class="desc">3D scenes, product visuals, lighting, camera movement and cinematic compositions.</div><div class="tools"><span>Cinema 4D</span><span>Blender</span><span>Octane</span></div></div>
-      <div class="svc reveal"><div class="no">04</div><h3>Campaign Films &amp; Product Launches</h3><div class="desc">Brand films, SaaS explainers and modular assets for web, social and paid campaigns.</div><div class="tools"><span>Direction</span><span>Editing</span><span>Launch</span></div></div>
-      <div class="svc reveal"><div class="no">05</div><h3>AI-Assisted Creative Development</h3><div class="desc">Fast visual exploration and experimental workflows — AI as a creative accelerator, not a gimmick.</div><div class="tools"><span>Runway</span><span>Midjourney</span><span>ComfyUI</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- WORK -->
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Selected work</span><h2>From campaign idea to animated system.</h2><p>Organised by the problem each project solves. A structure built to hold real case studies — context, direction, motion approach, deliverables and result.</p></div>
-      <span class="sec-no">[ Index / 06 ]</span>
-    </div>
-    <div class="filters reveal">
-      <button class="filter active" data-cat="all">All</button>
-      <button class="filter" data-cat="launch">Launch Films</button>
-      <button class="filter" data-cat="systems">Motion Systems</button>
-      <button class="filter" data-cat="3d">3D Worlds</button>
-      <button class="filter" data-cat="campaign">Campaign</button>
-      <button class="filter" data-cat="lab">Lab</button>
-    </div>
-    <div class="work-grid" id="workGrid">
-      <a class="proj big reveal" href="#" data-cat="launch">
-        <div class="layer t1"><div class="orb"></div></div><span class="bracket br-tr"></span>
-        <div class="top"><span class="pill">Case 001</span><span class="pill">SaaS Launch</span></div>
-        <div class="bot"><div><h3>Product Launch Film</h3><div class="cat">Launch Film · 2D/3D · Tech</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal d1" href="#" data-cat="systems">
-        <div class="layer t2"><div class="scan"></div><div class="scan2"></div></div>
-        <div class="top"><span class="pill">Case 002</span></div>
-        <div class="bot"><div><h3>Animated Brand System</h3><div class="cat">Motion System · Social</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal" href="#" data-cat="3d">
-        <div class="layer t3"><div class="grid3"></div></div>
-        <div class="top"><span class="pill">Case 003</span></div>
-        <div class="bot"><div><h3>3D Visual World</h3><div class="cat">3D Motion · Lookdev</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal d1" href="#" data-cat="campaign">
-        <div class="layer t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-        <div class="top"><span class="pill">Case 004</span><span class="pill">Gaming / FPV</span></div>
-        <div class="bot"><div><h3>Gaming Drop Campaign</h3><div class="cat">Campaign · Kinetic Type</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal" href="#" data-cat="launch">
-        <div class="layer t6"><div class="rings"></div><div class="dot"></div></div>
-        <div class="top"><span class="pill">Case 005</span><span class="pill">Explainer</span></div>
-        <div class="bot"><div><h3>SaaS Onboarding Explainer</h3><div class="cat">Launch · UI Motion</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-      <a class="proj reveal d1" href="#" data-cat="lab">
-        <div class="layer t5"><div class="kt">FLOW</div></div>
-        <div class="top"><span class="pill">Case 006</span><span class="pill">AI Lookdev</span></div>
-        <div class="bot"><div><h3>AI Lookdev Study</h3><div class="cat">Experimental · Styleframes</div></div><div class="arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </a>
-    </div>
-
-    <div class="reel reveal" style="margin-top:54px" role="img" aria-label="Showreel 2025">
-      <span class="bracket br-tl"></span><span class="bracket br-tr"></span><span class="bracket br-bl"></span><span class="bracket br-br"></span>
-      <div class="reel-inner">
-        <div class="play" tabindex="0" role="button" aria-label="Play showreel"><svg viewBox="0 0 24 24"><path d="M6 4 L20 12 L6 20 Z"/></svg></div>
-        <h3>Showreel ’25</h3>
-        <div class="meta">02:18 · Direction × Motion</div>
-      </div>
-      <div class="reel-stamp">REC ● 4K / 24FPS</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">How I work</span><h2>Visual direction for brands that need more than decoration.</h2></div>
-      <span class="sec-no">[ Process / 07 ]</span>
-    </div>
-    <div class="steps reveal">
-      <div class="step"><div class="no">01</div><h4>Decode</h4><p>Understand the brand, audience, message and desired perception.</p><div class="strip"><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
-      <div class="step"><div class="no">02</div><h4>Frame</h4><p>Define the visual direction, references, mood and narrative.</p><div class="strip"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div>
-      <div class="step"><div class="no">03</div><h4>Design</h4><p>Styleframes, layouts, motion principles and a modular system.</p><div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
-      <div class="step"><div class="no">04</div><h4>Animate</h4><p>2D/3D animation, camera moves, transitions and compositing.</p><div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
-      <div class="step"><div class="no">05</div><h4>Deliver</h4><p>Campaign-ready assets, formats, versions and implementation.</p><div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
-    </div>
-    <p class="process-foot reveal">Structured enough to be reliable. <span class="mute">Flexible enough to find the unexpected.</span></p>
-  </div>
-</section>
-
-<!-- LAB -->
-<section id="lab">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="lead"><span class="eyebrow">Motion Lab</span><h2>Where the next visual language gets tested.</h2><p>A space for experiments, visual research and emerging workflows — how AI, realtime tools, 3D and motion shape the next generation of brand content.</p></div>
-      <span class="sec-no">[ Lab / 08 ]</span>
-    </div>
-    <div class="lab-grid">
-      <div class="lab w2 reveal"><div class="layer t5"><div class="kt">AI</div></div><div class="lm"><h4>AI Styleframes</h4><span>Runway · MJ</span></div></div>
-      <div class="lab reveal d1"><div class="layer t6"><div class="rings"></div><div class="dot"></div></div><div class="lm"><h4>Realtime</h4><span>Unreal · Blender</span></div></div>
-      <div class="lab reveal d2"><div class="layer t4"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="lm"><h4>FPV &amp; Gaming</h4><span>Speed · Overlays</span></div></div>
-      <div class="lab reveal"><div class="layer t2"><div class="scan"></div><div class="scan2"></div></div><div class="lm"><h4>Interface Motion</h4><span>UI · Systems</span></div></div>
-      <div class="lab reveal d1"><div class="layer t3"><div class="grid3"></div></div><div class="lm"><h4>3D Lookdev</h4><span>Lighting · Camera</span></div></div>
-      <div class="lab w2 reveal d2"><div class="layer t1"><div class="orb"></div></div><div class="lm"><h4>Kinetic Type</h4><span>Rhythm · Shaders</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="about">
-      <div class="portrait reveal"><span class="bracket br-tl"></span><span class="bracket br-br"></span></div>
-      <div class="info reveal d1">
-        <span class="eyebrow">About</span>
-        <h2>Designed to explain, seduce and convert.</h2>
-        <p>I'm a Paris-based art director and motion designer with a background in advertising, digital arts and multimedia project direction.</p>
-        <p>My work connects campaign thinking, visual storytelling and 2D/3D motion design for brands that need content with rhythm, clarity and character — from concept to final delivery.</p>
-        <div class="skills"><span>Advertising background</span><span>Motion design</span><span>Digital arts</span><span>Project direction</span><span>Tech · SaaS · Gaming</span><span>AI-aware workflow</span></div>
-      </div>
-    </div>
-    <div class="stats reveal">
-      <div class="stat"><div class="v grad-text">7+ years</div><div class="l">Design &amp; motion</div></div>
-      <div class="stat"><div class="v grad-text">2D · 3D · Campaign</div><div class="l">Workflows</div></div>
-      <div class="stat"><div class="v grad-text">Advertising</div><div class="l">&amp; digital arts roots</div></div>
-      <div class="stat"><div class="v grad-text">Concept → Delivery</div><div class="l">End to end</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <span class="bracket br-tl"></span><span class="bracket br-tr"></span><span class="bracket br-bl"></span><span class="bracket br-br"></span>
-  <div class="wrap">
-    <span class="eyebrow c">Let's collaborate / 09</span>
-    <h2>Let's build a<br><em class="grad-text">moving</em> world</h2>
-    <a class="email" href="mailto:hello@gonzalomoreno.studio">hello@gonzalomoreno.studio
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="https://immersite.io/wp-content/uploads/2025/02/Immersite-Com.png" alt="Immersite">
+      <span><strong class="title">Portfolio</strong><small>Motion / VFX / Web</small></span>
     </a>
-    <div class="meta">
-      <div><div class="l">Based in</div><div class="v">Paris · Remote worldwide</div></div>
-      <div><div class="l">Response</div><div class="v">Within 24 hours</div></div>
-      <div><div class="l">Status</div><div class="v">Open for projects</div></div>
-    </div>
+    <ul class="menu">
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#workflow">Process</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#behance">Behance</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="th-btn" href="mailto:gandresmorenob@gmail.com">Let's Talk</a>
   </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site">
-  <div class="wrap row">
-    <div>© 2026 Gonzalo Moreno — Art Direction × Motion</div>
-    <div class="links"><a href="#">Instagram</a><a href="#">Behance</a><a href="#">LinkedIn</a><a href="#">Vimeo</a></div>
+</header>
+<main id="top">
+  <section class="hero-video" id="videos">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="sub-title">Vimeo Portfolio</span>
+          <h1 class="title">Motion VFX Sound Web <span>Digital Designer</span></h1>
+          <p>Video first. The portfolio opens with the moving work, then uses the exact Immersite visual system and WordPress JSON structure underneath.</p>
+          <div class="hero-actions">
+            <a class="th-btn" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener">View Behance</a>
+            <a class="th-btn style2" href="#services">Discover Services</a>
+          </div>
+        </div>
+        <div class="video-shell">
+          <div class="video-frame">
+            <iframe loading="eager" src="https://player.vimeo.com/video/1014715514?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Video Introduction"></iframe>
+          </div>
+          <div class="video-caption">
+            <div>
+              <span>Featured Reel</span>
+              <h2 class="title">Video Introduction</h2>
+            </div>
+            <a class="th-btn style2" href="https://vimeo.com/1014715514" target="_blank" rel="noopener">Open</a>
+          </div>
+        </div>
+      </div>
+      <div class="video-playlist">
+        <article class="mini-video"><div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/659142697?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Motion Design Reel"></iframe></div><h3>Motion Design Reel</h3><span>2D / 3D / VFX</span></article>
+        <article class="mini-video"><div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1161032273?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Editorial Cut"></iframe></div><h3>Editorial Cut</h3><span>Video Editing</span></article>
+        <article class="mini-video"><div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1126199772?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="3D Visual Study"></iframe></div><h3>3D Visual Study</h3><span>Lookdev</span></article>
+        <article class="mini-video"><div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/1014801010?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Dynamic Visual Content"></iframe></div><h3>Dynamic Content</h3><span>FPV / Campaign</span></article>
+        <article class="mini-video"><div class="video-frame"><iframe loading="lazy" src="https://player.vimeo.com/video/529817149?badge=0&amp;autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Brand Film System"></iframe></div><h3>Brand Film System</h3><span>Audiovisual</span></article>
+      </div>
+    </div>
+  </section>
+  <section class="section gray" id="workflow">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <span class="sub-title">Work Process</span>
+          <h2 class="title">Efficiency, Innovation and optimal Workflow</h2>
+        </div>
+        <p>Content extracted from the Immersite WordPress JSON page and reorganized for the portfolio.</p>
+      </div>
+      <div class="workflow">
+        <article class="work-card"><div class="iconbox"><img src="https://immersite.io/wp-content/uploads/2024/10/process_3_1-1.svg" alt=""></div><h3 class="title">Research</h3><p>Detailed analysis of the market, competition, and client needs to define the best strategy.</p></article>
+        <article class="work-card"><div class="iconbox"><img src="https://immersite.io/wp-content/uploads/2024/10/process_3_2-1.svg" alt=""></div><h3 class="title">Design</h3><p>Visual and functional experiences aligned with objectives and user expectations.</p></article>
+        <article class="work-card"><div class="iconbox"><img src="https://immersite.io/wp-content/uploads/2024/10/process_3_3-1.svg" alt=""></div><h3 class="title">Development</h3><p>Scalable digital solutions optimized for performance and conversion.</p></article>
+        <article class="work-card"><div class="iconbox"><img src="https://immersite.io/wp-content/uploads/2024/10/process_3_4-1.svg" alt=""></div><h3 class="title">Testing</h3><p>Rigorous testing before launch with improvements where needed.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <span class="sub-title">Our Services</span>
+          <h2 class="title">Discover Our Digital Solutions</h2>
+        </div>
+        <p>Same service structure from Immersite, with the portfolio content focused on motion, video and digital creation.</p>
+      </div>
+      <div class="services">
+        <article class="service-card"><h3 class="title">E-commerce Solutions</h3><p>Shopify, WooCommerce, WordPress CMS, SEO, performance and security.</p><ul><li>WooCommerce CMS</li><li>SEO optimization</li><li>Security and performance</li></ul></article>
+        <article class="service-card"><h3 class="title">Website Development</h3><p>Frontend development, CMS integration, maintenance and conversion-focused builds.</p><ul><li>Frontend development</li><li>CMS integration</li><li>SEO and performance</li></ul></article>
+        <article class="service-card"><h3 class="title">UX/UI Design</h3><p>Interactive prototyping, conversion-driven design, user research and accessibility.</p><ul><li>Interactive prototyping</li><li>User research</li><li>Usability optimization</li></ul></article>
+        <article class="service-card"><h3 class="title">Digital Marketing</h3><p>SEO, social media campaigns, email automation and analytics tracking.</p><ul><li>SEO and content</li><li>Paid campaigns</li><li>Analytics tracking</li></ul></article>
+      </div>
+    </div>
+  </section>
+  <section class="section about">
+    <div class="container about-grid">
+      <div class="about-media">
+        <img src="https://immersite.io/wp-content/uploads/2025/05/Immersite-Cinematic-Email-Newsletter-e1757062351337.png" alt="Immersite cinematic project">
+      </div>
+      <div>
+        <span class="sub-title">About Us</span>
+        <h2 class="title">We're Awards winning Digital Agency</h2>
+        <p>With over 8 years of experience, Immersite combines data, creativity, innovation, digital marketing, web development and user experience.</p>
+        <div class="about-list">
+          <div class="about-row"><div><b>Creative Collective for Next-Gen Visuals</b><span>Campaign and visual systems.</span></div></div>
+          <div class="about-row"><div><b>From Idea to Motion, Every Detail Matters</b><span>Motion, VFX, editing, sound and web.</span></div></div>
+          <div class="about-row"><div><b>Collaborations in English, French & Spanish</b><span>Paris based, international work.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <span class="sub-title">Our Projects</span>
+          <h2 class="title">Our Recent Projects</h2>
+        </div>
+        <p>Immersite project styling, plus portfolio project titles from Behance.</p>
+      </div>
+      <div class="projects">
+        <a class="project" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><img src="https://immersite.io/wp-content/uploads/2024/10/project_12_1-1.jpg" alt=""><div><span>Motion Design</span><h3>Portfolio 2026 Motion Design 2D/3D</h3></div></a>
+        <a class="project" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><img src="https://immersite.io/wp-content/uploads/2024/10/project_12_2-1.jpg" alt=""><div><span>Video Editing</span><h3>Exposition on James Turrell</h3></div></a>
+        <a class="project" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><img src="https://immersite.io/wp-content/uploads/2025/05/Immersite-Horizontal-Digital-Banner.png" alt=""><div><span>VFX / Campaign</span><h3>Video Loop for Stand</h3></div></a>
+      </div>
+    </div>
+  </section>
+  <section class="section gray" id="behance">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <span class="sub-title">Behance</span>
+          <h2 class="title">Selected Behance Projects</h2>
+        </div>
+        <p>Projects visible on the Behance portfolio, placed after the videos so the page still opens as a reel.</p>
+      </div>
+      <div class="behance">
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Portfolio 2026</span><h3 class="title">Motion Design 2D/3D, VFX, Montage</h3></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Video Editing</span><h3 class="title">Inspirations and James Turrell Exhibition</h3></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>3D</span><h3 class="title">Blender 3D and Dark Art</h3></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Identity</span><h3 class="title">Animation Personal Logo</h3></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Client Work</span><h3 class="title">DirecTV and Black Point Funding</h3></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Motion 2D</span><h3 class="title">Banque Ecologique Motion Design</h3></a>
+      </div>
+    </div>
+  </section>
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <span class="sub-title">Contact Us</span>
+          <h2 class="title">Join us in Creating something great</h2>
+          <p>Unveiling the extraordinary power of imagination in motion.</p>
+        </div>
+        <div class="contact-info">
+          <span>Paris, 75018</span>
+          <a href="tel:+33766874706">+33 7 66 87 47 06</a>
+          <a href="mailto:gandresmorenob@gmail.com">gandresmorenob@gmail.com</a>
+          <a class="th-btn" href="mailto:gandresmorenob@gmail.com">Send Message</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <span>2026 Immersite Portfolio. All rights reserved.</span>
+    <a href="#top">Back to top</a>
   </div>
 </footer>
-
-<script>
-  window.addEventListener('load',()=>document.body.classList.add('loaded'));
-  document.addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>document.body.classList.add('loaded')));
-  const hdr=document.getElementById('hdr');
-  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
-  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -7% 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  const filters=document.querySelectorAll('.filter');
-  const projs=document.querySelectorAll('#workGrid .proj');
-  filters.forEach(b=>b.addEventListener('click',()=>{
-    filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');
-    const c=b.dataset.cat;
-    projs.forEach(p=>p.classList.toggle('hide',c!=='all'&&p.dataset.cat!==c));
-  }));
+<script type="application/json" id="immersite-json-summary">
+{
+  "source": "https://immersite.io/wp-json/wp/v2/pages/8466",
+  "hero": "Seamless IT Solutions for business growth",
+  "workflow": ["Research", "Design", "Development", "Testing & Optimization"],
+  "services": ["E-commerce Solutions", "Website Development", "UX/UI Design", "Digital Marketing"],
+  "contact": {"address":"Paris, 75018","phone":"+33 7 66 87 47 06","email":"info.immersite@gmail.com"}
+}
 </script>
 </body>
 </html>
