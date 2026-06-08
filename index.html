@@ -104,6 +104,16 @@ button{cursor:pointer}
 .ticker-track span{display:inline-flex;align-items:center;gap:14px}
 .ticker-track span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--theme-color3)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.featured-reel{padding:86px 0 54px;background:#fff}
+.reel-stage{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);gap:28px;align-items:stretch}
+.reel-card{position:relative;overflow:hidden;border-radius:34px;background:radial-gradient(circle at 15% 10%,rgba(104,77,244,.34),transparent 30%),linear-gradient(135deg,#050812,#111934 58%,#060A16);padding:14px;box-shadow:0 34px 88px rgba(20,29,56,.24)}
+.reel-card .video-frame{border-radius:26px;min-height:360px}
+.reel-play{position:absolute;left:28px;bottom:28px;z-index:3;display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);color:#fff;border-radius:999px;padding:12px 16px;font-family:var(--title-font);font-weight:900;backdrop-filter:blur(14px)}
+.reel-play:before{content:"";width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 0 0 8px rgba(255,255,255,.1)}
+.reel-info{background:linear-gradient(180deg,#fff,#F8FAFF);border:1px solid var(--smoke-color2);border-radius:30px;padding:32px;box-shadow:0 20px 54px rgba(20,29,56,.09);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.reel-info h2{font-size:clamp(34px,4vw,54px)}
+.reel-tags{display:flex;flex-wrap:wrap;gap:10px}
+.reel-tags span{display:inline-flex;border:1px solid var(--smoke-color2);border-radius:999px;padding:8px 11px;background:#fff;color:var(--title-color);font-family:var(--title-font);font-weight:900;font-size:13px}
 .carousel-stack{display:grid;gap:42px}
 .carousel-block{position:relative;padding:22px 0 10px;border-top:1px solid rgba(226,232,250,.72)}
 .carousel-block:before{content:"";position:absolute;left:-24px;top:20px;width:4px;height:62px;border-radius:999px;background:linear-gradient(180deg,var(--theme-color),var(--theme-color3))}
@@ -161,6 +171,9 @@ button{cursor:pointer}
 .behance-card span{align-self:flex-start;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:7px 10px;font-family:var(--title-font);font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(12px)}
 .behance-card h3{font-family:var(--title-font);font-size:clamp(24px,3vw,38px);line-height:1;color:#fff;margin:18px 0 8px}
 .behance-card p{margin:0;color:rgba(255,255,255,.82)}
+.behance-card small{display:block;margin-top:12px;color:rgba(255,255,255,.7);font-weight:700}
+.archive-cta{display:inline-flex;align-self:flex-start;margin-top:18px;color:#fff;font-family:var(--title-font);font-weight:900;transform:translateY(8px);opacity:.72;transition:transform .22s ease,opacity .22s ease}
+.behance-card:hover .archive-cta{transform:translateY(0);opacity:1}
 .process{background:linear-gradient(180deg,#fff,#F7F9FF);border-top:1px solid var(--smoke-color2);border-bottom:1px solid var(--smoke-color2)}
 .process-list{display:grid;gap:14px;position:relative}
 .process-strip{height:8px;background:#E7ECFA;border-radius:999px;margin:-8px 0 28px;overflow:hidden}
@@ -184,6 +197,13 @@ button{cursor:pointer}
 .result-item{background:var(--smoke-color);border-radius:18px;padding:14px}
 .result-item b{display:block;color:var(--title-color);font-family:var(--title-font);font-size:18px}
 .result-item span{display:block;color:var(--body-color)}
+.estimate-note{margin:18px 0 0;color:var(--body-color);background:linear-gradient(180deg,#F8FAFF,#fff);border:1px solid var(--smoke-color2);border-radius:18px;padding:14px}
+.gantt{margin-top:18px;background:var(--black-color2);border-radius:22px;padding:18px;color:#DDE3F8}
+.gantt-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px;font-family:var(--title-font);font-weight:900}
+.gantt-head span{color:#fff}
+.gantt-row{display:grid;grid-template-columns:86px minmax(0,1fr) 58px;gap:10px;align-items:center;margin:10px 0;font-size:12px;font-weight:700}
+.gantt-track{position:relative;height:16px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+.gantt-track i{position:absolute;left:calc(var(--start,0) * 1%);width:calc(var(--span,30) * 1%);top:0;bottom:0;border-radius:999px;background:linear-gradient(90deg,var(--theme-color),var(--electric),var(--theme-color3));box-shadow:0 0 18px rgba(104,77,244,.32)}
 .contact{padding:118px 0;background:linear-gradient(135deg,#F8FAFF,#fff)}
 .contact-card{position:relative;overflow:hidden;background:radial-gradient(circle at 12% 20%,rgba(104,77,244,.38),transparent 28%),linear-gradient(135deg,#080E1C,#141D38 54%,#071120);border:1px solid rgba(255,255,255,.16);border-radius:36px;padding:60px;box-shadow:0 34px 88px rgba(20,29,56,.22);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center;color:#DDE3F8}
 .contact-card:before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(22,199,132,.28),transparent 68%)}
@@ -195,11 +215,12 @@ button{cursor:pointer}
 .footer{background:var(--black-color2);color:#B8C0D8;padding:34px 0}
 .footer .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .footer a{color:#fff;font-weight:700}
-.brand,.menu li,.hero-kicker,.hero h1,.hero .body-copy,.hero-actions,.tag,.hero-video,.frame-counter,.production-label,.section-head,.video-card,.profile-wrap,.service-card,.behance-card,.process-step,.process-note,.calc-panel,.calc-result,.contact-card{will-change:transform,opacity}
+.brand,.menu li,.hero-kicker,.hero h1,.hero .body-copy,.hero-actions,.tag,.hero-video,.frame-counter,.production-label,.featured-reel,.reel-card,.reel-info,.section-head,.video-card,.profile-wrap,.service-card,.behance-card,.process-step,.process-note,.calc-panel,.calc-result,.contact-card{will-change:transform,opacity}
 @media(max-width:1100px){
   .hero-layout,.profile-wrap,.calculator,.contact-card{grid-template-columns:1fr}
   .hero-layout{gap:34px}
   .hero-video{max-width:860px}
+  .reel-stage{grid-template-columns:1fr}
   .services{grid-template-columns:repeat(2,minmax(0,1fr))}
   .behance-grid{grid-template-columns:1fr 1fr}
   .behance-card:nth-child(1),.behance-card:nth-child(4){grid-column:auto;grid-row:auto}
@@ -224,6 +245,9 @@ button{cursor:pointer}
   .production-label{position:static;margin-top:12px}
   .frame-ui{grid-template-columns:1fr}
   .hero-metrics{grid-template-columns:1fr}
+  .featured-reel{padding:70px 0 34px}
+  .reel-card .video-frame{min-height:auto}
+  .gantt-row{grid-template-columns:1fr;gap:6px}
   .rail{grid-auto-columns:minmax(280px,86vw)}
   .specs,.proofs,.services,.behance-grid,.calc-grid,.service-card ul{grid-template-columns:1fr}
   .profile-wrap,.contact-card{padding:28px 24px}
@@ -311,12 +335,37 @@ button{cursor:pointer}
     </div>
   </div>
 
+  <section class="featured-reel" id="featured-reel">
+    <div class="container reel-stage">
+      <div class="reel-card">
+        <span class="frame-counter">SHOWREEL / 2026</span>
+        <div class="video-frame">
+          <iframe loading="lazy" src="https://player.vimeo.com/video/1014715514?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Gonzalo Moreno featured showreel"></iframe>
+        </div>
+        <a class="reel-play" href="https://vimeo.com/1014715514" target="_blank" rel="noopener">Watch main reel</a>
+      </div>
+      <aside class="reel-info">
+        <div>
+          <span class="eyebrow">Featured reel</span>
+          <h2 class="title">One reel for direction, motion and delivery.</h2>
+          <p class="body-copy">A compact look at SaaS explainers, 3D product visuals, campaign motion, editing rhythm and VFX finishing.</p>
+        </div>
+        <div class="reel-tags">
+          <span>SaaS Explainer</span>
+          <span>3D Product Film</span>
+          <span>Campaign Motion</span>
+          <span>Art Direction</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
   <section class="section" id="work">
     <div class="container">
       <div class="section-head">
         <div>
           <span class="eyebrow">Video wall</span>
-          <h2 class="title">The work sells before the copy does.</h2>
+          <h2 class="title">See the work first.</h2>
         </div>
         <p class="body-copy">Three focused reels for clients scanning fast: SaaS explainers, product visualization, and campaign motion systems.</p>
       </div>
@@ -396,14 +445,14 @@ button{cursor:pointer}
       <div class="profile-visual" aria-hidden="true"></div>
       <div class="profile">
         <span class="eyebrow">Profile</span>
-        <h2 class="title">Senior motion direction with a production brain.</h2>
+        <h2 class="title">Motion direction with production control.</h2>
         <p class="body-copy">I am a Paris based art director and senior motion designer with a background in advertising, digital arts and multimedia project direction.</p>
-        <p class="body-copy">I create motion films, 2D and 3D visuals, campaign systems and visual content for brands that need clarity, rhythm and character.</p>
+        <p class="body-copy">I create 2D and 3D motion films, product explainers and campaign systems for brands that need clarity, rhythm and visual character.</p>
         <div class="proofs">
-          <div class="proof">Advertising background</div>
-          <div class="proof">2D and 3D motion workflow</div>
-          <div class="proof">Campaign and social content experience</div>
-          <div class="proof">AI assisted creative development</div>
+          <div class="proof">Advertising and campaign thinking</div>
+          <div class="proof">2D and 3D motion production</div>
+          <div class="proof">Tech, SaaS and gaming visual culture</div>
+          <div class="proof">AI assisted lookdev and faster exploration</div>
         </div>
       </div>
     </div>
@@ -439,12 +488,12 @@ button{cursor:pointer}
         <p class="body-copy">A visual archive for motion, editing, identity animation, client work and experimental 3D.</p>
       </div>
       <div class="behance-grid">
-        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Motion 2D/3D</span><h3>Portfolio 2026 Motion Design 2D/3D</h3><p>Direction, montage, VFX and motion systems.</p></a>
-        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Video Editing</span><h3>James Turrell Exhibition</h3><p>Editorial rhythm and cinematic assembly.</p></a>
-        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Identity Animation</span><h3>Personal Logo Animation</h3><p>Brand motion and kinetic identity.</p></a>
-        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Experimental 3D</span><h3>Blender 3D and Dark Art</h3><p>Lookdev, lighting and abstract visual worlds.</p></a>
-        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Client Work</span><h3>DirecTV and Black Point Funding</h3><p>Commercial assets and production delivery.</p></a>
-        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>AI Lookdev</span><h3>Visual Research Archive</h3><p>AI assisted territories and style exploration.</p></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Motion 2D and 3D</span><h3>Portfolio 2026 Motion Design</h3><p>Direction, montage, VFX and motion systems.</p><small>Role: art direction, motion design, edit</small><b class="archive-cta">Open archive</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Video Editing</span><h3>James Turrell Exhibition</h3><p>Editorial rhythm and cinematic assembly.</p><small>Role: edit, rhythm, sound structure</small><b class="archive-cta">Open archive</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Identity Animation</span><h3>Personal Logo Animation</h3><p>Brand motion and kinetic identity.</p><small>Role: logo animation, transitions</small><b class="archive-cta">Open archive</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Experimental 3D</span><h3>Blender 3D and Dark Art</h3><p>Lookdev, lighting and abstract visual worlds.</p><small>Role: 3D lookdev, lighting, composition</small><b class="archive-cta">Open archive</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>Client Work</span><h3>DirecTV and Black Point Funding</h3><p>Commercial assets and production delivery.</p><small>Role: client motion, editing, delivery</small><b class="archive-cta">Open archive</b></a>
+        <a class="behance-card" href="https://www.behance.net/andresmorenobc" target="_blank" rel="noopener"><span>AI Lookdev</span><h3>Visual Research Archive</h3><p>AI assisted territories and style exploration.</p><small>Role: research, styleframes, lookdev</small><b class="archive-cta">Open archive</b></a>
       </div>
     </div>
   </section>
@@ -475,7 +524,7 @@ button{cursor:pointer}
       <div class="section-head">
         <div>
           <span class="eyebrow">Project calculator</span>
-          <h2 class="title">Estimate the shape of the production.</h2>
+          <h2 class="title">Estimate your project range.</h2>
         </div>
         <p class="body-copy">Use this as a first range, not a fixed quote. The goal is to start with a realistic production frame.</p>
       </div>
@@ -500,6 +549,13 @@ button{cursor:pointer}
             <div class="result-item"><span>Estimated production time</span><b id="timeline">3 to 5 weeks</b></div>
             <div class="result-item"><span>Recommended package</span><b id="packageName">Launch Film</b></div>
             <div class="result-item"><span>Best for</span><b id="packageDesc">SaaS explainers, product launches and campaign motion.</b></div>
+          </div>
+          <p class="estimate-note">This range includes visual direction, motion production, feedback rounds and delivery-ready exports. It is a starting point, not a fixed quote.</p>
+          <div class="gantt" aria-label="Estimated motion production schedule">
+            <div class="gantt-head"><span>Production plan</span><b id="workingDays">20 working days</b></div>
+            <div class="gantt-row"><span>Direction</span><div class="gantt-track"><i id="ganttDirection"></i></div><b id="directionDays">4d</b></div>
+            <div class="gantt-row"><span>Production</span><div class="gantt-track"><i id="ganttProduction"></i></div><b id="productionDays">14d</b></div>
+            <div class="gantt-row"><span>Delivery</span><div class="gantt-track"><i id="ganttDelivery"></i></div><b id="deliveryDays">2d</b></div>
           </div>
           <a class="btn accent" href="mailto:gandresmorenob@gmail.com?subject=Project%20estimate%20request">Request a precise quote</a>
         </aside>
@@ -538,30 +594,74 @@ const budgetRange = document.querySelector('#budgetRange');
 const timeline = document.querySelector('#timeline');
 const packageName = document.querySelector('#packageName');
 const packageDesc = document.querySelector('#packageDesc');
+const workingDays = document.querySelector('#workingDays');
+const ganttDirection = document.querySelector('#ganttDirection');
+const ganttProduction = document.querySelector('#ganttProduction');
+const ganttDelivery = document.querySelector('#ganttDelivery');
+const directionDays = document.querySelector('#directionDays');
+const productionDays = document.querySelector('#productionDays');
+const deliveryDays = document.querySelector('#deliveryDays');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function formatEuro(value){return 'EUR ' + value.toLocaleString('en-US');}
+function setBar(element,start,span){
+  element.style.setProperty('--start',start.toFixed(2));
+  element.style.setProperty('--span',span.toFixed(2));
+}
+function updateGantt(totalDays){
+  const direction = Math.max(2, Math.round(totalDays * .22));
+  const delivery = Math.max(2, Math.round(totalDays * .16));
+  const production = Math.max(4, totalDays - direction - delivery);
+  const directionPct = direction / totalDays * 100;
+  const productionPct = production / totalDays * 100;
+  const deliveryPct = delivery / totalDays * 100;
+  setBar(ganttDirection,0,directionPct);
+  setBar(ganttProduction,directionPct,productionPct);
+  setBar(ganttDelivery,directionPct + productionPct,deliveryPct);
+  workingDays.textContent = totalDays + ' working days';
+  directionDays.textContent = direction + 'd';
+  productionDays.textContent = production + 'd';
+  deliveryDays.textContent = delivery + 'd';
+}
 function updateEstimate(){
-  const values = [...calculator.querySelectorAll('select')].map((select)=>Number(select.value));
+  const selects = [...calculator.querySelectorAll('select')];
+  const values = selects.map((select)=>Number(select.value));
+  const projectType = document.querySelector('#projectType').selectedOptions[0].textContent;
   const total = values.reduce((sum,value)=>sum + value,0);
   const low = Math.max(1200, Math.round(total / 100) * 100);
   const high = Math.round((total * 1.45 + 700) / 100) * 100;
+  let days = total < 2600 ? 10 : total < 5600 ? 20 : 34;
   budgetRange.textContent = formatEuro(low) + ' to ' + formatEuro(high);
-  if(total < 2600){
-    timeline.textContent = '1 to 2 weeks';
+  if(projectType.includes('SaaS')){
+    packageName.textContent = 'SaaS Explainer';
+    packageDesc.textContent = 'Product explainers, app videos, UI motion and launch videos.';
+  }else if(projectType.includes('3D')){
+    packageName.textContent = '3D Product Film';
+    packageDesc.textContent = 'Product visualization, premium 3D shots, lighting, camera and lookdev.';
+    days += 5;
+  }else if(projectType.includes('Campaign')){
+    packageName.textContent = 'Campaign Motion System';
+    packageDesc.textContent = 'Multiple assets, formats and a coherent campaign motion language.';
+    days += 6;
+  }else if(projectType.includes('Brand')){
+    packageName.textContent = 'Brand Film';
+    packageDesc.textContent = 'Cinematic storytelling, editing, motion design and campaign perception.';
+    days += 3;
+  }else if(projectType.includes('Social')){
     packageName.textContent = 'Essential Motion';
-    packageDesc.textContent = 'Short animated content, loops and social assets.';
-  }else if(total < 5600){
-    timeline.textContent = '2 to 4 weeks';
-    packageName.textContent = 'Launch Film';
-    packageDesc.textContent = 'SaaS explainers, product launches and campaign motion.';
+    packageDesc.textContent = 'Short motion assets, loops, reels and simple animated content.';
+    days = Math.max(8, days - 4);
   }else{
-    timeline.textContent = '4 to 7 weeks';
-    packageName.textContent = 'Visual System';
-    packageDesc.textContent = 'A full motion language with multiple assets and formats.';
+    packageName.textContent = 'Essential Motion';
+    packageDesc.textContent = 'Animated identity assets, transitions and brand motion kit elements.';
   }
+  const weekLow = Math.max(1, Math.round(days / 7));
+  const weekHigh = Math.max(weekLow + 1, Math.ceil((days + 6) / 5));
+  timeline.textContent = weekLow + ' to ' + weekHigh + ' weeks';
+  updateGantt(days);
   if(window.gsap && !reduceMotion){
     gsap.fromTo('.calc-result',{scale:.985},{scale:1,duration:.32,ease:'power2.out',overwrite:'auto'});
     gsap.fromTo('.price',{y:8,autoAlpha:.72},{y:0,autoAlpha:1,duration:.28,ease:'power2.out',overwrite:'auto'});
+    gsap.fromTo('.gantt-track i',{scaleX:.94,transformOrigin:'left center'},{scaleX:1,duration:.36,ease:'power2.out',overwrite:'auto'});
   }
 }
 calculator.addEventListener('change', updateEstimate);
@@ -598,6 +698,16 @@ if(window.gsap && window.ScrollTrigger && !reduceMotion){
         onEnter:(batch)=>gsap.fromTo(batch,{y:isDesktop ? 30 : 18,autoAlpha:0},{y:0,autoAlpha:1,stagger:isDesktop ? .07 : .045,duration:isDesktop ? .66 : .48,ease:'power3.out',overwrite:'auto'})
       });
 
+      gsap.fromTo('.reel-card,.reel-info',{y:isDesktop ? 34 : 18,autoAlpha:0,scale:isDesktop ? .985 : 1},{
+        y:0,
+        autoAlpha:1,
+        scale:1,
+        stagger:.12,
+        duration:isDesktop ? .78 : .52,
+        ease:'power3.out',
+        scrollTrigger:{trigger:'.featured-reel',start:'top 76%',once:true}
+      });
+
       gsap.utils.toArray('.section-head,.profile-wrap,.process-note,.calc-panel,.calc-result,.contact-card').forEach((element)=>{
         gsap.fromTo(element,{y:isDesktop ? 28 : 16,autoAlpha:0},{
           y:0,
@@ -622,7 +732,7 @@ if(window.gsap && window.ScrollTrigger && !reduceMotion){
         gsap.to('.profile-visual',{y:-24,ease:'none',scrollTrigger:{trigger:'.profile-wrap',start:'top bottom',end:'bottom top',scrub:1}});
       }
 
-      gsap.utils.toArray('.video-card,.service-card,.behance-card').forEach((card)=>{
+      gsap.utils.toArray('.video-card,.service-card,.behance-card,.reel-card').forEach((card)=>{
         const onEnter = ()=>gsap.to(card,{y:-6,scale:1.01,duration:.22,ease:'power2.out',overwrite:'auto'});
         const onLeave = ()=>gsap.to(card,{y:0,scale:1,duration:.26,ease:'power2.out',overwrite:'auto'});
         card.addEventListener('mouseenter',onEnter);
