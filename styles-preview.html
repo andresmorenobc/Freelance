@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style directions — Gonzalo Moreno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,400..600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",sans-serif;background:#000;color:#fff}
+  .opt{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:8vh 6vw;border-bottom:3px solid #000}
+  .tagbar{position:absolute;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+  .tagbar .num{font-weight:600}
+  .tagbar .desc{opacity:.7;text-align:right;max-width:60%}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:26px}
+  .cta{display:inline-flex;align-items:center;gap:9px;font-family:"Space Grotesk";font-weight:600;font-size:14px;padding:14px 24px;border-radius:4px;margin-top:32px;cursor:pointer}
+  .lede{font-size:17px;line-height:1.55;max-width:440px;margin-top:20px}
+
+  /* ============ OPTION 1 — HUD / Sci-Fi FUI ============ */
+  .o1{background:#05070a;color:#dff6ff}
+  .o1 .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.06) 1px,transparent 1px);background-size:48px 48px}
+  .o1 .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,229,255,.025) 3px 4px);pointer-events:none}
+  .o1 .glowblob{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,160,255,.18),transparent 65%);top:-15%;right:-8%;filter:blur(20px)}
+  .o1 .corner{position:absolute;width:34px;height:34px;border:1px solid rgba(0,229,255,.5)}
+  .o1 .c-tl{top:60px;left:24px;border-right:0;border-bottom:0}.o1 .c-br{bottom:30px;right:24px;border-left:0;border-top:0}
+  .o1 .eyebrow{color:#00e5ff;display:flex;align-items:center;gap:12px}
+  .o1 .eyebrow::before,.o1 .eyebrow::after{content:"";height:1px;width:40px;background:linear-gradient(90deg,transparent,#00e5ff)}
+  .o1 h2{font-family:"Space Grotesk";font-weight:700;font-size:clamp(38px,7vw,92px);line-height:1.02;letter-spacing:-.03em;position:relative}
+  .o1 h2 .hi{color:#00e5ff;text-shadow:0 0 24px rgba(0,229,255,.55)}
+  .o1 .readout{position:absolute;right:6vw;top:50%;transform:translateY(-50%);font-family:"JetBrains Mono";font-size:11px;color:rgba(0,229,255,.7);text-align:right;line-height:2;display:none}
+  .o1 .lede{color:#9fc4d6}
+  .o1 .cta{background:#00e5ff;color:#02141a;box-shadow:0 0 30px rgba(0,229,255,.4)}
+  @media(min-width:900px){.o1 .readout{display:block}}
+
+  /* ============ OPTION 2 — Cinematic Dark (premium / Linear-like) ============ */
+  .o2{background:#06060a;color:#ededf2}
+  .o2 .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5}
+  .o2 .b1{width:520px;height:520px;background:#4b3aff;top:-12%;left:-6%}
+  .o2 .b2{width:440px;height:440px;background:#0a6cff;bottom:-16%;right:-4%;opacity:.4}
+  .o2 .b3{width:360px;height:360px;background:#9b4bff;top:40%;left:40%;opacity:.25}
+  .o2 .veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent,rgba(6,6,10,.6))}
+  .o2 .eyebrow{color:#a7a3ff}
+  .o2 .inner{position:relative;z-index:2;max-width:900px}
+  .o2 h2{font-family:"Space Grotesk";font-weight:600;font-size:clamp(40px,7.2vw,104px);line-height:1.0;letter-spacing:-.045em}
+  .o2 h2 em{font-style:normal;background:linear-gradient(100deg,#b9a3ff,#7ab6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .o2 .lede{color:#b6b6c4}
+  .o2 .cta{background:#fff;color:#0a0a12}
+
+  /* ============ OPTION 3 — Glitch / Cyberpunk editorial ============ */
+  .o3{background:#0a0510;color:#fce9ff}
+  .o3 .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,0,170,.04) 2px 3px);pointer-events:none}
+  .o3 .mesh{position:absolute;inset:0;background:radial-gradient(50% 50% at 80% 10%,rgba(255,0,150,.25),transparent 60%),radial-gradient(45% 45% at 10% 90%,rgba(0,229,255,.22),transparent 60%)}
+  .o3 .eyebrow{color:#ff36c4;letter-spacing:.3em}
+  .o3 h2{font-family:"Space Grotesk";font-weight:700;font-size:clamp(40px,8vw,108px);line-height:.98;letter-spacing:-.04em;text-transform:uppercase;position:relative}
+  .o3 h2 .g{position:relative;color:#fff}
+  .o3 h2 .g::before,.o3 h2 .g::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;clip-path:inset(0)}
+  .o3 h2 .g::before{color:#ff2bd0;animation:gl1 2.6s infinite steps(2);mix-blend-mode:screen}
+  .o3 h2 .g::after{color:#23e7ff;animation:gl2 2.2s infinite steps(2);mix-blend-mode:screen}
+  @keyframes gl1{0%,92%,100%{transform:translate(0,0)}94%{transform:translate(-3px,1px)}96%{transform:translate(2px,-1px)}}
+  @keyframes gl2{0%,90%,100%{transform:translate(0,0)}93%{transform:translate(3px,-1px)}97%{transform:translate(-2px,1px)}}
+  .o3 .lede{color:#d7a7e0;font-family:"JetBrains Mono";font-size:14px}
+  .o3 .cta{background:linear-gradient(90deg,#ff2bd0,#23e7ff);color:#0a0510;font-weight:700}
+
+  /* ============ OPTION 4 — Cinematic film / treatment ============ */
+  .o4{background:#0a0a0a;color:#f2efe9;justify-content:center;align-items:center;text-align:center}
+  .o4 .bar{position:absolute;left:0;right:0;height:9vh;background:#000;z-index:5}
+  .o4 .bar.top{top:0;border-bottom:1px solid #1c1c1c}.o4 .bar.bot{bottom:0;border-top:1px solid #1c1c1c}
+  .o4 .grain{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .o4 .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 40%,rgba(0,0,0,.7))}
+  .o4 .tc{position:absolute;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;color:#8a8a82;z-index:6}
+  .o4 .tc.l{left:24px;top:calc(9vh + 18px)}.o4 .tc.r{right:24px;top:calc(9vh + 18px)}
+  .o4 .eyebrow{color:#b8b2a4;letter-spacing:.34em}
+  .o4 h2{font-family:"Fraunces";font-style:italic;font-weight:400;font-size:clamp(40px,8vw,104px);line-height:1.0;letter-spacing:-.02em;max-width:14ch}
+  .o4 h2 .up{font-family:"Space Grotesk";font-style:normal;font-weight:700;text-transform:uppercase;letter-spacing:-.03em;display:block}
+  .o4 .lede{color:#bdb8ac;margin-inline:auto}
+  .o4 .cta{background:transparent;border:1px solid #4a4a44;color:#f2efe9}
+</style>
+</head>
+<body>
+
+<!-- OPTION 1 -->
+<section class="opt o1">
+  <div class="grid"></div><div class="scan"></div><div class="glowblob"></div>
+  <span class="corner c-tl"></span><span class="corner c-br"></span>
+  <div class="tagbar"><span class="num" style="color:#00e5ff">OPTION 1</span><span class="desc">HUD / Sci-Fi FUI — thin lines, cyan glow, technical markers, data readouts</span></div>
+  <div class="readout">SYS // MOTION.ENGINE<br>FPS 24 · 4K · OK<br>LAT 48.85 / 2.35<br>STATUS ● ONLINE</div>
+  <span class="eyebrow">Paris · Art Direction × Motion</span>
+  <h2>I turn strategy into<br><span class="hi">moving visual worlds</span></h2>
+  <p class="lede">Art direction and 2D/3D motion for campaigns, launches, SaaS and gaming.</p>
+  <span class="cta">View selected work →</span>
+</section>
+
+<!-- OPTION 2 -->
+<section class="opt o2">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="veil"></div>
+  <div class="tagbar"><span class="num" style="color:#a7a3ff">OPTION 2</span><span class="desc">Cinematic dark premium — deep black, ambient light blobs, refined big type (Linear / Arc vibe)</span></div>
+  <div class="inner">
+    <span class="eyebrow">Paris · Art Direction × 2D/3D Motion</span>
+    <h2>I turn strategy into <em>moving visual worlds.</em></h2>
+    <p class="lede">Art direction and 2D/3D motion design for campaigns, product launches, SaaS explainers, gaming content and digital brands.</p>
+    <span class="cta">View selected work →</span>
+  </div>
+</section>
+
+<!-- OPTION 3 -->
+<section class="opt o3">
+  <div class="mesh"></div><div class="scan"></div>
+  <div class="tagbar"><span class="num" style="color:#ff36c4">OPTION 3</span><span class="desc">Glitch / cyberpunk editorial — magenta + cyan, glitch text, scanlines, kinetic energy</span></div>
+  <span class="eyebrow">// Paris · Motion Systems</span>
+  <h2><span class="g" data-t="MOVING">MOVING</span><br>VISUAL WORLDS</h2>
+  <p class="lede">art_direction + 2D/3D motion · campaigns · gaming · SaaS · AI</p>
+  <span class="cta">VIEW WORK →</span>
+</section>
+
+<!-- OPTION 4 -->
+<section class="opt o4">
+  <div class="bar top"></div><div class="bar bot"></div><div class="grain"></div><div class="vig"></div>
+  <div class="tagbar" style="color:#8a8a82"><span class="num" style="color:#d8d2c4">OPTION 4</span><span class="desc">Cinematic film / treatment — letterbox, timecode, grain, serif-italic + grotesk title card</span></div>
+  <span class="tc l">TC 01:00:02:18</span><span class="tc r">REEL ’25 · 4K</span>
+  <span class="eyebrow">Gonzalo Moreno — Paris</span>
+  <h2><span class="up">I turn strategy into</span> moving visual worlds</h2>
+  <p class="lede">Art direction & 2D/3D motion design for campaigns, launches and digital brands.</p>
+  <span class="cta">View selected work →</span>
+</section>
+
+</body>
+</html>
