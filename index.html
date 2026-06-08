@@ -12,7 +12,7 @@
 :root{
   --theme-color:#684DF4;
   --theme-color2:#684DF4;
-  --theme-color3:#FF8139;
+  --theme-color3:#16C784;
   --electric:#1477FF;
   --green:#16C784;
   --title-color:#141D38;
@@ -31,7 +31,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#FBFCFF;color:var(--body-color);font-family:var(--body-font);font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 8% 10%,rgba(104,77,244,.11),transparent 28%),radial-gradient(circle at 96% 4%,rgba(255,129,57,.12),transparent 26%),linear-gradient(180deg,#fff 0%,#F8FAFF 42%,#fff 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 8% 10%,rgba(104,77,244,.11),transparent 28%),radial-gradient(circle at 96% 4%,rgba(22,199,132,.12),transparent 26%),linear-gradient(180deg,#fff 0%,#F8FAFF 42%,#fff 100%)}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 button,input,select{font:inherit}
@@ -45,8 +45,8 @@ button{cursor:pointer}
 .btn:hover{transform:translateY(-2px);background:#543BD9;box-shadow:0 18px 40px rgba(104,77,244,.32)}
 .btn.secondary{background:#fff;color:var(--title-color);border-color:var(--smoke-color2);box-shadow:0 12px 34px rgba(20,29,56,.08)}
 .btn.secondary:hover{border-color:var(--theme-color);color:var(--theme-color)}
-.btn.orange{background:var(--theme-color3);box-shadow:0 16px 34px rgba(255,129,57,.24)}
-.btn.orange:hover{background:#F06F25}
+.btn.accent{background:var(--theme-color3);box-shadow:0 16px 34px rgba(22,199,132,.24)}
+.btn.accent:hover{background:#10A86E}
 .topbar{background:var(--black-color2);color:#DDE3F8;font-size:13px}
 .topbar .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .topbar b{color:#fff}
@@ -79,10 +79,10 @@ button{cursor:pointer}
 .tag-row{display:flex;flex-wrap:wrap;gap:10px;max-width:660px}
 .tag{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:0 12px;border-radius:999px;background:#fff;border:1px solid var(--smoke-color2);color:var(--title-color);font-family:var(--title-font);font-weight:800;font-size:13px;box-shadow:0 9px 24px rgba(20,29,56,.06)}
 .tag:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--theme-color)}
-.tag.orange:before{background:var(--theme-color3)}
+.tag.accent:before{background:var(--theme-color3)}
 .tag.blue:before{background:var(--electric)}
 .hero-video{position:relative;border-radius:30px;background:var(--black-color2);padding:12px;box-shadow:0 34px 80px rgba(20,29,56,.24)}
-.hero-video:before{content:"";position:absolute;inset:-1px;border-radius:31px;padding:1px;background:linear-gradient(135deg,rgba(104,77,244,.85),rgba(20,119,255,.42),rgba(255,129,57,.7));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hero-video:before{content:"";position:absolute;inset:-1px;border-radius:31px;padding:1px;background:linear-gradient(135deg,rgba(104,77,244,.85),rgba(20,119,255,.42),rgba(22,199,132,.68));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 .video-frame{position:relative;aspect-ratio:16/9;background:#050812;border-radius:22px;overflow:hidden}
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .frame-ui{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:18px 12px 4px;color:#fff}
@@ -135,7 +135,7 @@ button{cursor:pointer}
 .service-card p{margin:0;color:var(--body-color)}
 .service-card ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 0;padding:0;list-style:none}
 .service-card li{font-size:13px;line-height:1.25;color:var(--title-color);font-weight:700;background:var(--smoke-color);border:1px solid var(--smoke-color2);border-radius:999px;padding:8px 10px}
-.service-card:nth-child(2n):after{content:"";position:absolute;left:-44px;bottom:-44px;width:112px;height:112px;border-radius:50%;background:rgba(255,129,57,.12)}
+.service-card:nth-child(2n):after{content:"";position:absolute;left:-44px;bottom:-44px;width:112px;height:112px;border-radius:50%;background:rgba(22,199,132,.12)}
 .behance-grid{display:grid;grid-template-columns:1.1fr .9fr 1fr;grid-auto-rows:220px;gap:18px}
 .behance-card{position:relative;overflow:hidden;border-radius:24px;border:1px solid var(--smoke-color2);background:#fff;box-shadow:0 16px 42px rgba(20,29,56,.08);padding:22px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
 .behance-card:nth-child(1){grid-row:span 2}
@@ -145,7 +145,7 @@ button{cursor:pointer}
 .behance-card:nth-child(3):before{background:linear-gradient(135deg,#2C1857,var(--theme-color3))}
 .behance-card:nth-child(4):before{background:linear-gradient(135deg,#071120,#684DF4 55%,#16C784)}
 .behance-card:nth-child(5):before{background:linear-gradient(135deg,#10182E,#1477FF)}
-.behance-card:nth-child(6):before{background:linear-gradient(135deg,#151A32,#FF8139)}
+.behance-card:nth-child(6):before{background:linear-gradient(135deg,#151A32,#16C784)}
 .behance-card:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:34px 34px;opacity:.55;z-index:1}
 .behance-card > *{position:relative;z-index:2}
 .behance-card span{align-self:flex-start;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:7px 10px;font-family:var(--title-font);font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(12px)}
@@ -259,10 +259,10 @@ button{cursor:pointer}
           <span class="tag">SaaS Explainers</span>
           <span class="tag blue">3D Product Visuals</span>
           <span class="tag">Brand Films</span>
-          <span class="tag orange">VFX</span>
+          <span class="tag accent">VFX</span>
           <span class="tag blue">Campaign Motion</span>
           <span class="tag">Motion Identity</span>
-          <span class="tag orange">Social Ads</span>
+          <span class="tag accent">Social Ads</span>
           <span class="tag">AI Assisted Lookdev</span>
         </div>
       </div>
@@ -478,7 +478,7 @@ button{cursor:pointer}
             <div class="result-item"><span>Recommended package</span><b id="packageName">Launch Film</b></div>
             <div class="result-item"><span>Best for</span><b id="packageDesc">SaaS explainers, product launches and campaign motion.</b></div>
           </div>
-          <a class="btn orange" href="mailto:gandresmorenob@gmail.com?subject=Project%20estimate%20request">Request a precise quote</a>
+          <a class="btn accent" href="mailto:gandresmorenob@gmail.com?subject=Project%20estimate%20request">Request a precise quote</a>
         </aside>
       </div>
     </div>
