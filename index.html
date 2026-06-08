@@ -111,9 +111,13 @@
   .sec-head p{color:var(--ink-2);font-size:16px;margin:18px 0 0;max-width:540px}
   .sec-no{font-family:"JetBrains Mono";font-size:12px;color:var(--ink-3);white-space:nowrap;letter-spacing:.1em}
 
-  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}.reveal.d3{transition-delay:.21s}.reveal.d4{transition-delay:.28s}.reveal.d5{transition-delay:.35s}
+  /* reveals only hide once JS is ready (content visible by default) */
+  body.anim .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s var(--ease)}
+  body.anim .reveal.in{opacity:1;transform:none}
+  body.anim .reveal.d1{transition-delay:.07s}body.anim .reveal.d2{transition-delay:.14s}body.anim .reveal.d3{transition-delay:.21s}body.anim .reveal.d4{transition-delay:.28s}body.anim .reveal.d5{transition-delay:.35s}
+  /* parallax helpers */
+  .px{will-change:transform}
+  .h-drift{will-change:transform}
 
   /* intro */
   .intro .big{font-family:"Space Grotesk";font-weight:500;font-size:clamp(23px,3.2vw,40px);line-height:1.22;letter-spacing:-.02em;max-width:1000px}
@@ -652,19 +656,13 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // smooth scroll (lenis) — guarded
-  if(!reduce && window.Lenis){
-    const lenis=new Lenis({lerp:.1,smoothWheel:true});
-    function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
-    requestAnimationFrame(raf);
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){const el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-70})}}});
-    });
-  }
+  const hasGSAP = !!(window.gsap && window.ScrollTrigger);
+  let lenis=null;
 
   // load + header
   window.addEventListener('load',()=>document.body.classList.add('loaded'));
@@ -673,11 +671,65 @@
   const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
   onScroll();window.addEventListener('scroll',onScroll,{passive:true});
 
-  // reveals
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // ---- smooth scroll (Lenis) ----
+  if(!reduce && window.Lenis){
+    lenis=new Lenis({lerp:.092,smoothWheel:true,wheelMultiplier:1});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
+    requestAnimationFrame(raf);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){const el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-70})}}});
+    });
+  }
 
-  // drag-to-scroll carousels
+  if(!reduce && hasGSAP){
+    // ===== thefinch-style scroll motion (GSAP ScrollTrigger) =====
+    gsap.registerPlugin(ScrollTrigger);
+    if(lenis){ lenis.on('scroll',ScrollTrigger.update); gsap.ticker.add((t)=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0); }
+
+    // hide reveal targets inline (no CSS transition conflict), then batch-animate
+    gsap.set('.reveal',{opacity:0,y:34});
+    ScrollTrigger.batch('.reveal',{
+      start:'top 88%',
+      onEnter:(els)=>gsap.to(els,{opacity:1,y:0,duration:.9,ease:'power3.out',stagger:.08,overwrite:true}),
+      once:true
+    });
+
+    // hero: parallax out + ambient drift
+    gsap.to('#top .readout',{y:120,opacity:0,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('#top h1',{y:-60,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:.4}});
+    gsap.to('#top .hero-lede,#top .hero-tags',{y:-30,opacity:.2,ease:'none',scrollTrigger:{trigger:'#top',start:'center top',end:'bottom top',scrub:.6}});
+
+    // section headings: subtle parallax lift (opacity handled by parent reveal)
+    gsap.utils.toArray('.sec-head h2,.intro .big,.contact h2').forEach(h=>{
+      gsap.fromTo(h,{yPercent:14},{yPercent:-6,ease:'none',scrollTrigger:{trigger:h,start:'top 90%',end:'top 40%',scrub:.6}});
+    });
+
+    // archive rows drift horizontally on scroll (alternating directions)
+    gsap.utils.toArray('#archive .row').forEach((row,i)=>{
+      const dir = i%2===0 ? 1 : -1;
+      gsap.fromTo(row,{x:40*dir},{x:-40*dir,ease:'none',scrollTrigger:{trigger:row,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+
+    // marquee speed reacts to scroll velocity
+    if(lenis){
+      const tracks=document.querySelectorAll('.ticker-track');
+      lenis.on('scroll',({velocity})=>{
+        const v=Math.min(Math.abs(velocity)/8,6);
+        tracks.forEach(t=>t.style.animationDuration=(34/(1+v))+'s');
+      });
+    }
+
+    ScrollTrigger.refresh();
+    window.addEventListener('load',()=>ScrollTrigger.refresh());
+  } else if(!reduce){
+    // ---- fallback (no GSAP): CSS transition reveals via IntersectionObserver ----
+    document.body.classList.add('anim');
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
+  /* reduced motion: no class added → all content visible, no animation */
+
+  // drag-to-scroll carousels (works alongside scroll drift)
   document.querySelectorAll('.row').forEach(row=>{
     let down=false,startX,scrollL;
     row.addEventListener('pointerdown',e=>{down=true;row.classList.add('drag');startX=e.pageX;scrollL=row.scrollLeft});
